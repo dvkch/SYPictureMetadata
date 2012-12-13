@@ -1,0 +1,336 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F80C7264167A0AF000A9110A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F80C7263167A0AF000A9110A /* UIKit.framework */; };
+		F80C7266167A0AF000A9110A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F80C7265167A0AF000A9110A /* Foundation.framework */; };
+		F80C7268167A0AF000A9110A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F80C7267167A0AF000A9110A /* CoreGraphics.framework */; };
+		F80C726E167A0AF100A9110A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F80C726C167A0AF100A9110A /* InfoPlist.strings */; };
+		F80C7270167A0AF100A9110A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F80C726F167A0AF100A9110A /* main.m */; };
+		F80C7274167A0AF100A9110A /* SYAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F80C7273167A0AF100A9110A /* SYAppDelegate.m */; };
+		F80C7276167A0AF100A9110A /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = F80C7275167A0AF100A9110A /* Default.png */; };
+		F80C7278167A0AF100A9110A /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F80C7277167A0AF100A9110A /* Default@2x.png */; };
+		F80C727A167A0AF100A9110A /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F80C7279167A0AF100A9110A /* Default-568h@2x.png */; };
+		F80C7283167A0AF100A9110A /* SYViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F80C7282167A0AF100A9110A /* SYViewController.m */; };
+		F80C728B167A0B6300A9110A /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F80C728A167A0B6300A9110A /* Storyboard.storyboard */; };
+		F80C728E167A0BF300A9110A /* SYPicture.m in Sources */ = {isa = PBXBuildFile; fileRef = F80C728D167A0BF300A9110A /* SYPicture.m */; };
+		F80C7290167A0C0400A9110A /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F80C728F167A0C0400A9110A /* AssetsLibrary.framework */; };
+		F80C7293167A147300A9110A /* SYPictureDictionaryTIFF.m in Sources */ = {isa = PBXBuildFile; fileRef = F80C7292167A147300A9110A /* SYPictureDictionaryTIFF.m */; };
+		F80C7295167A18FA00A9110A /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F80C7294167A18FA00A9110A /* ImageIO.framework */; };
+		F8423EA3167A2C1900927712 /* SYPictureDictionaryEXIF.m in Sources */ = {isa = PBXBuildFile; fileRef = F8423EA2167A2C1900927712 /* SYPictureDictionaryEXIF.m */; };
+		F8423EA7167A357D00927712 /* SYPictureDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = F8423EA6167A357D00927712 /* SYPictureDictionary.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		F80C725F167A0AF000A9110A /* SYPictureMetadataExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SYPictureMetadataExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F80C7263167A0AF000A9110A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		F80C7265167A0AF000A9110A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		F80C7267167A0AF000A9110A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		F80C726B167A0AF100A9110A /* SYPictureMetadataExample-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SYPictureMetadataExample-Info.plist"; sourceTree = "<group>"; };
+		F80C726D167A0AF100A9110A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		F80C726F167A0AF100A9110A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		F80C7271167A0AF100A9110A /* SYPictureMetadataExample-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SYPictureMetadataExample-Prefix.pch"; sourceTree = "<group>"; };
+		F80C7272167A0AF100A9110A /* SYAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SYAppDelegate.h; sourceTree = "<group>"; };
+		F80C7273167A0AF100A9110A /* SYAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SYAppDelegate.m; sourceTree = "<group>"; };
+		F80C7275167A0AF100A9110A /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		F80C7277167A0AF100A9110A /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		F80C7279167A0AF100A9110A /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		F80C7281167A0AF100A9110A /* SYViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SYViewController.h; sourceTree = "<group>"; };
+		F80C7282167A0AF100A9110A /* SYViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SYViewController.m; sourceTree = "<group>"; };
+		F80C728A167A0B6300A9110A /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
+		F80C728C167A0BF300A9110A /* SYPicture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYPicture.h; sourceTree = "<group>"; };
+		F80C728D167A0BF300A9110A /* SYPicture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYPicture.m; sourceTree = "<group>"; };
+		F80C728F167A0C0400A9110A /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
+		F80C7291167A147300A9110A /* SYPictureDictionaryTIFF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYPictureDictionaryTIFF.h; sourceTree = "<group>"; };
+		F80C7292167A147300A9110A /* SYPictureDictionaryTIFF.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYPictureDictionaryTIFF.m; sourceTree = "<group>"; };
+		F80C7294167A18FA00A9110A /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
+		F8423EA1167A2C1900927712 /* SYPictureDictionaryEXIF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYPictureDictionaryEXIF.h; sourceTree = "<group>"; };
+		F8423EA2167A2C1900927712 /* SYPictureDictionaryEXIF.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYPictureDictionaryEXIF.m; sourceTree = "<group>"; };
+		F8423EA5167A357D00927712 /* SYPictureDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYPictureDictionary.h; sourceTree = "<group>"; };
+		F8423EA6167A357D00927712 /* SYPictureDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYPictureDictionary.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F80C725C167A0AF000A9110A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F80C7295167A18FA00A9110A /* ImageIO.framework in Frameworks */,
+				F80C7290167A0C0400A9110A /* AssetsLibrary.framework in Frameworks */,
+				F80C7264167A0AF000A9110A /* UIKit.framework in Frameworks */,
+				F80C7266167A0AF000A9110A /* Foundation.framework in Frameworks */,
+				F80C7268167A0AF000A9110A /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F80C7254167A0AF000A9110A = {
+			isa = PBXGroup;
+			children = (
+				F80C7269167A0AF000A9110A /* SYPictureMetadataExample */,
+				F80C7289167A0B4800A9110A /* SYPictureMetadata */,
+				F80C7262167A0AF000A9110A /* Frameworks */,
+				F80C7260167A0AF000A9110A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F80C7260167A0AF000A9110A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F80C725F167A0AF000A9110A /* SYPictureMetadataExample.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F80C7262167A0AF000A9110A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F80C7294167A18FA00A9110A /* ImageIO.framework */,
+				F80C728F167A0C0400A9110A /* AssetsLibrary.framework */,
+				F80C7263167A0AF000A9110A /* UIKit.framework */,
+				F80C7265167A0AF000A9110A /* Foundation.framework */,
+				F80C7267167A0AF000A9110A /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F80C7269167A0AF000A9110A /* SYPictureMetadataExample */ = {
+			isa = PBXGroup;
+			children = (
+				F80C7272167A0AF100A9110A /* SYAppDelegate.h */,
+				F80C7273167A0AF100A9110A /* SYAppDelegate.m */,
+				F80C7281167A0AF100A9110A /* SYViewController.h */,
+				F80C7282167A0AF100A9110A /* SYViewController.m */,
+				F80C726A167A0AF000A9110A /* Supporting Files */,
+				F80C728A167A0B6300A9110A /* Storyboard.storyboard */,
+			);
+			path = SYPictureMetadataExample;
+			sourceTree = "<group>";
+		};
+		F80C726A167A0AF000A9110A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F80C726B167A0AF100A9110A /* SYPictureMetadataExample-Info.plist */,
+				F80C726C167A0AF100A9110A /* InfoPlist.strings */,
+				F80C726F167A0AF100A9110A /* main.m */,
+				F80C7271167A0AF100A9110A /* SYPictureMetadataExample-Prefix.pch */,
+				F80C7275167A0AF100A9110A /* Default.png */,
+				F80C7277167A0AF100A9110A /* Default@2x.png */,
+				F80C7279167A0AF100A9110A /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F80C7289167A0B4800A9110A /* SYPictureMetadata */ = {
+			isa = PBXGroup;
+			children = (
+				F80C728C167A0BF300A9110A /* SYPicture.h */,
+				F80C728D167A0BF300A9110A /* SYPicture.m */,
+				F8423EA5167A357D00927712 /* SYPictureDictionary.h */,
+				F8423EA6167A357D00927712 /* SYPictureDictionary.m */,
+				F80C7291167A147300A9110A /* SYPictureDictionaryTIFF.h */,
+				F80C7292167A147300A9110A /* SYPictureDictionaryTIFF.m */,
+				F8423EA1167A2C1900927712 /* SYPictureDictionaryEXIF.h */,
+				F8423EA2167A2C1900927712 /* SYPictureDictionaryEXIF.m */,
+			);
+			name = SYPictureMetadata;
+			path = ../SYPictureMetadata;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F80C725E167A0AF000A9110A /* SYPictureMetadataExample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F80C7286167A0AF100A9110A /* Build configuration list for PBXNativeTarget "SYPictureMetadataExample" */;
+			buildPhases = (
+				F80C725B167A0AF000A9110A /* Sources */,
+				F80C725C167A0AF000A9110A /* Frameworks */,
+				F80C725D167A0AF000A9110A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SYPictureMetadataExample;
+			productName = SYPictureMetadataExample;
+			productReference = F80C725F167A0AF000A9110A /* SYPictureMetadataExample.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F80C7256167A0AF000A9110A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = SY;
+				LastUpgradeCheck = 0450;
+				ORGANIZATIONNAME = Syan;
+			};
+			buildConfigurationList = F80C7259167A0AF000A9110A /* Build configuration list for PBXProject "SYPictureMetadataExample" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = F80C7254167A0AF000A9110A;
+			productRefGroup = F80C7260167A0AF000A9110A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F80C725E167A0AF000A9110A /* SYPictureMetadataExample */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F80C725D167A0AF000A9110A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F80C726E167A0AF100A9110A /* InfoPlist.strings in Resources */,
+				F80C7276167A0AF100A9110A /* Default.png in Resources */,
+				F80C7278167A0AF100A9110A /* Default@2x.png in Resources */,
+				F80C727A167A0AF100A9110A /* Default-568h@2x.png in Resources */,
+				F80C728B167A0B6300A9110A /* Storyboard.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F80C725B167A0AF000A9110A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F80C7270167A0AF100A9110A /* main.m in Sources */,
+				F80C7274167A0AF100A9110A /* SYAppDelegate.m in Sources */,
+				F80C7283167A0AF100A9110A /* SYViewController.m in Sources */,
+				F80C728E167A0BF300A9110A /* SYPicture.m in Sources */,
+				F80C7293167A147300A9110A /* SYPictureDictionaryTIFF.m in Sources */,
+				F8423EA3167A2C1900927712 /* SYPictureDictionaryEXIF.m in Sources */,
+				F8423EA7167A357D00927712 /* SYPictureDictionary.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		F80C726C167A0AF100A9110A /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F80C726D167A0AF100A9110A /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F80C7284167A0AF100A9110A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F80C7285167A0AF100A9110A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F80C7287167A0AF100A9110A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SYPictureMetadataExample/SYPictureMetadataExample-Prefix.pch";
+				INFOPLIST_FILE = "SYPictureMetadataExample/SYPictureMetadataExample-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		F80C7288167A0AF100A9110A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SYPictureMetadataExample/SYPictureMetadataExample-Prefix.pch";
+				INFOPLIST_FILE = "SYPictureMetadataExample/SYPictureMetadataExample-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F80C7259167A0AF000A9110A /* Build configuration list for PBXProject "SYPictureMetadataExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F80C7284167A0AF100A9110A /* Debug */,
+				F80C7285167A0AF100A9110A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F80C7286167A0AF100A9110A /* Build configuration list for PBXNativeTarget "SYPictureMetadataExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F80C7287167A0AF100A9110A /* Debug */,
+				F80C7288167A0AF100A9110A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F80C7256167A0AF000A9110A /* Project object */;
+}
