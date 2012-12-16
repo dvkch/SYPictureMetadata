@@ -1,5 +1,5 @@
 //
-//  SYPictureDictionaryTIFF.h
+//  SYMetadataTIFF.h
 //  SYPictureMetadataExample
 //
 //  Created by rominet on 12/13/12.
@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "SYPictureDictionary.h"
+#import "SYMetadataBase.h"
 
 typedef enum {
     SYPictureTiffOrientation_TopLeft = 1,
@@ -38,7 +38,7 @@ typedef enum {
 
 
 
-@interface SYPictureDictionaryTIFF : SYPictureDictionary
+@interface SYMetadataTIFF : SYMetadataBase
 
 @property (readonly, nonatomic, getter = getCompression)                NSNumber*   compression;
 @property (readonly, nonatomic, getter = getPhotometricInterpretation)  NSNumber*   photometricInterpretation;

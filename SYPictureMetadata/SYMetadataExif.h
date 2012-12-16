@@ -1,5 +1,5 @@
 //
-//  SYPictureDictionaryEXIF.h
+//  SYMetadataExif.h
 //  SYPictureMetadataExample
 //
 //  Created by rominet on 12/13/12.
@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "SYPictureDictionary.h"
+#import "SYMetadataBase.h"
 
 typedef enum {
     SYPictureExifExposureProgram_NotDefined = 0,
@@ -132,7 +132,7 @@ typedef enum {
 
 
 
-@interface SYPictureDictionaryEXIF : SYPictureDictionary
+@interface SYMetadataExif : SYMetadataBase
 
 @property (readonly, nonatomic, getter = getExposureTime)               NSNumber*   exposureTime;
 @property (readonly, nonatomic, getter = getFNumber)                    NSNumber*   fNumber;

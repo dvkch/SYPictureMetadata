@@ -1,5 +1,5 @@
 //
-//SYPictureDictionaryEXIF.m
+//SYMetadataEXIF.m
 //SYPictureMetadataExample
 //
 //Created by rominet on 12/13/12.
@@ -7,9 +7,9 @@
 //
 
 #import <ImageIO/ImageIO.h>
-#import "SYPictureDictionaryEXIF.h"
+#import "SYMetadataEXIF.h"
 
-@implementation SYPictureDictionaryEXIF
+@implementation SYMetadataExif
 
 -(NSNumber *)getExposureTime
 { return [self numberForKeyStringRef:kCGImagePropertyExifExposureTime]; }

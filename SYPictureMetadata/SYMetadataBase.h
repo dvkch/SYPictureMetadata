@@ -1,5 +1,5 @@
 //
-//  SYPictureDictionary.h
+//  SYMetadataBase.h
 //  SYPictureMetadataExample
 //
 //  Created by rominet on 12/13/12.
@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface SYPictureDictionary : NSObject {
+@interface SYMetadataBase : NSObject {
 @protected
     NSDictionary *_dic;
 }

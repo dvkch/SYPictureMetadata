@@ -1,5 +1,5 @@
 //
-//  SYPictureDictionaryTIFF.m
+//  SYMetadataTIFF.m
 //  SYPictureMetadataExample
 //
 //  Created by rominet on 12/13/12.
@@ -7,9 +7,9 @@
 //
 
 #import <ImageIO/ImageIO.h>
-#import "SYPictureDictionaryTIFF.h"
+#import "SYMetadataTIFF.h"
 
-@implementation SYPictureDictionaryTIFF
+@implementation SYMetadataTIFF
 
 -(NSNumber*)getCompression
 { return [self numberForKeyStringRef:kCGImagePropertyTIFFCompression]; }
