@@ -36,6 +36,8 @@
 -(SYMetadata*)initWithAssetURL:(NSURL*)assetURL;
 -(SYMetadata*)initWithAbsolutePath:(NSString*)absolutePath;
 
+-(NSDictionary*)allMetadatas;
+
 -(SYMetadataTIFF*)metadataTiff;
 -(SYMetadataExif*)metadataExif;
 -(SYMetadataGIF*)metadataGIF;

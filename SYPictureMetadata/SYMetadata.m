@@ -64,6 +64,11 @@
 
 #pragma mark - Public methods
 
+-(NSDictionary*)allMetadatas
+{
+    return self->_metadata;
+}
+
 -(SYMetadataTIFF *)metadataTiff
 {
     return [[SYMetadataTIFF alloc] initWithDic:[self->_metadata objectForKey:(__bridge NSString *)kCGImagePropertyTIFFDictionary]];
