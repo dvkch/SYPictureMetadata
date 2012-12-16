@@ -43,19 +43,19 @@
     if(self = [super init])
     {
         self->_assetURL = assetURL;
-        self->_absolutePath = nil;
+        self->_absolutePathURL = nil;
         self->_metadata = nil;
         [self refresh];
     }
     return self;
 }
 
--(SYMetadata*)initWithAbsolutePath:(NSString*)absolutePath
+-(SYMetadata *)initWithAbsolutePathURL:(NSURL *)absolutePathURL
 {
     if(self = [super init])
     {
         self->_assetURL = nil;
-        self->_absolutePath = absolutePath;
+        self->_absolutePathURL = absolutePathURL;
         self->_metadata = nil;
         [self refresh];
     }
@@ -177,10 +177,9 @@
 
 -(void)refresh
 {
-    if(self->_absolutePath)
+    if(self->_absolutePathURL)
     {
-        NSURL *url = [NSURL URLWithString:self->_absolutePath];
-        CGImageSourceRef source = CGImageSourceCreateWithURL((__bridge CFURLRef)url, NULL);
+        CGImageSourceRef source = CGImageSourceCreateWithURL((__bridge CFURLRef)self->_absolutePathURL, NULL);
         if (source == NULL)
             return;
         

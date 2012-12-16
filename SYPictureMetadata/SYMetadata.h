@@ -30,11 +30,11 @@
 @private
     NSDictionary *_metadata;
     NSURL *_assetURL;
-    NSString* _absolutePath;
+    NSURL* _absolutePathURL;
 }
 
 -(SYMetadata*)initWithAssetURL:(NSURL*)assetURL;
--(SYMetadata*)initWithAbsolutePath:(NSString*)absolutePath;
+-(SYMetadata*)initWithAbsolutePathURL:(NSURL*)absolutePathURL;
 
 -(NSDictionary*)allMetadatas;
 
