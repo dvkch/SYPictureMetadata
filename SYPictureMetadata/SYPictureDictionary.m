@@ -43,10 +43,12 @@
 {
     NSObject *obj = [self->_dic objectForKey:key];
     BOOL isString = [obj isKindOfClass:[NSString class]];
-    if(!isString)
-        NSLog(@"Wrong type for key \"%@\", not a string : %@", key, [[obj class] description]);
+    if(!isString && obj) {
+        NSLog(@"Wrong type for key \"%@\", not a string : %@\n returning description", key, [[obj class] description]);
+        return [obj description];
+    }
     
-    return [obj description];
+    return (NSString*)obj;
 }
 -(NSString*)stringForKeyStringRef:(CFStringRef)key
 {
@@ -57,7 +59,7 @@
 {
     NSObject *obj = [self->_dic objectForKey:key];
     BOOL isNumber = [obj isKindOfClass:[NSNumber class]];
-    if(!isNumber) {
+    if(!isNumber && obj) {
         NSLog(@"Wrong type for key \"%@\", not a number : %@", key, [[obj class] description]);
         return nil;
     }
@@ -73,7 +75,7 @@
 {
     NSObject *obj = [self->_dic objectForKey:key];
     BOOL isArray = [obj isKindOfClass:[NSArray class]];
-    if(!isArray) {
+    if(!isArray && obj) {
         NSLog(@"Wrong type for key \"%@\", not a array : %@", key, [[obj class] description]);
         return nil;
     }
