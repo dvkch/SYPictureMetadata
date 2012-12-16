@@ -179,7 +179,8 @@
 {
     if(self->_absolutePath)
     {
-        CGImageSourceRef source = CGImageSourceCreateWithURL((__bridge CFURLRef)self->_absolutePath, NULL);
+        NSURL *url = [NSURL URLWithString:self->_absolutePath];
+        CGImageSourceRef source = CGImageSourceCreateWithURL((__bridge CFURLRef)url, NULL);
         if (source == NULL)
             return;
         
