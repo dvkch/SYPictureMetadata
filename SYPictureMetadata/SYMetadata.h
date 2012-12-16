@@ -7,24 +7,24 @@
 //
 
 #import <Foundation/Foundation.h>
-@class SYMetadataExif;
-@class SYMetadataTIFF;
-@class SYMetadataGIF;
-@class SYMetadataJFIF;
-@class SYMetadataPNG;
-@class SYMetadataIPTC;
-@class SYMetadataGPS;
-@class SYMetadataRaw;
-@class SYMetadataCIFF;
-@class SYMetadataMakerCanon;
-@class SYMetadataMakerNikon;
-@class SYMetadataMakerMinolta;
-@class SYMetadataMakerFuji;
-@class SYMetadataMakerOlympus;
-@class SYMetadataMakerPentax;
-@class SYMetadata8BIM;
-@class SYMetadataDNG;
-@class SYMetadataExifAux;
+#import "SYMetadataTIFF.h"
+#import "SYMetadataGIF.h"
+#import "SYMetadataJFIF.h"
+#import "SYMetadataExif.h"
+#import "SYMetadataPNG.h"
+#import "SYMetadataIPTC.h"
+#import "SYMetadataGPS.h"
+#import "SYMetadataRaw.h"
+#import "SYMetadataCIFF.h"
+#import "SYMetadataMakerCanon.h"
+#import "SYMetadataMakerNikon.h"
+#import "SYMetadataMakerMinolta.h"
+#import "SYMetadataMakerFuji.h"
+#import "SYMetadataMakerOlympus.h"
+#import "SYMetadataMakerPentax.h"
+#import "SYMetadata8BIM.h"
+#import "SYMetadataDNG.h"
+#import "SYMetadataExifAux.h"
 
 @interface SYMetadata : NSObject {
 @private
