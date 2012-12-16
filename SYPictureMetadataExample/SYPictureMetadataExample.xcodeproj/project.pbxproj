@@ -21,6 +21,7 @@
 		F80C728E167A0BF300A9110A /* SYMetadata.m in Sources */ = {isa = PBXBuildFile; fileRef = F80C728D167A0BF300A9110A /* SYMetadata.m */; };
 		F80C7290167A0C0400A9110A /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F80C728F167A0C0400A9110A /* AssetsLibrary.framework */; };
 		F80C7295167A18FA00A9110A /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F80C7294167A18FA00A9110A /* ImageIO.framework */; };
+		F8AC5491167E4A7600E079D3 /* IMG_NIKON.NEF in Resources */ = {isa = PBXBuildFile; fileRef = F8AC5490167E4A7600E079D3 /* IMG_NIKON.NEF */; };
 		F8BE2367167DE42600CFE2BB /* SYMetadata8BIM.m in Sources */ = {isa = PBXBuildFile; fileRef = F8BE2342167DE42200CFE2BB /* SYMetadata8BIM.m */; };
 		F8BE2368167DE42600CFE2BB /* SYMetadataBase.m in Sources */ = {isa = PBXBuildFile; fileRef = F8BE2344167DE42200CFE2BB /* SYMetadataBase.m */; };
 		F8BE2369167DE42600CFE2BB /* SYMetadataCIFF.m in Sources */ = {isa = PBXBuildFile; fileRef = F8BE2346167DE42200CFE2BB /* SYMetadataCIFF.m */; };
@@ -64,6 +65,7 @@
 		F80C728D167A0BF300A9110A /* SYMetadata.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYMetadata.m; sourceTree = "<group>"; };
 		F80C728F167A0C0400A9110A /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 		F80C7294167A18FA00A9110A /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
+		F8AC5490167E4A7600E079D3 /* IMG_NIKON.NEF */ = {isa = PBXFileReference; lastKnownFileType = file; path = IMG_NIKON.NEF; sourceTree = "<group>"; };
 		F8BE2341167DE42200CFE2BB /* SYMetadata8BIM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYMetadata8BIM.h; sourceTree = "<group>"; };
 		F8BE2342167DE42200CFE2BB /* SYMetadata8BIM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYMetadata8BIM.m; sourceTree = "<group>"; };
 		F8BE2343167DE42200CFE2BB /* SYMetadataBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYMetadataBase.h; sourceTree = "<group>"; };
@@ -125,6 +127,7 @@
 			isa = PBXGroup;
 			children = (
 				F8BE23CA167E087900CFE2BB /* IMG_NIKON.JPG */,
+				F8AC5490167E4A7600E079D3 /* IMG_NIKON.NEF */,
 				F80C7269167A0AF000A9110A /* SYPictureMetadataExample */,
 				F80C7289167A0B4800A9110A /* SYPictureMetadata */,
 				F80C7262167A0AF000A9110A /* Frameworks */,
@@ -285,6 +288,7 @@
 				F80C727A167A0AF100A9110A /* Default-568h@2x.png in Resources */,
 				F80C728B167A0B6300A9110A /* Storyboard.storyboard in Resources */,
 				F8BE23CB167E087900CFE2BB /* IMG_NIKON.JPG in Resources */,
+				F8AC5491167E4A7600E079D3 /* IMG_NIKON.NEF in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

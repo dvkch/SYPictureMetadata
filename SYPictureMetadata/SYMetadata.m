@@ -185,9 +185,12 @@
         
         NSDictionary *options = [NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithBool:NO], (NSString *)kCGImageSourceShouldCache, nil];
         CFDictionaryRef properties = CGImageSourceCopyPropertiesAtIndex(source, 0, (__bridge CFDictionaryRef)options);
-        if (!properties)
+        if (!properties) {
+            CFRelease(source);
             return;
+        }
         
+        CFRelease(source);
         self->_metadata = (__bridge NSDictionary*)properties;
     }
     else if(self->_assetURL)
