@@ -40,6 +40,7 @@
 		F8BE2377167DE42600CFE2BB /* SYMetadataPNG.m in Sources */ = {isa = PBXBuildFile; fileRef = F8BE2362167DE42500CFE2BB /* SYMetadataPNG.m */; };
 		F8BE2378167DE42600CFE2BB /* SYMetadataRaw.m in Sources */ = {isa = PBXBuildFile; fileRef = F8BE2364167DE42500CFE2BB /* SYMetadataRaw.m */; };
 		F8BE2379167DE42600CFE2BB /* SYMetadataTIFF.m in Sources */ = {isa = PBXBuildFile; fileRef = F8BE2366167DE42500CFE2BB /* SYMetadataTIFF.m */; };
+		F8BE23CB167E087900CFE2BB /* IMG_NIKON.JPG in Resources */ = {isa = PBXBuildFile; fileRef = F8BE23CA167E087900CFE2BB /* IMG_NIKON.JPG */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -101,6 +102,7 @@
 		F8BE2364167DE42500CFE2BB /* SYMetadataRaw.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYMetadataRaw.m; sourceTree = "<group>"; };
 		F8BE2365167DE42500CFE2BB /* SYMetadataTIFF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYMetadataTIFF.h; sourceTree = "<group>"; };
 		F8BE2366167DE42500CFE2BB /* SYMetadataTIFF.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYMetadataTIFF.m; sourceTree = "<group>"; };
+		F8BE23CA167E087900CFE2BB /* IMG_NIKON.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = IMG_NIKON.JPG; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +124,7 @@
 		F80C7254167A0AF000A9110A = {
 			isa = PBXGroup;
 			children = (
+				F8BE23CA167E087900CFE2BB /* IMG_NIKON.JPG */,
 				F80C7269167A0AF000A9110A /* SYPictureMetadataExample */,
 				F80C7289167A0B4800A9110A /* SYPictureMetadata */,
 				F80C7262167A0AF000A9110A /* Frameworks */,
@@ -281,6 +284,7 @@
 				F80C7278167A0AF100A9110A /* Default@2x.png in Resources */,
 				F80C727A167A0AF100A9110A /* Default-568h@2x.png in Resources */,
 				F80C728B167A0B6300A9110A /* Storyboard.storyboard in Resources */,
+				F8BE23CB167E087900CFE2BB /* IMG_NIKON.JPG in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
