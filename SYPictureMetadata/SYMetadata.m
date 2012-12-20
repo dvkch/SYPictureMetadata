@@ -38,10 +38,24 @@
 
 #pragma mark - Initialization
 
+-(SYMetadata*)initWithAsset:(ALAsset *)asset
+{
+    if(self = [super init])
+    {
+        self->_asset = asset;
+        self->_assetURL = nil;
+        self->_absolutePathURL = nil;
+        self->_metadata = nil;
+        [self refresh];
+    }
+    return self;
+}
+
 -(SYMetadata*)initWithAssetURL:(NSURL*)assetURL
 {
     if(self = [super init])
     {
+        self->_asset = nil;
         self->_assetURL = assetURL;
         self->_absolutePathURL = nil;
         self->_metadata = nil;
@@ -54,6 +68,7 @@
 {
     if(self = [super init])
     {
+        self->_asset = nil;
         self->_assetURL = nil;
         self->_absolutePathURL = absolutePathURL;
         self->_metadata = nil;
@@ -177,21 +192,10 @@
 
 -(void)refresh
 {
-    if(self->_absolutePathURL)
+    if(self->_asset)
     {
-        CGImageSourceRef source = CGImageSourceCreateWithURL((__bridge CFURLRef)self->_absolutePathURL, NULL);
-        if (source == NULL)
-            return;
-        
-        NSDictionary *options = [NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithBool:NO], (NSString *)kCGImageSourceShouldCache, nil];
-        CFDictionaryRef properties = CGImageSourceCopyPropertiesAtIndex(source, 0, (__bridge CFDictionaryRef)options);
-        if (!properties) {
-            CFRelease(source);
-            return;
-        }
-        
-        CFRelease(source);
-        self->_metadata = (__bridge NSDictionary*)properties;
+        ALAssetRepresentation *representation = [self->_asset defaultRepresentation];
+        self->_metadata = [representation metadata];
     }
     else if(self->_assetURL)
     {
@@ -212,6 +216,22 @@
         
         ALAssetRepresentation *representation = [assetAtUrl defaultRepresentation];
         self->_metadata = [representation metadata];
+    }
+    else if(self->_absolutePathURL)
+    {
+        CGImageSourceRef source = CGImageSourceCreateWithURL((__bridge CFURLRef)self->_absolutePathURL, NULL);
+        if (source == NULL)
+            return;
+        
+        NSDictionary *options = [NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithBool:NO], (NSString *)kCGImageSourceShouldCache, nil];
+        CFDictionaryRef properties = CGImageSourceCopyPropertiesAtIndex(source, 0, (__bridge CFDictionaryRef)options);
+        if (!properties) {
+            CFRelease(source);
+            return;
+        }
+        
+        CFRelease(source);
+        self->_metadata = (__bridge NSDictionary*)properties;
     }
     else
     {

@@ -26,13 +26,17 @@
 #import "SYMetadataDNG.h"
 #import "SYMetadataExifAux.h"
 
+@class ALAsset;
+
 @interface SYMetadata : NSObject {
 @private
     NSDictionary *_metadata;
+    ALAsset *_asset;
     NSURL *_assetURL;
     NSURL* _absolutePathURL;
 }
 
+-(SYMetadata*)initWithAsset:(ALAsset*)asset;
 -(SYMetadata*)initWithAssetURL:(NSURL*)assetURL;
 -(SYMetadata*)initWithAbsolutePathURL:(NSURL*)absolutePathURL;
 
