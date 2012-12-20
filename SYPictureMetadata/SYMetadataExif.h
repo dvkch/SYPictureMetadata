@@ -193,12 +193,12 @@ typedef enum {
 @property (readonly, nonatomic, getter = getImageUniqueID)              NSString*   imageUniqueID;
 
 // iOS 5+
-@property (readonly, nonatomic, getter = getCameraOwnerName)            NSString*   cameraOwnerName;
-@property (readonly, nonatomic, getter = getBodySerialNumber)           NSString*   bodySerialNumber;
-@property (readonly, nonatomic, getter = getLensSpecification)          NSArray*    lensSpecification;
-@property (readonly, nonatomic, getter = getLensMake)                   NSString*   lensMake;
-@property (readonly, nonatomic, getter = getLensModel)                  NSString*   lensModel;
-@property (readonly, nonatomic, getter = getLensSerialNumber)           NSString*   lensSerialNumber;
+//@property (readonly, nonatomic, getter = getCameraOwnerName)            NSString*   cameraOwnerName;
+//@property (readonly, nonatomic, getter = getBodySerialNumber)           NSString*   bodySerialNumber;
+//@property (readonly, nonatomic, getter = getLensSpecification)          NSArray*    lensSpecification;
+//@property (readonly, nonatomic, getter = getLensMake)                   NSString*   lensMake;
+//@property (readonly, nonatomic, getter = getLensModel)                  NSString*   lensModel;
+//@property (readonly, nonatomic, getter = getLensSerialNumber)           NSString*   lensSerialNumber;
 @property (readonly, nonatomic, getter = getGamma)                      NSNumber*   gamma;
 
 @end

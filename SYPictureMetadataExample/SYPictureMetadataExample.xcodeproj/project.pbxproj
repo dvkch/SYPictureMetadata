@@ -21,6 +21,9 @@
 		F80C728E167A0BF300A9110A /* SYMetadata.m in Sources */ = {isa = PBXBuildFile; fileRef = F80C728D167A0BF300A9110A /* SYMetadata.m */; };
 		F80C7290167A0C0400A9110A /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F80C728F167A0C0400A9110A /* AssetsLibrary.framework */; };
 		F80C7295167A18FA00A9110A /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F80C7294167A18FA00A9110A /* ImageIO.framework */; };
+		F827333F168331DD0016C0F9 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F827333C168331DD0016C0F9 /* CoreImage.framework */; };
+		F8273340168331DD0016C0F9 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F827333D168331DD0016C0F9 /* CoreMedia.framework */; };
+		F8273341168331DD0016C0F9 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F827333E168331DD0016C0F9 /* CoreVideo.framework */; };
 		F8AC5491167E4A7600E079D3 /* IMG_NIKON.NEF in Resources */ = {isa = PBXBuildFile; fileRef = F8AC5490167E4A7600E079D3 /* IMG_NIKON.NEF */; };
 		F8BE2367167DE42600CFE2BB /* SYMetadata8BIM.m in Sources */ = {isa = PBXBuildFile; fileRef = F8BE2342167DE42200CFE2BB /* SYMetadata8BIM.m */; };
 		F8BE2368167DE42600CFE2BB /* SYMetadataBase.m in Sources */ = {isa = PBXBuildFile; fileRef = F8BE2344167DE42200CFE2BB /* SYMetadataBase.m */; };
@@ -65,6 +68,9 @@
 		F80C728D167A0BF300A9110A /* SYMetadata.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYMetadata.m; sourceTree = "<group>"; };
 		F80C728F167A0C0400A9110A /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 		F80C7294167A18FA00A9110A /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
+		F827333C168331DD0016C0F9 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
+		F827333D168331DD0016C0F9 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		F827333E168331DD0016C0F9 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
 		F8AC5490167E4A7600E079D3 /* IMG_NIKON.NEF */ = {isa = PBXFileReference; lastKnownFileType = file; path = IMG_NIKON.NEF; sourceTree = "<group>"; };
 		F8BE2341167DE42200CFE2BB /* SYMetadata8BIM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYMetadata8BIM.h; sourceTree = "<group>"; };
 		F8BE2342167DE42200CFE2BB /* SYMetadata8BIM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYMetadata8BIM.m; sourceTree = "<group>"; };
@@ -112,11 +118,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F827333F168331DD0016C0F9 /* CoreImage.framework in Frameworks */,
+				F8273340168331DD0016C0F9 /* CoreMedia.framework in Frameworks */,
+				F8273341168331DD0016C0F9 /* CoreVideo.framework in Frameworks */,
+				F80C7268167A0AF000A9110A /* CoreGraphics.framework in Frameworks */,
 				F80C7295167A18FA00A9110A /* ImageIO.framework in Frameworks */,
 				F80C7290167A0C0400A9110A /* AssetsLibrary.framework in Frameworks */,
 				F80C7264167A0AF000A9110A /* UIKit.framework in Frameworks */,
 				F80C7266167A0AF000A9110A /* Foundation.framework in Frameworks */,
-				F80C7268167A0AF000A9110A /* CoreGraphics.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -126,6 +135,9 @@
 		F80C7254167A0AF000A9110A = {
 			isa = PBXGroup;
 			children = (
+				F827333C168331DD0016C0F9 /* CoreImage.framework */,
+				F827333D168331DD0016C0F9 /* CoreMedia.framework */,
+				F827333E168331DD0016C0F9 /* CoreVideo.framework */,
 				F8BE23CA167E087900CFE2BB /* IMG_NIKON.JPG */,
 				F8AC5490167E4A7600E079D3 /* IMG_NIKON.NEF */,
 				F80C7269167A0AF000A9110A /* SYPictureMetadataExample */,
@@ -399,6 +411,7 @@
 				INFOPLIST_FILE = "SYPictureMetadataExample/SYPictureMetadataExample-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -411,6 +424,7 @@
 				INFOPLIST_FILE = "SYPictureMetadataExample/SYPictureMetadataExample-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

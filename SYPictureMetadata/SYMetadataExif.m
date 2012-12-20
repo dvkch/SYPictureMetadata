@@ -178,25 +178,36 @@
 -(NSString *)getImageUniqueID
 { return [self stringForKeyStringRef:kCGImagePropertyExifImageUniqueID]; }
 
-
+#warning not found by dyld even if exists in sdk files....
+/*
 -(NSString *)getCameraOwnerName
 { return [self stringForKeyStringRef:kCGImagePropertyExifCameraOwnerName]; }
-
+*/
+#warning not found by dyld even if exists in sdk files....
+/*
 -(NSString *)getBodySerialNumber
 { return [self stringForKeyStringRef:kCGImagePropertyExifBodySerialNumber]; }
-
+*/
+#warning not found by dyld even if exists in sdk files....
+/*
 -(NSArray *)getLensSpecification
 { return [self arrayForKeyStringRef:kCGImagePropertyExifLensSpecification]; }
-
+*/
+#warning not found by dyld even if exists in sdk files....
+/*
 -(NSString *)getLensMake
 { return [self stringForKeyStringRef:kCGImagePropertyExifLensMake]; }
-
+*/
+#warning not found by dyld even if exists in sdk files....
+/*
 -(NSString *)getLensModel
 { return [self stringForKeyStringRef:kCGImagePropertyExifLensModel]; }
-
+*/
+#warning not found by dyld even if exists in sdk files....
+/*
 -(NSString *)getLensSerialNumber
 { return [self stringForKeyStringRef:kCGImagePropertyExifLensSerialNumber]; }
-
+*/
 
 -(NSNumber *)getGamma
 { return [self numberForKeyStringRef:kCGImagePropertyExifGamma]; }
