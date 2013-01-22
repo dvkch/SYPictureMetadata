@@ -36,7 +36,7 @@
     NSURL* _absolutePathURL;
 }
 
--(SYMetadata*)initWithMetadataDictionnary:(NSDictionary*)metadata;
+-(SYMetadata*)initWithMetadataDictionary:(NSDictionary*)metadata;
 -(SYMetadata*)initWithAsset:(ALAsset*)asset;
 -(SYMetadata*)initWithAssetURL:(NSURL*)assetURL;
 -(SYMetadata*)initWithAbsolutePathURL:(NSURL*)absolutePathURL;

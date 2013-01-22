@@ -38,7 +38,7 @@
 
 #pragma mark - Initialization
 
--(SYMetadata*)initWithMetadataDictionnary:(NSDictionary*)metadata
+-(SYMetadata*)initWithMetadataDictionary:(NSDictionary*)metadata
 {
     if(self = [super init])
     {
