@@ -31,12 +31,25 @@
 
 
 @interface SYMetadata (Private)
--(void)refresh;
+-(void)refresh:(BOOL)force;
 @end
 
 @implementation SYMetadata
 
 #pragma mark - Initialization
+
+-(SYMetadata*)initWithMetadataDictionnary:(NSDictionary*)metadata
+{
+    if(self = [super init])
+    {
+        self->_asset = nil;
+        self->_assetURL = nil;
+        self->_absolutePathURL = nil;
+        self->_metadata = metadata;
+        [self refresh:NO];
+    }
+    return self;
+}
 
 -(SYMetadata*)initWithAsset:(ALAsset *)asset
 {
@@ -46,7 +59,7 @@
         self->_assetURL = nil;
         self->_absolutePathURL = nil;
         self->_metadata = nil;
-        [self refresh];
+        [self refresh:NO];
     }
     return self;
 }
@@ -59,7 +72,7 @@
         self->_assetURL = assetURL;
         self->_absolutePathURL = nil;
         self->_metadata = nil;
-        [self refresh];
+        [self refresh:NO];
     }
     return self;
 }
@@ -72,7 +85,7 @@
         self->_assetURL = nil;
         self->_absolutePathURL = absolutePathURL;
         self->_metadata = nil;
-        [self refresh];
+        [self refresh:NO];
     }
     return self;
 }
@@ -190,8 +203,11 @@
 
 #pragma mark - Private methods
 
--(void)refresh
+-(void)refresh:(BOOL)force
 {
+    if(self->_metadata && !force)
+        return;
+    
     if(self->_asset)
     {
         ALAssetRepresentation *representation = [self->_asset defaultRepresentation];
