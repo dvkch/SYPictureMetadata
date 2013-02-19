@@ -42,10 +42,7 @@
 {
     if(self = [super init])
     {
-        self->_asset = nil;
-        self->_assetURL = nil;
-        self->_absolutePathURL = nil;
-        self->_metadata = metadata;
+        _metadata = metadata;
         [self refresh:NO];
     }
     return self;
@@ -55,10 +52,7 @@
 {
     if(self = [super init])
     {
-        self->_asset = asset;
-        self->_assetURL = nil;
-        self->_absolutePathURL = nil;
-        self->_metadata = nil;
+        _asset = asset;
         [self refresh:NO];
     }
     return self;
@@ -68,10 +62,7 @@
 {
     if(self = [super init])
     {
-        self->_asset = nil;
-        self->_assetURL = assetURL;
-        self->_absolutePathURL = nil;
-        self->_metadata = nil;
+        _assetURL = assetURL;
         [self refresh:NO];
     }
     return self;
@@ -81,11 +72,8 @@
 {
     if(self = [super init])
     {
-        self->_asset = nil;
-        self->_assetURL = nil;
-        self->_absolutePathURL = absolutePathURL;
-        self->_metadata = nil;
-        [self refresh:NO];
+        _absolutePathURL = absolutePathURL;
+        [self refresh:NO];        
     }
     return self;
 }
