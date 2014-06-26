@@ -12,22 +12,15 @@
 
 -(id)initWithDic:(NSDictionary*)dic
 {
+    if(!dic) return nil;
+    
     if(self = [super init])
     {
-        self->_dic = dic;
+        _dic = dic;
     }
-    
-    if(!dic)
-        return nil;
     
     return self;
 }
-
--(NSDictionary *)getDictionary
-{
-    return self->_dic;
-}
-
 
 -(NSObject *)objectForKeyString:(NSString *)key
 {
@@ -74,8 +67,8 @@
 -(NSArray*)arrayForKeyString:(NSString*)key
 {
     NSObject *obj = [self->_dic objectForKey:key];
-    BOOL isArray = [obj isKindOfClass:[NSArray class]];
-    if(!isArray && obj) {
+    BOOL isArray = [obj isKindOfClass:[NSArray class]]; // if obj == nil, expression will evaluate false.
+    if(!isArray) {
         NSLog(@"Wrong type for key \"%@\", not a array : %@", key, [[obj class] description]);
         return nil;
     }
