@@ -1,0 +1,11 @@
+source 'https://github.com/CocoaPods/Specs.git'
+
+inhibit_all_warnings!
+
+target :'SYPictureMetadataExample' do
+	platform :ios, '8.0'
+	pod 'Mantle'
+	pod 'SYKit'
+end
+
+

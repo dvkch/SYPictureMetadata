@@ -2,257 +2,223 @@
 //  SYMetadata.m
 //  SYPictureMetadataExample
 //
-//  Created by rominet on 12/13/12.
+//  Created by Stan Chevallier on 12/13/12.
 //  Copyright (c) 2012 Syan. All rights reserved.
 //
 
 #import <AssetsLibrary/AssetsLibrary.h>
 #import <ImageIO/ImageIO.h>
 #import "SYMetadata.h"
+#import "NSDictionary+SY.h"
 
-#import "SYMetadataTIFF.h"
-#import "SYMetadataGIF.h"
-#import "SYMetadataJFIF.h"
-#import "SYMetadataExif.h"
-#import "SYMetadataPNG.h"
-#import "SYMetadataIPTC.h"
-#import "SYMetadataGPS.h"
-#import "SYMetadataRaw.h"
-#import "SYMetadataCIFF.h"
-#import "SYMetadataMakerCanon.h"
-#import "SYMetadataMakerNikon.h"
-#import "SYMetadataMakerMinolta.h"
-#import "SYMetadataMakerFuji.h"
-#import "SYMetadataMakerOlympus.h"
-#import "SYMetadataMakerPentax.h"
-#import "SYMetadata8BIM.h"
-#import "SYMetadataDNG.h"
-#import "SYMetadataExifAux.h"
-
+#define SYKeyForMetadata(name)          NSStringFromSelector(@selector(metadata##name))
+#define SYDictionaryForMetadata(name)   SYPaste(SYPaste(kCGImageProperty,name),Dictionary)
+#define SYClassForMetadata(name)        SYPaste(SYMetadata,name)
+#define SYMappingPptyToClass(name)      SYKeyForMetadata(name):SYClassForMetadata(name).class
+#define SYMappingPptyToKeyPath(name)    SYKeyForMetadata(name):(__bridge NSString *)SYDictionaryForMetadata(name)
 
 @interface SYMetadata (Private)
--(void)refresh:(BOOL)force;
+- (void)refresh:(BOOL)force;
 @end
 
 @implementation SYMetadata
 
 #pragma mark - Initialization
 
--(SYMetadata*)initWithMetadataDictionary:(NSDictionary*)metadata
++ (instancetype)metadataWithDictionary:(NSDictionary *)dictionary
 {
-    if(self = [super init])
-    {
-        self->_asset = nil;
-        self->_assetURL = nil;
-        self->_absolutePathURL = nil;
-        self->_metadata = metadata;
-        [self refresh:NO];
-    }
-    return self;
-}
-
--(SYMetadata*)initWithAsset:(ALAsset *)asset
-{
-    if(self = [super init])
-    {
-        self->_asset = asset;
-        self->_assetURL = nil;
-        self->_absolutePathURL = nil;
-        self->_metadata = nil;
-        [self refresh:NO];
-    }
-    return self;
-}
-
--(SYMetadata*)initWithAssetURL:(NSURL*)assetURL
-{
-    if(self = [super init])
-    {
-        self->_asset = nil;
-        self->_assetURL = assetURL;
-        self->_absolutePathURL = nil;
-        self->_metadata = nil;
-        [self refresh:NO];
-    }
-    return self;
-}
-
--(SYMetadata *)initWithAbsolutePathURL:(NSURL *)absolutePathURL
-{
-    if(self = [super init])
-    {
-        self->_asset = nil;
-        self->_assetURL = nil;
-        self->_absolutePathURL = absolutePathURL;
-        self->_metadata = nil;
-        [self refresh:NO];
-    }
-    return self;
-}
-
-#pragma mark - Public methods
-
--(NSDictionary*)allMetadatas
-{
-    return self->_metadata;
-}
-
--(SYMetadataTIFF *)metadataTiff
-{
-    return [[SYMetadataTIFF alloc] initWithDic:[self->_metadata objectForKey:(__bridge NSString *)kCGImagePropertyTIFFDictionary]];
-}
-
--(SYMetadataExif *)metadataExif
-{
-    return [[SYMetadataExif alloc] initWithDic:[self->_metadata objectForKey:(__bridge NSString *)kCGImagePropertyExifDictionary]];
-}
-
--(SYMetadataGIF*)metadataGIF
-{
-    return [[SYMetadataGIF alloc] initWithDic:[self->_metadata objectForKey:(__bridge NSString *)kCGImagePropertyGIFDictionary]];
-}
-
--(SYMetadataJFIF*)metadataJFIF
-{
-    return [[SYMetadataJFIF alloc] initWithDic:[self->_metadata objectForKey:(__bridge NSString *)kCGImagePropertyJFIFDictionary]];
-}
-
--(SYMetadataPNG*)metadataPNG
-{
-    return [[SYMetadataPNG alloc] initWithDic:[self->_metadata objectForKey:(__bridge NSString *)kCGImagePropertyPNGDictionary]];
-}
-
--(SYMetadataIPTC*)metadataIPTC
-{
-    return [[SYMetadataIPTC alloc] initWithDic:[self->_metadata objectForKey:(__bridge NSString *)kCGImagePropertyIPTCDictionary]];
-}
-
--(SYMetadataGPS*)metadataGPS
-{
-    return [[SYMetadataGPS alloc] initWithDic:[self->_metadata objectForKey:(__bridge NSString *)kCGImagePropertyGPSDictionary]];
-}
-
--(SYMetadataRaw*)metadataRaw
-{
-    return [[SYMetadataRaw alloc] initWithDic:[self->_metadata objectForKey:(__bridge NSString *)kCGImagePropertyRawDictionary]];
-}
-
--(SYMetadataCIFF*)metadataCIFF
-{
-    return [[SYMetadataCIFF alloc] initWithDic:[self->_metadata objectForKey:(__bridge NSString *)kCGImagePropertyCIFFDictionary]];
-}
-
--(SYMetadataMakerCanon*)metadataMakerCanon
-{
-    return [[SYMetadataMakerCanon alloc] initWithDic:[self->_metadata objectForKey:(__bridge NSString *)kCGImagePropertyMakerCanonDictionary]];
-}
-
--(SYMetadataMakerNikon*)metadataMakerNikon
-{
-    return [[SYMetadataMakerNikon alloc] initWithDic:[self->_metadata objectForKey:(__bridge NSString *)kCGImagePropertyMakerNikonDictionary]];
-}
-
-#warning iOS SDK doesn't seem to have definition for this key....
-/*
--(SYMetadataMakerMinolta*)metadataMakerMinolta
-{
-    return [[SYMetadataMakerMinolta alloc] initWithDic:[self->_metadata objectForKey:(__bridge NSString *)kCGImagePropertyMakerMinoltaDictionary]];
-}
-*/
-
-#warning iOS SDK doesn't seem to have definition for this key....
-/*
--(SYMetadataMakerFuji*)metadataMakerFuji
-{
-    return [[SYMetadataMakerFuji alloc] initWithDic:[self->_metadata objectForKey:(__bridge NSString *)kCGImagePropertyMakerFujiDictionary]];
-}
-*/
-
-#warning iOS SDK doesn't seem to have definition for this key....
-/*
--(SYMetadataMakerOlympus*)metadataMakerOlympus
-{
-    return [[SYMetadataMakerOlympus alloc] initWithDic:[self->_metadata objectForKey:(__bridge NSString *)kCGImagePropertyMakerOlympusDictionary]];
-}
-*/
-
-#warning iOS SDK doesn't seem to have definition for this key....
-/*
--(SYMetadataMakerPentax*)metadataMakerPentax
-{
-    return [[SYMetadataMakerPentax alloc] initWithDic:[self->_metadata objectForKey:(__bridge NSString *)kCGImagePropertyMakerPentaxDictionary]];
-}
-*/
-
--(SYMetadata8BIM*)metadata8BIM
-{
-    return [[SYMetadata8BIM alloc] initWithDic:[self->_metadata objectForKey:(__bridge NSString *)kCGImageProperty8BIMDictionary]];
-}
-
--(SYMetadataDNG*)metadataDNG
-{
-    return [[SYMetadataDNG alloc] initWithDic:[self->_metadata objectForKey:(__bridge NSString *)kCGImagePropertyDNGDictionary]];
-}
-
--(SYMetadataExifAux*)metadataExifAux
-{
-    return [[SYMetadataExifAux alloc] initWithDic:[self->_metadata objectForKey:(__bridge NSString *)kCGImagePropertyExifAuxDictionary]];
-}
-
-
-
-#pragma mark - Private methods
-
--(void)refresh:(BOOL)force
-{
-    if(self->_metadata && !force)
-        return;
+    if (!dictionary)
+        return nil;
     
-    if(self->_asset)
-    {
-        ALAssetRepresentation *representation = [self->_asset defaultRepresentation];
-        self->_metadata = [representation metadata];
+    NSError *error;
+    
+    SYMetadata *instance = [MTLJSONAdapter modelOfClass:self.class fromJSONDictionary:dictionary error:&error];
+    
+    if (instance)
+        instance->_originalDictionary = dictionary;
+        
+    if (error)
+        NSLog(@"--> Error creating %@ object: %@", NSStringFromClass(self.class), error);
+    
+    return instance;
+}
+
++ (instancetype)metadataWithAsset:(ALAsset *)asset
+{
+    ALAssetRepresentation *representation = [asset defaultRepresentation];
+
+    SYMetadata *instance = [self metadataWithDictionary:[representation metadata]];
+    if (instance)
+        instance->_asset = asset;
+    
+    return instance;
+}
+
++ (instancetype)metadataWithAssetURL:(NSURL *)assetURL
+{
+    NSDictionary *dictionary = [self dictionaryWithAssetURL:assetURL];
+    if (!dictionary)
+        return nil;
+    
+    SYMetadata *instance = [self metadataWithDictionary:dictionary];
+    if (instance)
+        instance->_assetURL = assetURL;
+    
+    return instance;
+}
+
++ (instancetype)metadataWithFileURL:(NSURL *)fileURL
+{
+    if (!fileURL)
+        return nil;
+    
+    CGImageSourceRef source = CGImageSourceCreateWithURL((__bridge CFURLRef)fileURL, NULL);
+    if (source == NULL)
+        return nil;
+    
+    NSDictionary *dictionary;
+    
+    NSDictionary *options = @{(NSString *)kCGImageSourceShouldCache:@(NO)};
+    CFDictionaryRef properties = CGImageSourceCopyPropertiesAtIndex(source, 0, (__bridge CFDictionaryRef)options);
+    if (properties) {
+        dictionary = (__bridge NSDictionary*)properties;
     }
-    else if(self->_assetURL)
-    {
-        __block ALAsset *assetAtUrl = nil;
-        ALAssetsLibrary* library = [[ALAssetsLibrary alloc] init];
-        
-        dispatch_semaphore_t sema = dispatch_semaphore_create(0);
-        [library assetForURL:self->_assetURL resultBlock:^(ALAsset *asset) {
-            assetAtUrl = asset;
-            dispatch_semaphore_signal(sema);
-        } failureBlock:^(NSError *error) {
-            dispatch_semaphore_signal(sema);
-        }];
-        dispatch_semaphore_wait(sema, DISPATCH_TIME_FOREVER);
-        
-        if(!assetAtUrl)
-            return;
-        
-        ALAssetRepresentation *representation = [assetAtUrl defaultRepresentation];
-        self->_metadata = [representation metadata];
-    }
-    else if(self->_absolutePathURL)
-    {
-        CGImageSourceRef source = CGImageSourceCreateWithURL((__bridge CFURLRef)self->_absolutePathURL, NULL);
-        if (source == NULL)
-            return;
-        
-        NSDictionary *options = [NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithBool:NO], (NSString *)kCGImageSourceShouldCache, nil];
-        CFDictionaryRef properties = CGImageSourceCopyPropertiesAtIndex(source, 0, (__bridge CFDictionaryRef)options);
-        if (!properties) {
-            CFRelease(source);
-            return;
-        }
-        
-        CFRelease(source);
-        self->_metadata = (__bridge NSDictionary*)properties;
-    }
+    
+    CFRelease(source);
+    
+    SYMetadata *instance = [self metadataWithDictionary:dictionary];
+    if (instance)
+        instance->_fileURL = fileURL;
+    
+    return instance;
+}
+
+#pragma mark - Getting metadata
+
++ (NSDictionary *)dictionaryWithAssetURL:(NSURL *)assetURL
+{
+    __block ALAsset *assetAtUrl = nil;
+    ALAssetsLibrary* library = [[ALAssetsLibrary alloc] init];
+    
+    dispatch_semaphore_t sema = dispatch_semaphore_create(0);
+    [library assetForURL:assetURL resultBlock:^(ALAsset *asset) {
+        assetAtUrl = asset;
+        dispatch_semaphore_signal(sema);
+    } failureBlock:^(NSError *error) {
+        dispatch_semaphore_signal(sema);
+    }];
+    dispatch_semaphore_wait(sema, DISPATCH_TIME_FOREVER);
+    
+    if (!assetAtUrl)
+        return nil;
+    
+    ALAssetRepresentation *representation = [assetAtUrl defaultRepresentation];
+    return [representation metadata];
+}
+
+#pragma mark - Mapping
+
++ (NSDictionary *)JSONKeyPathsByPropertyKey
+{
+    NSMutableDictionary <NSString *, NSString *> *mappings = [NSMutableDictionary dictionary];
+    [mappings
+     addEntriesFromDictionary:@{SYMappingPptyToKeyPath(TIFF),
+                                SYMappingPptyToKeyPath(Exif),
+                                SYMappingPptyToKeyPath(GIF),
+                                SYMappingPptyToKeyPath(JFIF),
+                                SYMappingPptyToKeyPath(PNG),
+                                SYMappingPptyToKeyPath(IPTC),
+                                SYMappingPptyToKeyPath(GPS),
+                                SYMappingPptyToKeyPath(Raw),
+                                SYMappingPptyToKeyPath(CIFF),
+                                SYMappingPptyToKeyPath(MakerCanon),
+                                SYMappingPptyToKeyPath(MakerNikon),
+                                SYMappingPptyToKeyPath(MakerMinolta),
+                                SYMappingPptyToKeyPath(MakerFuji),
+                                SYMappingPptyToKeyPath(MakerOlympus),
+                                SYMappingPptyToKeyPath(MakerPentax),
+                                SYMappingPptyToKeyPath(8BIM),
+                                SYMappingPptyToKeyPath(DNG),
+                                SYMappingPptyToKeyPath(ExifAux),
+                                }];
+    
+    [mappings
+     addEntriesFromDictionary:@{SYStringSel(fileSize):      (NSString *)kCGImagePropertyFileSize,
+                                SYStringSel(pixelHeight):   (NSString *)kCGImagePropertyPixelHeight,
+                                SYStringSel(pixelWidth):    (NSString *)kCGImagePropertyPixelWidth,
+                                SYStringSel(dpiHeight):     (NSString *)kCGImagePropertyDPIHeight,
+                                SYStringSel(dpiWidth):      (NSString *)kCGImagePropertyDPIWidth,
+                                SYStringSel(depth):         (NSString *)kCGImagePropertyDepth,
+                                SYStringSel(orientation):   (NSString *)kCGImagePropertyOrientation,
+                                SYStringSel(isFloat):       (NSString *)kCGImagePropertyIsFloat,
+                                SYStringSel(isIndexed):     (NSString *)kCGImagePropertyIsIndexed,
+                                SYStringSel(hasAlpha):      (NSString *)kCGImagePropertyHasAlpha,
+                                SYStringSel(colorModel):    (NSString *)kCGImagePropertyColorModel,
+                                SYStringSel(profileName):   (NSString *)kCGImagePropertyProfileName,
+                                
+                                SYStringSel(metadataApple):         (NSString *)kCGImagePropertyMakerAppleDictionary,
+                                SYStringSel(metadataPictureStyle):  (NSString *)kSYImagePropertyPictureStyle,
+                                }];
+    
+    return [mappings copy];
+}
+
++ (NSValueTransformer *)JSONTransformerForKey:(NSString *)key
+{
+    static dispatch_once_t onceToken;
+    static NSDictionary <NSString *, Class> *classMappings;
+    dispatch_once(&onceToken, ^{
+        classMappings = @{SYMappingPptyToClass(TIFF),
+                          SYMappingPptyToClass(Exif),
+                          SYMappingPptyToClass(GIF),
+                          SYMappingPptyToClass(JFIF),
+                          SYMappingPptyToClass(PNG),
+                          SYMappingPptyToClass(IPTC),
+                          SYMappingPptyToClass(GPS),
+                          SYMappingPptyToClass(Raw),
+                          SYMappingPptyToClass(CIFF),
+                          SYMappingPptyToClass(MakerCanon),
+                          SYMappingPptyToClass(MakerNikon),
+                          SYMappingPptyToClass(MakerMinolta),
+                          SYMappingPptyToClass(MakerFuji),
+                          SYMappingPptyToClass(MakerOlympus),
+                          SYMappingPptyToClass(MakerPentax),
+                          SYMappingPptyToClass(8BIM),
+                          SYMappingPptyToClass(DNG),
+                          SYMappingPptyToClass(ExifAux),
+                          };
+    });
+    
+    
+    Class objectClass = classMappings[key];
+    
+    if (objectClass)
+        return [MTLJSONAdapter dictionaryTransformerWithModelClass:objectClass];
+    
+    return [super JSONTransformerForKey:key];
+}
+
+#pragma mark - Tests
+
++ (BOOL)testWithFileURL:(NSURL *)fileURL
+{
+    NSLog(@"---------------------------------");
+    NSLog(@"Loading %@", fileURL.lastPathComponent);
+    
+    SYMetadata *metadata = [SYMetadata metadataWithFileURL:fileURL];
+    NSDictionary *diffs = [metadata differencesFromOriginalMetadataToModel];
+    
+    if (diffs.count)
+        NSLog(@"Differences:\n%@", diffs);
     else
-    {
-        self->_metadata = nil;
-    }
+        NSLog(@"No differences");
+    
+    return (diffs.count == 0);
+}
+
+- (NSDictionary *)differencesFromOriginalMetadataToModel
+{
+    return [NSDictionary sy_differencesFrom:self.originalDictionary to:[self generatedDictionary]];
 }
 
 @end

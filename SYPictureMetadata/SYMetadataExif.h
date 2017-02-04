@@ -2,7 +2,7 @@
 //  SYMetadataExif.h
 //  SYPictureMetadataExample
 //
-//  Created by rominet on 12/13/12.
+//  Created by Stan Chevallier on 12/13/12.
 //  Copyright (c) 2012 Syan. All rights reserved.
 //
 
@@ -128,77 +128,115 @@ typedef enum {
     SYPictureExifSubjectDistanceRange_DistantView = 3
 } SYPictureExifSubjectDistanceRange;
 
+typedef enum : NSUInteger {
+    SYMetadataExifSensitivityType_Unknown                                                          = 0,
+    SYMetadataExifSensitivityType_StandardOutputSensitivity                                        = 1,
+    SYMetadataExifSensitivityType_RecommendedExposureIndex                                         = 2,
+    SYMetadataExifSensitivityType_ISOSpeed                                                         = 3,
+    SYMetadataExifSensitivityType_StandardOutputSensitivityAndRecommendedExposureIndex             = 4,
+    SYMetadataExifSensitivityType_StandardOutputSensitivityAndISOSpeed                             = 5,
+    SYMetadataExifSensitivityType_RecommendedExposureIndexAndISOSpeed                              = 6,
+    SYMetadataExifSensitivityType_StandardOutputSensitivityAndRecommendedExposureIndexAndISOSpeed  = 7,
+} SYMetadataExifSensitivityType;
 
-
-
+typedef enum : NSUInteger {
+    SYMetadataExifFlash_FlashDidNotFire                                                        = 0x0000,
+    SYMetadataExifFlash_FlashFired                                                             = 0x0001,
+    SYMetadataExifFlash_StrobeReturnLightNotDetected                                           = 0x0005,
+    SYMetadataExifFlash_StrobeReturnLightDetected                                              = 0x0007,
+    SYMetadataExifFlash_FlashFiredCompulsoryFlashMode                                          = 0x0009,
+    SYMetadataExifFlash_FlashFiredCompulsoryFlashModeReturnLightNotDetected                    = 0x000D,
+    SYMetadataExifFlash_FlashFiredCompulsoryFlashModeReturnLightDetected                       = 0x000F,
+    SYMetadataExifFlash_FlashDidNotFireCompulsoryDlashMode                                     = 0x0010,
+    SYMetadataExifFlash_FlashDidNotFireAutoMode                                                = 0x0018,
+    SYMetadataExifFlash_FlashFiredAutoMode                                                     = 0x0019,
+    SYMetadataExifFlash_FlashFiredAutoModeReturnLightNotDetected                               = 0x001D,
+    SYMetadataExifFlash_FlashFiredAutoModeReturnLightDetected                                  = 0x001F,
+    SYMetadataExifFlash_NoFlashFunction                                                        = 0x0020,
+    SYMetadataExifFlash_FlashFiredRedEyeReductionMode                                          = 0x0041,
+    SYMetadataExifFlash_FlashFiredRedEyeReductionModeReturnLightNotDetected                    = 0x0045,
+    SYMetadataExifFlash_FlashFiredRedEyeReductionModeReturnLightDetected                       = 0x0047,
+    SYMetadataExifFlash_FlashFiredCompulsoryFlashModeRedEyeReductionMode                       = 0x0049,
+    SYMetadataExifFlash_FlashFiredCompulsoryFlashModeRedEyeReductionModeReturnLightNotDetected = 0x004D,
+    SYMetadataExifFlash_FlashFiredCompulsoryFlashModeRedEyeReductionModeReturnLightDetected    = 0x004F,
+    SYMetadataExifFlash_FlashFiredAutoModeRedEyeReductionMode                                  = 0x0059,
+    SYMetadataExifFlash_FlashFiredAutoModeReturnLightNotDetectedRedEyeReductionMode            = 0x005D,
+    SYMetadataExifFlash_FlashFiredAutoModeReturnLightDetectedRedEyeReductionMode               = 0x005F,
+} SYMetadataExifFlash;
 
 @interface SYMetadataExif : SYMetadataBase
 
-@property (readonly, nonatomic, getter = getExposureTime)               NSNumber*   exposureTime;
-@property (readonly, nonatomic, getter = getFNumber)                    NSNumber*   fNumber;
-@property (readonly, nonatomic, getter = getExposureProgram)            NSNumber*   exposureProgram;
-@property (readonly, nonatomic, getter = getSpectralSensitivity)        NSString*   spectralSensitivity;
-@property (readonly, nonatomic, getter = getISOSpeedRatings)            NSNumber*   isoSpeedRatings;
-@property (readonly, nonatomic, getter = getOECF)                       NSObject*   oecf;
-@property (readonly, nonatomic, getter = getVersion)                    NSArray*    version;
-@property (readonly, nonatomic, getter = getDateTimeOriginal)           NSString*   dateTimeOriginal;
-@property (readonly, nonatomic, getter = getDateTimeDigitized)          NSString*   dateTimeDigitized;
-@property (readonly, nonatomic, getter = getComponentsConfiguration)    NSArray*    componentsConfiguration;
-@property (readonly, nonatomic, getter = getCompressedBitsPerPixel)     NSNumber*   compressedBitsPerPixel;
-@property (readonly, nonatomic, getter = getShutterSpeedValue)          NSNumber*   shutterSpeedValue;
-@property (readonly, nonatomic, getter = getApertureValue)              NSNumber*   apertureValue;
-@property (readonly, nonatomic, getter = getBrightnessValue)            NSNumber*   brightnessValue;
-@property (readonly, nonatomic, getter = getExposureBiasValue)          NSNumber*   exposureBiasValue;
-@property (readonly, nonatomic, getter = getMaxApertureValue)           NSNumber*   maxApertureValue;
-@property (readonly, nonatomic, getter = getSubjectDistance)            NSNumber*   subjectDistance;
-@property (readonly, nonatomic, getter = getMeteringMode)               NSNumber*   meteringMode;
-@property (readonly, nonatomic, getter = getLightSource)                NSNumber*   lightSource;
-@property (readonly, nonatomic, getter = getFlash)                      NSNumber*   flash;
-@property (readonly, nonatomic, getter = getFlashString)                NSString*   flashString;
-@property (readonly, nonatomic, getter = getFocalLength)                NSNumber*   focalLength;
-@property (readonly, nonatomic, getter = getSubjectArea)                NSArray*    subjectArea;
-@property (readonly, nonatomic, getter = getMakerNote)                  NSObject*   makerNote;
-@property (readonly, nonatomic, getter = getUserComment)                NSString*   userComment;
-@property (readonly, nonatomic, getter = getSubsecTime)                 NSString*   subsecTime;
-@property (readonly, nonatomic, getter = getSubsecTimeOriginal)         NSString*   subsecTimeOriginal;
-@property (readonly, nonatomic, getter = getSubsecTimeDigitized)        NSString*   subsecTimeDigitized;
-@property (readonly, nonatomic, getter = getFlashPixVersion)            NSString*   flashPixVersion;
-@property (readonly, nonatomic, getter = getColorSpace)                 NSNumber*   colorSpace;
-@property (readonly, nonatomic, getter = getPixelXDimension)            NSNumber*   pixelXDimension;
-@property (readonly, nonatomic, getter = getPixelYDimension)            NSNumber*   pixelYDimension;
-@property (readonly, nonatomic, getter = getRelatedSoundFile)           NSString*   relatedSoundFile;
-@property (readonly, nonatomic, getter = getFlashEnergy)                NSNumber*   flashEnergy;
-@property (readonly, nonatomic, getter = getSpatialFrequencyResponse)   NSObject*   spatialFrequencyResponse;
-@property (readonly, nonatomic, getter = getFocalPlaneXResolution)      NSNumber*   focalPlaneXResolution;
-@property (readonly, nonatomic, getter = getFocalPlaneYResolution)      NSNumber*   focalPlaneYResolution;
-@property (readonly, nonatomic, getter = getFocalPlaneResolutionUnit)   NSNumber*   focalPlaneResolutionUnit;
-@property (readonly, nonatomic, getter = getSubjectLocation)            NSArray*    subjectLocation;
-@property (readonly, nonatomic, getter = getExposureIndex)              NSNumber*   exposureIndex;
-@property (readonly, nonatomic, getter = getSensingMethod)              NSNumber*   sensingMethod;
-@property (readonly, nonatomic, getter = getFileSource)                 NSObject*   fileSource;
-@property (readonly, nonatomic, getter = getSceneType)                  NSObject*   sceneType;
-@property (readonly, nonatomic, getter = getCFAPattern)                 NSArray*    cfaPattern;
-@property (readonly, nonatomic, getter = getCustomRendered)             NSNumber*   customRendered;
-@property (readonly, nonatomic, getter = getExposureMode)               NSNumber*   exposureMode;
-@property (readonly, nonatomic, getter = getWhiteBalance)               NSNumber*   whiteBalance;
-@property (readonly, nonatomic, getter = getDigitalZoomRatio)           NSNumber*   digitalZoomRatio;
-@property (readonly, nonatomic, getter = getFocalLenIn35mmFilm)         NSNumber*   focalLenIn35mmFilm;
-@property (readonly, nonatomic, getter = getSceneCaptureType)           NSNumber*   sceneCaptureType;
-@property (readonly, nonatomic, getter = getGainControl)                NSNumber*   gainControl;
-@property (readonly, nonatomic, getter = getContrast)                   NSNumber*   contrast;
-@property (readonly, nonatomic, getter = getSaturation)                 NSNumber*   saturation;
-@property (readonly, nonatomic, getter = getSharpness)                  NSNumber*   sharpness;
-@property (readonly, nonatomic, getter = getDeviceSettingDescription)   NSObject*   deviceSettingDescription;
-@property (readonly, nonatomic, getter = getSubjectDistRange)           NSNumber*   subjectDistRange;
-@property (readonly, nonatomic, getter = getImageUniqueID)              NSString*   imageUniqueID;
-
-// iOS 5+
-//@property (readonly, nonatomic, getter = getCameraOwnerName)            NSString*   cameraOwnerName;
-//@property (readonly, nonatomic, getter = getBodySerialNumber)           NSString*   bodySerialNumber;
-//@property (readonly, nonatomic, getter = getLensSpecification)          NSArray*    lensSpecification;
-//@property (readonly, nonatomic, getter = getLensMake)                   NSString*   lensMake;
-//@property (readonly, nonatomic, getter = getLensModel)                  NSString*   lensModel;
-//@property (readonly, nonatomic, getter = getLensSerialNumber)           NSString*   lensSerialNumber;
-@property (readonly, nonatomic, getter = getGamma)                      NSNumber*   gamma;
+@property (nonatomic, copy, readonly) NSNumber              *exposureTime;
+@property (nonatomic, copy, readonly) NSNumber              *fNumber;
+@property (nonatomic, copy, readonly) NSNumber              *exposureProgram;
+@property (nonatomic, copy, readonly) NSString              *spectralSensitivity;
+@property (nonatomic, copy, readonly) NSArray <NSNumber *>  *isoSpeedRatings;
+@property (nonatomic, copy, readonly) NSObject              *oecf;
+@property (nonatomic, copy, readonly) NSArray <NSNumber *>  *version;
+@property (nonatomic, copy, readonly) NSString              *dateTimeOriginal;
+@property (nonatomic, copy, readonly) NSString              *dateTimeDigitized;
+@property (nonatomic, copy, readonly) NSArray <NSNumber *>  *componentsConfiguration;
+@property (nonatomic, copy, readonly) NSNumber              *compressedBitsPerPixel;
+@property (nonatomic, copy, readonly) NSNumber              *shutterSpeedValue;
+@property (nonatomic, copy, readonly) NSNumber              *apertureValue;
+@property (nonatomic, copy, readonly) NSNumber              *brightnessValue;
+@property (nonatomic, copy, readonly) NSNumber              *exposureBiasValue;
+@property (nonatomic, copy, readonly) NSNumber              *maxApertureValue;
+@property (nonatomic, copy, readonly) NSNumber              *subjectDistance;
+@property (nonatomic, copy, readonly) NSNumber              *meteringMode;
+@property (nonatomic, copy, readonly) NSNumber              *lightSource;
+@property (nonatomic, copy, readonly) NSNumber              *flash;
+@property (nonatomic, copy, readonly) NSString              *flashString;
+@property (nonatomic, copy, readonly) NSNumber              *focalLength;
+@property (nonatomic, copy, readonly) NSArray <NSNumber *>  *subjectArea;
+@property (nonatomic, copy, readonly) NSObject              *makerNote;
+@property (nonatomic, copy, readonly) NSString              *userComment;
+@property (nonatomic, copy, readonly) NSString              *subsecTime;
+@property (nonatomic, copy, readonly) NSString              *subsecTimeOriginal;
+@property (nonatomic, copy, readonly) NSString              *subsecTimeDigitized;
+@property (nonatomic, copy, readonly) NSArray <NSNumber *>  *flashPixVersion;
+@property (nonatomic, copy, readonly) NSNumber              *colorSpace;
+@property (nonatomic, copy, readonly) NSNumber              *pixelXDimension;
+@property (nonatomic, copy, readonly) NSNumber              *pixelYDimension;
+@property (nonatomic, copy, readonly) NSString              *relatedSoundFile;
+@property (nonatomic, copy, readonly) NSNumber              *flashEnergy;
+@property (nonatomic, copy, readonly) NSObject              *spatialFrequencyResponse;
+@property (nonatomic, copy, readonly) NSNumber              *focalPlaneXResolution;
+@property (nonatomic, copy, readonly) NSNumber              *focalPlaneYResolution;
+@property (nonatomic, copy, readonly) NSNumber              *focalPlaneResolutionUnit;
+@property (nonatomic, copy, readonly) NSArray <NSNumber *>  *subjectLocation;
+@property (nonatomic, copy, readonly) NSNumber              *exposureIndex;
+@property (nonatomic, copy, readonly) NSNumber              *sensingMethod;
+@property (nonatomic, copy, readonly) NSObject              *fileSource;
+@property (nonatomic, copy, readonly) NSObject              *sceneType;
+@property (nonatomic, copy, readonly) NSArray               *cfaPattern;
+@property (nonatomic, copy, readonly) NSNumber              *customRendered;
+@property (nonatomic, copy, readonly) NSNumber              *exposureMode;
+@property (nonatomic, copy, readonly) NSNumber              *whiteBalance;
+@property (nonatomic, copy, readonly) NSNumber              *digitalZoomRatio;
+@property (nonatomic, copy, readonly) NSNumber              *focalLenIn35mmFilm;
+@property (nonatomic, copy, readonly) NSNumber              *sceneCaptureType;
+@property (nonatomic, copy, readonly) NSNumber              *gainControl;
+@property (nonatomic, copy, readonly) NSNumber              *contrast;
+@property (nonatomic, copy, readonly) NSNumber              *saturation;
+@property (nonatomic, copy, readonly) NSNumber              *sharpness;
+@property (nonatomic, copy, readonly) NSObject              *deviceSettingDescription;
+@property (nonatomic, copy, readonly) NSNumber              *subjectDistRange;
+@property (nonatomic, copy, readonly) NSString              *imageUniqueID;
+@property (nonatomic, copy, readonly) NSString              *cameraOwnerName;
+@property (nonatomic, copy, readonly) NSString              *bodySerialNumber;
+@property (nonatomic, copy, readonly) NSArray               *lensSpecification;
+@property (nonatomic, copy, readonly) NSString              *lensMake;
+@property (nonatomic, copy, readonly) NSString              *lensModel;
+@property (nonatomic, copy, readonly) NSString              *lensSerialNumber;
+@property (nonatomic, copy, readonly) NSNumber              *gamma;
+@property (nonatomic, copy, readonly) NSNumber              *sensitivityType;
+@property (nonatomic, copy, readonly) NSNumber              *standardOutputSensitivity;
+@property (nonatomic, copy, readonly) NSNumber              *recommendedExposureIndex;
+@property (nonatomic, copy, readonly) NSNumber              *isoSpeed;
+@property (nonatomic, copy, readonly) NSNumber              *isoSpeedLatitudeyyy;
+@property (nonatomic, copy, readonly) NSNumber              *isoSpeedLatitudezzz;
 
 @end
+
+

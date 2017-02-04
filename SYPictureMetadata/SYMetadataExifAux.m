@@ -2,7 +2,7 @@
 //  SYMetadataExifAux.m
 //  SYPictureMetadataExample
 //
-//  Created by rominet on 12/16/12.
+//  Created by Stan Chevallier on 12/16/12.
 //  Copyright (c 2012 Syan. All rights reserved.
 //
 
@@ -11,31 +11,25 @@
 
 @implementation SYMetadataExifAux
 
--(NSArray *)getLensInfo
-{ return [self arrayForKeyStringRef:kCGImagePropertyExifAuxLensInfo]; }
-
--(NSString *)getLensModel
-{ return [self stringForKeyStringRef:kCGImagePropertyExifAuxLensModel]; }
-
--(NSString *)getSerialNumber
-{ return [self stringForKeyStringRef:kCGImagePropertyExifAuxSerialNumber]; }
-
--(NSNumber *)getLensID
-{ return [self numberForKeyStringRef:kCGImagePropertyExifAuxLensID]; }
-
--(NSString *)getLensSerialNumber
-{ return [self stringForKeyStringRef:kCGImagePropertyExifAuxLensSerialNumber]; }
-
--(NSNumber *)getImageNumber
-{ return [self numberForKeyStringRef:kCGImagePropertyExifAuxImageNumber]; }
-
--(NSObject *)getFlashCompensation
-{ return [self objectForKeyStringRef:kCGImagePropertyExifAuxFlashCompensation]; }
-
--(NSString *)getOwnerName
-{ return [self stringForKeyStringRef:kCGImagePropertyExifAuxOwnerName]; }
-
--(NSObject *)getFirmware
-{ return [self objectForKeyStringRef:kCGImagePropertyExifAuxFirmware]; }
++ (NSDictionary *)JSONKeyPathsByPropertyKey
+{
+    return @{SYStringSel(lensInfo):             (NSString *)kCGImagePropertyExifAuxLensInfo,
+             SYStringSel(lensModel):            (NSString *)kCGImagePropertyExifAuxLensModel,
+             SYStringSel(serialNumber):         (NSString *)kCGImagePropertyExifAuxSerialNumber,
+             SYStringSel(lensID):               (NSString *)kCGImagePropertyExifAuxLensID,
+             SYStringSel(lensSerialNumber):     (NSString *)kCGImagePropertyExifAuxLensSerialNumber,
+             SYStringSel(imageNumber):          (NSString *)kCGImagePropertyExifAuxImageNumber,
+             SYStringSel(flashCompensation):    (NSString *)kCGImagePropertyExifAuxFlashCompensation,
+             SYStringSel(ownerName):            (NSString *)kCGImagePropertyExifAuxOwnerName,
+             SYStringSel(firmware):             (NSString *)kCGImagePropertyExifAuxFirmware,
+             
+             // iOS reads the data but the keys are not publicly declared, we use the Nikon equivalents
+             SYStringSel(focusMode):            (NSString *)kCGImagePropertyMakerNikonFocusMode,
+             SYStringSel(focusDistance):        (NSString *)kCGImagePropertyMakerNikonFocusDistance,
+             
+             SYStringSel(afInfo):               (NSString *)kSYImagePropertyExifAuxAutoFocusInfo,
+             SYStringSel(imageStabilization):   (NSString *)kSYImagePropertyExifAuxImageStabilization,
+             };
+}
 
 @end

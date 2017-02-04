@@ -1,0 +1,1183 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		010FB32391DD914308C175B7732BE2F8 /* SYGradientView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E12FA13D2680BA54CB7CCE20062779E /* SYGradientView.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0 -w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		0F8BC4F32DAF44B2979D14030416A084 /* NSValueTransformer+MTLInversionAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = CE2C5C7C4084D8B0F0BB7D480E930543 /* NSValueTransformer+MTLInversionAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1A05BF934A67A1D58510863477450A6D /* Mantle-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5955BCFE20591063F51CC42AAF3DF8ED /* Mantle-dummy.m */; };
+		1D0907809FA58944DCF0338BEEF823E3 /* EXTScope.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F356F0BFD67DA07777503CAFFF94179 /* EXTScope.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0 -w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		1F871B2B505D5C2E316DFA0618C43847 /* EXTKeyPathCoding.h in Headers */ = {isa = PBXBuildFile; fileRef = 76709AD9737358A74505506D0C9A4DE3 /* EXTKeyPathCoding.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		1F9EB9740876757565137CF513205807 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
+		2018607C3D61886864802AF58E0DFC61 /* metamacros.h in Headers */ = {isa = PBXBuildFile; fileRef = CB0F6D259F67646C2555A11D0CA2B7B4 /* metamacros.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		2020A86F9E1845CA1319EA46E3C29BB8 /* MTLTransformerErrorHandling.m in Sources */ = {isa = PBXBuildFile; fileRef = 363127FD0FD6A774C88420F74C5D6899 /* MTLTransformerErrorHandling.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0 -w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		241783C8D5E43984BF8BA587B5974B1E /* NSValueTransformer+MTLPredefinedTransformerAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = A1C3A5E32ECCFC3B712DF980AE968E88 /* NSValueTransformer+MTLPredefinedTransformerAdditions.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0 -w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		27C806DD37E3CC8EE961EE669FAE33FA /* NSObject+MTLComparisonAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 4DEEFDDC72638C3147927105D2D17963 /* NSObject+MTLComparisonAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		27D89056A58198B32839F8AA6868EF54 /* SYSearchField.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BCF7222A82113DC4A55F2A1063F21D6 /* SYSearchField.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2879EE0CFED2DDE9FC98782965DBDC30 /* NSData+SYKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 33AC712AF2B2E401658A807DB224E98A /* NSData+SYKit.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0 -w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		2A0C164601ABC8BA083D05AADB9164AE /* NSDictionary+MTLJSONKeyPath.h in Headers */ = {isa = PBXBuildFile; fileRef = D9DC6877C6DEDF4393DB4D09D376EAC3 /* NSDictionary+MTLJSONKeyPath.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2B16DE546A6A8AF4854B6AE7344DE1B2 /* JGMethodSwizzler.h in Headers */ = {isa = PBXBuildFile; fileRef = B7073AAFB57A9CEC9B145588AFABF689 /* JGMethodSwizzler.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2DF09C7D7437DA87EEDB91F942F31295 /* SYKit-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 948A3F87575E66D972501A6BDA8700B2 /* SYKit-dummy.m */; };
+		3776420239ED0180EF58CFD77989B4A1 /* MTLReflection.h in Headers */ = {isa = PBXBuildFile; fileRef = 99F216D61155BA8DA4CC2A8C4F42F937 /* MTLReflection.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		39CB850EF4296921B301F2F60C5A094A /* JGMethodSwizzler-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 489C251232E46537F5E416356A01DA65 /* JGMethodSwizzler-dummy.m */; };
+		3C26D174C32F72E08DFD412843CEFC8E /* NSData+SYKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 600C4FA9763A1AB5EC02817A794D226B /* NSData+SYKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3D3DEA8435219ACFA76990829AD8A6A6 /* UIButton+SYKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 67F4341A1598DB5E2C5E4689EE3667B5 /* UIButton+SYKit.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0 -w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		4483948B13B5B09848B048AB8203CEC8 /* SYShapeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D08B129A6B66DDA0BDB2BB7A7453FEF /* SYShapeView.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0 -w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		44C375DC19EB890EA68DEA121CD822D2 /* UIDevice+SYKit.h in Headers */ = {isa = PBXBuildFile; fileRef = F22DDFA775AF3EFBF1507723F9BB1AFB /* UIDevice+SYKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		46BAB6394E367A6742A1EC295A24F0C1 /* JGMethodSwizzler.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CFB5E1BB17009CC6455F3CB4E77BACA /* JGMethodSwizzler.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc -w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		48EBAF945D6600BFAC95C945559C4767 /* NSDictionary+MTLJSONKeyPath.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B68748D1A2ABEEECE3007AAB5050B6A /* NSDictionary+MTLJSONKeyPath.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0 -w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		49165C856AE6C700F8B8AC7C1659C39E /* NSError+MTLModelException.m in Sources */ = {isa = PBXBuildFile; fileRef = 22C2758F3694EAAD883078D58E72F629 /* NSError+MTLModelException.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0 -w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		49A8948F14FFA56C0C2F36F418452CEF /* UIImage+SYKit.m in Sources */ = {isa = PBXBuildFile; fileRef = ED1937242334804558A610DB993DCC15 /* UIImage+SYKit.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0 -w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		4DC0AA7B7A3E91B3CFF653F31DCA8470 /* UITableViewCell+SYKit.h in Headers */ = {isa = PBXBuildFile; fileRef = A881AA28E1B7743A440014E302AFF249 /* UITableViewCell+SYKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4FCCCA8B1CF8ACABA35D89849FA94F53 /* NSObject+SYKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 83A195ADD8D9C6DC0916DBF432808F1A /* NSObject+SYKit.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0 -w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		50506EE059B3628467BFF2AF81D9E9E0 /* SYScreenHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = 85CEA964900B74C62C2A84D5C5D3153A /* SYScreenHelper.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5119FD722E1101AAC5CBD401B0553128 /* NSArray+MTLManipulationAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 94FEC38A4B8EA02B6AF48ABBE0B4E0DD /* NSArray+MTLManipulationAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		545F67B4D1CF5698FCEF9F96209F15CC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
+		56BABD243777DD8F4E01F5971E02F588 /* NSAttributedString+SYKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 27C1B053CA82021E069D71EE54F49B06 /* NSAttributedString+SYKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5741DD6D20B53BEEC0865588554936D3 /* NSError+MTLModelException.h in Headers */ = {isa = PBXBuildFile; fileRef = 250659BAEC857366A9760A65F3FC4B32 /* NSError+MTLModelException.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5A55F2B28525C70D0B152121D8FF17C4 /* SYScreenHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E26878804E96A4D4E2A3684C8323AE2 /* SYScreenHelper.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0 -w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		5BE25D651102C0F7874521CA1A9FC808 /* UIButton+SYKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 83FFEF514962C028DA7A41026B9D37BA /* UIButton+SYKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5D1C187A3CC472F98EA3F1BACA399E34 /* MTLJSONAdapter.h in Headers */ = {isa = PBXBuildFile; fileRef = FA0E3B3D374EB6F872DE45DBD5959C6C /* MTLJSONAdapter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5EDD8906C4E16AB90458BC79D2AD0F16 /* UIImage+SYKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 7FB6DDA4F36B55DBE0BAB6325C264E21 /* UIImage+SYKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		60346BDB74B30FBDD1ECAB0A6CCFA5C2 /* NSDictionary+MTLMappingAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 09CCCD1F5F2C58F7EDA27C53EE40A62A /* NSDictionary+MTLMappingAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6117889BF98B61FD40C12BB4C217AA2D /* SYShapeView.h in Headers */ = {isa = PBXBuildFile; fileRef = 4DF193B8E6DB495097106A3FAEE2C90C /* SYShapeView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		61ED4B5B249526AFD6F7C6DB4D487A8A /* MTLModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4586B5F54B47E3597AEE6DE186EBC207 /* MTLModel.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0 -w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		6572487AF3AFEC23F4E63E0DDD31A1F9 /* loupe.png in Resources */ = {isa = PBXBuildFile; fileRef = 147137040640ECC584DE51F450A34192 /* loupe.png */; };
+		68F1A50AA6DA6C67C24B969731946E90 /* MTLReflection.m in Sources */ = {isa = PBXBuildFile; fileRef = D334DA217F0B53587E54DAFAA086C5C4 /* MTLReflection.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0 -w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		6FB4B6F7C17B903EC01E7864C8CE2F6A /* SYSearchField.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AE1244B4BE65E0E4BE6CC4ADAEE404D /* SYSearchField.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0 -w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		7461C0190AE22F99B1C81A8EF335E872 /* MTLModel.h in Headers */ = {isa = PBXBuildFile; fileRef = E67FD5DEAD634F4F82AF3A53134D6FE2 /* MTLModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7786994F2F7D9F1CB44AB55AAAB6028E /* Mantle.h in Headers */ = {isa = PBXBuildFile; fileRef = 44F6CE35732E188377BC62BB888A18A5 /* Mantle.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		781277601C831DBEB14A4BA9551CE079 /* EXTRuntimeExtensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 4A7B3738391980B8989E874BFD08766B /* EXTRuntimeExtensions.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		7BBE9CAF9699F22BA250F649B4E0CC8F /* MTLValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A761DB38326ED32D6CF028CD1C784F6 /* MTLValueTransformer.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0 -w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		85E5CBDBCFE9FBBA39E9846951DD72C0 /* MTLModel+NSCoding.m in Sources */ = {isa = PBXBuildFile; fileRef = 178C7F68D86171716C1D624E2BCC5E31 /* MTLModel+NSCoding.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0 -w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		8BDD736A5462C351DA5F156B89B2CE97 /* NSDictionary+MTLMappingAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = EA04330C5C587BFA289C88DE1A8F895D /* NSDictionary+MTLMappingAdditions.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0 -w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		8C016FAEAF5A16E17045C8797FBBD767 /* UIScrollView+SYKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 07C14315B8AF4A0D0F89F4CDA7CD9DA6 /* UIScrollView+SYKit.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0 -w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		8FE8B5CFBBB2FF4D4CCFFDFAFFD3CE5E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
+		90724BCD9F75D989C3C93A4FD54365B2 /* NSDictionary+MTLManipulationAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = BB6FD80A9E06131FE6802A4A955FB0CC /* NSDictionary+MTLManipulationAdditions.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0 -w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		913E45D2159D0F30BB5EF796B2C297EF /* NSDictionary+MTLManipulationAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = C406EA7FA2D7DA7716919A3729AF53F6 /* NSDictionary+MTLManipulationAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		93DF4C350D1A6EC770F2DC5C0B06E2A4 /* loupe@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C675890181A1F4876180851F4C659B0 /* loupe@3x.png */; };
+		975A5DF19EBCF7C921369697F4ABB709 /* MTLModel+NSCoding.h in Headers */ = {isa = PBXBuildFile; fileRef = 8B8A9602B92F995651DC85416660CAA4 /* MTLModel+NSCoding.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A69D3FE7C23DEF1824371EC0817A08E4 /* MTLTransformerErrorHandling.h in Headers */ = {isa = PBXBuildFile; fileRef = 695DBAB58DE50D441327804565853236 /* MTLTransformerErrorHandling.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A76DF80C3E734D9EDF8367DC91DDF2BF /* SYGradientView.h in Headers */ = {isa = PBXBuildFile; fileRef = EB6445A3FDE134AE7E45A21ABC1A5F1E /* SYGradientView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A99D00C50186853EB4A698ABB95AA039 /* EXTScope.h in Headers */ = {isa = PBXBuildFile; fileRef = B160C043B8643ED11F93E154C198DC36 /* EXTScope.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		AB3322A21932CEEB89EED42CB7122DAD /* CGTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A43A5AC07CF7D8D53CF985BAC6F1DB1 /* CGTools.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0 -w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		ABC3307BAFD60D90ECBF23DF5B6DEA94 /* UIDevice+SYKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 50C4074987BB56300C320326BCC4D6CA /* UIDevice+SYKit.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0 -w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		AEC2EB870402360C192DCD22422B2319 /* NSLayoutConstraint+SYKit.h in Headers */ = {isa = PBXBuildFile; fileRef = C9BE4EADF91B447DC05EBA5A56B5BA27 /* NSLayoutConstraint+SYKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AFA0E7524AF6ED96E138C8E512481FE5 /* MTLValueTransformer.h in Headers */ = {isa = PBXBuildFile; fileRef = 8F99EACCEFD60AB1B7682ACAEAAC4820 /* MTLValueTransformer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B77DDA534DFFABA613D61A4A54A8D297 /* SYButton.m in Sources */ = {isa = PBXBuildFile; fileRef = DAC0482A47ABE573907F53D2D8F5423F /* SYButton.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0 -w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		BB97C120EE59A93538B285E0DF2DA419 /* UIScrollView+SYKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 6C5B6E1DE60D3753EFF3FB0C5894B434 /* UIScrollView+SYKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BE21A06B2D66686F7DFFEBE9BCACF2B1 /* UIScreen+SYKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 75760A10E5B128E61266AF0E9B175AFF /* UIScreen+SYKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C7532BFCA9285A891690589167970E0C /* NSAttributedString+SYKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 049D846D5FCFAEC42E6F0A2B997275FC /* NSAttributedString+SYKit.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0 -w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		C797198D3A3E1766F4052BB5DDA8906E /* NSObject+MTLComparisonAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = CDFB4B3BBAC2BACFADB1EE082A3D7609 /* NSObject+MTLComparisonAdditions.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0 -w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		C9AC35B0293809E9CB33E46B0F4D1900 /* loupe@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2850A5A1BA2F88589B7E7AEC69A98DB9 /* loupe@2x.png */; };
+		CDB9622D0CA5954B7D1E4F4C82985FFE /* CGTools.h in Headers */ = {isa = PBXBuildFile; fileRef = 801B6711403154A46959254C863DC103 /* CGTools.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CEEE61762F8D1BD8204156907D28645D /* MTLJSONAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 73CD6F97954A50CCF4A7FDCF170A5CE2 /* MTLJSONAdapter.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0 -w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		D22D5689461A0E91D8AAD0C54260F80B /* UIView+SYKit.h in Headers */ = {isa = PBXBuildFile; fileRef = EBAFD983E3856F28E678111424D1C8C5 /* UIView+SYKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D232DCD1D6C1A99B64C232658CA91CFA /* EXTRuntimeExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 61C7E0BC6052DE96276CEC5898F66627 /* EXTRuntimeExtensions.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0 -w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		D2ED70CD4A24A072616089B72FBF882E /* UITableViewCell+SYKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DAEE30DB1BAFDF387FA9A5D839E90C7 /* UITableViewCell+SYKit.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0 -w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		D3386F293B3C922504DE94C488A7609D /* SYWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = E24B77F996753F860730395259828381 /* SYWindow.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0 -w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		D600FD1F59579E0EAC99C3A1364DC3BF /* Pods-SYPictureMetadataExample-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D8494460D511EE72EEA4C6F6ED11015 /* Pods-SYPictureMetadataExample-dummy.m */; };
+		D8FE91CE6401B6D596A2168E603430E7 /* UIView+SYKit.m in Sources */ = {isa = PBXBuildFile; fileRef = E4BB68AB8CA0BC8070C3AC858A835916 /* UIView+SYKit.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0 -w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		D9A0EA92EC0FC22AACB7BC602605BF63 /* SYWindow.h in Headers */ = {isa = PBXBuildFile; fileRef = 3672FCB6800514075A1CF0CEEBFC40C6 /* SYWindow.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DBC3F2C0591E56B7DA7F7E28140F434E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
+		DC170433D255E3ACF2156B48C1EEC2C9 /* NSObject+SYKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 413DF42446294ED24FAEDD85233EBE73 /* NSObject+SYKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DD2378AF1C6BD5DC2894AB1FB9A8BBCD /* NSString+SYKit.m in Sources */ = {isa = PBXBuildFile; fileRef = EF818EA67719700812703A290804EE61 /* NSString+SYKit.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0 -w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		E2DF50443558722A4AB52CB30092EB97 /* SYButton.h in Headers */ = {isa = PBXBuildFile; fileRef = D1684F3922F1EE8CC37A3A068BB0DD2A /* SYButton.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E7542B2C536DB2C543894587075D1289 /* NSValueTransformer+MTLPredefinedTransformerAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 6B471EC38C0E9BAE19AF2A544CAD2979 /* NSValueTransformer+MTLPredefinedTransformerAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E804714E174AF44903629AFD1415E8FD /* NSValueTransformer+MTLInversionAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 23F4FF649A4C5F5DFCC66F62A09A7E51 /* NSValueTransformer+MTLInversionAdditions.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0 -w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		EF1FB178BA33D17E522BDE3B44AA7324 /* UIScreen+SYKit.m in Sources */ = {isa = PBXBuildFile; fileRef = DAF9FCC2AF01CD98316C3AC442748A05 /* UIScreen+SYKit.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0 -w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		F5EF1CC369E90026A825BEE4A40FD913 /* NSString+SYKit.h in Headers */ = {isa = PBXBuildFile; fileRef = C369E1926370FDF0F671E6A2B0B9CD87 /* NSString+SYKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F80F292BF60B8252720516F0EB281D55 /* NSArray+MTLManipulationAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 25D625B4A20D6510CC89B586C1204371 /* NSArray+MTLManipulationAdditions.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0 -w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		FF0D1EC47ADA19C5D55B1FFCBD20D753 /* NSLayoutConstraint+SYKit.m in Sources */ = {isa = PBXBuildFile; fileRef = DFFD1F3BCFFE6D48FDE1020BF3BC8FE3 /* NSLayoutConstraint+SYKit.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0 -w -Xanalyzer -analyzer-disable-all-checks"; }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4CEC44A1DF6716B27BF3AC6BD1668EDB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8E2F85A9EA167EFA71B3DCB5DF170059;
+			remoteInfo = Mantle;
+		};
+		C19C5466C542E4106DABED7F5E75F104 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7C214356709EB3EA286F3E87E9ABE638;
+			remoteInfo = JGMethodSwizzler;
+		};
+		D0BE93CE2E494A5728F6DF298ABA75A4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7C214356709EB3EA286F3E87E9ABE638;
+			remoteInfo = JGMethodSwizzler;
+		};
+		D0BF199F3169757BA0A3E29088C58A9F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4BB957C31F95888404EAD9C8947C351E;
+			remoteInfo = "SYKit-SYSearchField";
+		};
+		DE338D4EB46D304D9A19FD7F2FA56F63 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CFDFA2639A663B6445253E9AF8DC4DDA;
+			remoteInfo = SYKit;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		049D846D5FCFAEC42E6F0A2B997275FC /* NSAttributedString+SYKit.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSAttributedString+SYKit.m"; path = "Common/NSAttributedString+SYKit.m"; sourceTree = "<group>"; };
+		072661DB3B58B40D20D167BA550326BD /* libJGMethodSwizzler.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libJGMethodSwizzler.a; path = libJGMethodSwizzler.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		07C14315B8AF4A0D0F89F4CDA7CD9DA6 /* UIScrollView+SYKit.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIScrollView+SYKit.m"; path = "iOS/UIScrollView+SYKit.m"; sourceTree = "<group>"; };
+		09CCCD1F5F2C58F7EDA27C53EE40A62A /* NSDictionary+MTLMappingAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSDictionary+MTLMappingAdditions.h"; path = "Mantle/NSDictionary+MTLMappingAdditions.h"; sourceTree = "<group>"; };
+		0A43A5AC07CF7D8D53CF985BAC6F1DB1 /* CGTools.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CGTools.m; path = Common/CGTools.m; sourceTree = "<group>"; };
+		0C61F5B65C22212B6A3E646C3CB066BE /* JGMethodSwizzler.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = JGMethodSwizzler.xcconfig; sourceTree = "<group>"; };
+		147137040640ECC584DE51F450A34192 /* loupe.png */ = {isa = PBXFileReference; includeInIndex = 1; name = loupe.png; path = Resources/loupe.png; sourceTree = "<group>"; };
+		178C7F68D86171716C1D624E2BCC5E31 /* MTLModel+NSCoding.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "MTLModel+NSCoding.m"; path = "Mantle/MTLModel+NSCoding.m"; sourceTree = "<group>"; };
+		22C2758F3694EAAD883078D58E72F629 /* NSError+MTLModelException.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSError+MTLModelException.m"; path = "Mantle/NSError+MTLModelException.m"; sourceTree = "<group>"; };
+		23F4FF649A4C5F5DFCC66F62A09A7E51 /* NSValueTransformer+MTLInversionAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSValueTransformer+MTLInversionAdditions.m"; path = "Mantle/NSValueTransformer+MTLInversionAdditions.m"; sourceTree = "<group>"; };
+		250659BAEC857366A9760A65F3FC4B32 /* NSError+MTLModelException.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSError+MTLModelException.h"; path = "Mantle/NSError+MTLModelException.h"; sourceTree = "<group>"; };
+		25D625B4A20D6510CC89B586C1204371 /* NSArray+MTLManipulationAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSArray+MTLManipulationAdditions.m"; path = "Mantle/NSArray+MTLManipulationAdditions.m"; sourceTree = "<group>"; };
+		27C1B053CA82021E069D71EE54F49B06 /* NSAttributedString+SYKit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSAttributedString+SYKit.h"; path = "Common/NSAttributedString+SYKit.h"; sourceTree = "<group>"; };
+		2850A5A1BA2F88589B7E7AEC69A98DB9 /* loupe@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; name = "loupe@2x.png"; path = "Resources/loupe@2x.png"; sourceTree = "<group>"; };
+		2BCF7222A82113DC4A55F2A1063F21D6 /* SYSearchField.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SYSearchField.h; path = Common/SYSearchField.h; sourceTree = "<group>"; };
+		2F356F0BFD67DA07777503CAFFF94179 /* EXTScope.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EXTScope.m; path = Mantle/extobjc/EXTScope.m; sourceTree = "<group>"; };
+		33AC712AF2B2E401658A807DB224E98A /* NSData+SYKit.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSData+SYKit.m"; path = "Common/NSData+SYKit.m"; sourceTree = "<group>"; };
+		363127FD0FD6A774C88420F74C5D6899 /* MTLTransformerErrorHandling.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MTLTransformerErrorHandling.m; path = Mantle/MTLTransformerErrorHandling.m; sourceTree = "<group>"; };
+		3672FCB6800514075A1CF0CEEBFC40C6 /* SYWindow.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SYWindow.h; path = Common/SYWindow.h; sourceTree = "<group>"; };
+		3CF86261F63AB525BEE5C02F026A2188 /* libMantle.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libMantle.a; path = libMantle.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		3D08B129A6B66DDA0BDB2BB7A7453FEF /* SYShapeView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SYShapeView.m; path = Common/SYShapeView.m; sourceTree = "<group>"; };
+		413DF42446294ED24FAEDD85233EBE73 /* NSObject+SYKit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSObject+SYKit.h"; path = "Common/NSObject+SYKit.h"; sourceTree = "<group>"; };
+		419FCF73D17C435562C38BE769490BCE /* SYKit.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SYKit.xcconfig; sourceTree = "<group>"; };
+		44F6CE35732E188377BC62BB888A18A5 /* Mantle.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Mantle.h; path = Mantle/Mantle.h; sourceTree = "<group>"; };
+		4586B5F54B47E3597AEE6DE186EBC207 /* MTLModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MTLModel.m; path = Mantle/MTLModel.m; sourceTree = "<group>"; };
+		489C251232E46537F5E416356A01DA65 /* JGMethodSwizzler-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "JGMethodSwizzler-dummy.m"; sourceTree = "<group>"; };
+		4A7B3738391980B8989E874BFD08766B /* EXTRuntimeExtensions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EXTRuntimeExtensions.h; path = Mantle/extobjc/EXTRuntimeExtensions.h; sourceTree = "<group>"; };
+		4DAEE30DB1BAFDF387FA9A5D839E90C7 /* UITableViewCell+SYKit.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UITableViewCell+SYKit.m"; path = "Common/UITableViewCell+SYKit.m"; sourceTree = "<group>"; };
+		4DEEFDDC72638C3147927105D2D17963 /* NSObject+MTLComparisonAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSObject+MTLComparisonAdditions.h"; path = "Mantle/NSObject+MTLComparisonAdditions.h"; sourceTree = "<group>"; };
+		4DF193B8E6DB495097106A3FAEE2C90C /* SYShapeView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SYShapeView.h; path = Common/SYShapeView.h; sourceTree = "<group>"; };
+		4E858186162CA3AF0D41B2A2DBF28911 /* libPods-SYPictureMetadataExample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-SYPictureMetadataExample.a"; path = "libPods-SYPictureMetadataExample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		50B565D21A041DA1417288D6EFAB1B35 /* Pods-SYPictureMetadataExample-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SYPictureMetadataExample-frameworks.sh"; sourceTree = "<group>"; };
+		50C4074987BB56300C320326BCC4D6CA /* UIDevice+SYKit.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIDevice+SYKit.m"; path = "Common/UIDevice+SYKit.m"; sourceTree = "<group>"; };
+		5955BCFE20591063F51CC42AAF3DF8ED /* Mantle-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Mantle-dummy.m"; sourceTree = "<group>"; };
+		600C4FA9763A1AB5EC02817A794D226B /* NSData+SYKit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSData+SYKit.h"; path = "Common/NSData+SYKit.h"; sourceTree = "<group>"; };
+		6192ABFFDE995C458AC716A7C60551DB /* Pods-SYPictureMetadataExample-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-SYPictureMetadataExample-acknowledgements.markdown"; sourceTree = "<group>"; };
+		61C7E0BC6052DE96276CEC5898F66627 /* EXTRuntimeExtensions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EXTRuntimeExtensions.m; path = Mantle/extobjc/EXTRuntimeExtensions.m; sourceTree = "<group>"; };
+		64CDE3B5B7B82B94A7FB47A9D9A09026 /* Pods-SYPictureMetadataExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SYPictureMetadataExample.release.xcconfig"; sourceTree = "<group>"; };
+		67F4341A1598DB5E2C5E4689EE3667B5 /* UIButton+SYKit.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIButton+SYKit.m"; path = "Common/UIButton+SYKit.m"; sourceTree = "<group>"; };
+		695DBAB58DE50D441327804565853236 /* MTLTransformerErrorHandling.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MTLTransformerErrorHandling.h; path = Mantle/MTLTransformerErrorHandling.h; sourceTree = "<group>"; };
+		6A761DB38326ED32D6CF028CD1C784F6 /* MTLValueTransformer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MTLValueTransformer.m; path = Mantle/MTLValueTransformer.m; sourceTree = "<group>"; };
+		6B471EC38C0E9BAE19AF2A544CAD2979 /* NSValueTransformer+MTLPredefinedTransformerAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSValueTransformer+MTLPredefinedTransformerAdditions.h"; path = "Mantle/NSValueTransformer+MTLPredefinedTransformerAdditions.h"; sourceTree = "<group>"; };
+		6B68748D1A2ABEEECE3007AAB5050B6A /* NSDictionary+MTLJSONKeyPath.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSDictionary+MTLJSONKeyPath.m"; path = "Mantle/NSDictionary+MTLJSONKeyPath.m"; sourceTree = "<group>"; };
+		6C5B6E1DE60D3753EFF3FB0C5894B434 /* UIScrollView+SYKit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIScrollView+SYKit.h"; path = "iOS/UIScrollView+SYKit.h"; sourceTree = "<group>"; };
+		6E26878804E96A4D4E2A3684C8323AE2 /* SYScreenHelper.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SYScreenHelper.m; path = Common/SYScreenHelper.m; sourceTree = "<group>"; };
+		734BE8F32FE6F1C6061DA2672460D523 /* Mantle-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Mantle-prefix.pch"; sourceTree = "<group>"; };
+		73CD6F97954A50CCF4A7FDCF170A5CE2 /* MTLJSONAdapter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MTLJSONAdapter.m; path = Mantle/MTLJSONAdapter.m; sourceTree = "<group>"; };
+		75760A10E5B128E61266AF0E9B175AFF /* UIScreen+SYKit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIScreen+SYKit.h"; path = "Common/UIScreen+SYKit.h"; sourceTree = "<group>"; };
+		76709AD9737358A74505506D0C9A4DE3 /* EXTKeyPathCoding.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EXTKeyPathCoding.h; path = Mantle/extobjc/EXTKeyPathCoding.h; sourceTree = "<group>"; };
+		7AFCCC641058EBD2ED9BCE4C0D5E2C6F /* Pods-SYPictureMetadataExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SYPictureMetadataExample.debug.xcconfig"; sourceTree = "<group>"; };
+		7CFB5E1BB17009CC6455F3CB4E77BACA /* JGMethodSwizzler.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JGMethodSwizzler.m; path = JGMethodSwizzler/JGMethodSwizzler.m; sourceTree = "<group>"; };
+		7E12FA13D2680BA54CB7CCE20062779E /* SYGradientView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SYGradientView.m; path = Common/SYGradientView.m; sourceTree = "<group>"; };
+		7FB6DDA4F36B55DBE0BAB6325C264E21 /* UIImage+SYKit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImage+SYKit.h"; path = "Common/UIImage+SYKit.h"; sourceTree = "<group>"; };
+		801B6711403154A46959254C863DC103 /* CGTools.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CGTools.h; path = Common/CGTools.h; sourceTree = "<group>"; };
+		83A195ADD8D9C6DC0916DBF432808F1A /* NSObject+SYKit.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSObject+SYKit.m"; path = "Common/NSObject+SYKit.m"; sourceTree = "<group>"; };
+		83FFEF514962C028DA7A41026B9D37BA /* UIButton+SYKit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIButton+SYKit.h"; path = "Common/UIButton+SYKit.h"; sourceTree = "<group>"; };
+		85CEA964900B74C62C2A84D5C5D3153A /* SYScreenHelper.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SYScreenHelper.h; path = Common/SYScreenHelper.h; sourceTree = "<group>"; };
+		8AA0AB9526F9E9F8A4ACABEA9F422DD9 /* JGMethodSwizzler-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "JGMethodSwizzler-prefix.pch"; sourceTree = "<group>"; };
+		8AE1244B4BE65E0E4BE6CC4ADAEE404D /* SYSearchField.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SYSearchField.m; path = Common/SYSearchField.m; sourceTree = "<group>"; };
+		8B8A9602B92F995651DC85416660CAA4 /* MTLModel+NSCoding.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "MTLModel+NSCoding.h"; path = "Mantle/MTLModel+NSCoding.h"; sourceTree = "<group>"; };
+		8D8494460D511EE72EEA4C6F6ED11015 /* Pods-SYPictureMetadataExample-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-SYPictureMetadataExample-dummy.m"; sourceTree = "<group>"; };
+		8F99EACCEFD60AB1B7682ACAEAAC4820 /* MTLValueTransformer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MTLValueTransformer.h; path = Mantle/MTLValueTransformer.h; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		948A3F87575E66D972501A6BDA8700B2 /* SYKit-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SYKit-dummy.m"; sourceTree = "<group>"; };
+		94FEC38A4B8EA02B6AF48ABBE0B4E0DD /* NSArray+MTLManipulationAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSArray+MTLManipulationAdditions.h"; path = "Mantle/NSArray+MTLManipulationAdditions.h"; sourceTree = "<group>"; };
+		99F216D61155BA8DA4CC2A8C4F42F937 /* MTLReflection.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MTLReflection.h; path = Mantle/MTLReflection.h; sourceTree = "<group>"; };
+		9C675890181A1F4876180851F4C659B0 /* loupe@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; name = "loupe@3x.png"; path = "Resources/loupe@3x.png"; sourceTree = "<group>"; };
+		A1257DF06A10FC1B9A24C25458CAE0D8 /* SYKit-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SYKit-prefix.pch"; sourceTree = "<group>"; };
+		A1C3A5E32ECCFC3B712DF980AE968E88 /* NSValueTransformer+MTLPredefinedTransformerAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSValueTransformer+MTLPredefinedTransformerAdditions.m"; path = "Mantle/NSValueTransformer+MTLPredefinedTransformerAdditions.m"; sourceTree = "<group>"; };
+		A881AA28E1B7743A440014E302AFF249 /* UITableViewCell+SYKit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UITableViewCell+SYKit.h"; path = "Common/UITableViewCell+SYKit.h"; sourceTree = "<group>"; };
+		B160C043B8643ED11F93E154C198DC36 /* EXTScope.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EXTScope.h; path = Mantle/extobjc/EXTScope.h; sourceTree = "<group>"; };
+		B2CD02ABC8B9AC3E0B11A2AE321BDFFC /* Pods-SYPictureMetadataExample-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SYPictureMetadataExample-resources.sh"; sourceTree = "<group>"; };
+		B7073AAFB57A9CEC9B145588AFABF689 /* JGMethodSwizzler.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JGMethodSwizzler.h; path = JGMethodSwizzler/JGMethodSwizzler.h; sourceTree = "<group>"; };
+		BB6FD80A9E06131FE6802A4A955FB0CC /* NSDictionary+MTLManipulationAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSDictionary+MTLManipulationAdditions.m"; path = "Mantle/NSDictionary+MTLManipulationAdditions.m"; sourceTree = "<group>"; };
+		C369E1926370FDF0F671E6A2B0B9CD87 /* NSString+SYKit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSString+SYKit.h"; path = "Common/NSString+SYKit.h"; sourceTree = "<group>"; };
+		C406EA7FA2D7DA7716919A3729AF53F6 /* NSDictionary+MTLManipulationAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSDictionary+MTLManipulationAdditions.h"; path = "Mantle/NSDictionary+MTLManipulationAdditions.h"; sourceTree = "<group>"; };
+		C6871CA46A1C640D27860DA4C71DFE3F /* libSYKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libSYKit.a; path = libSYKit.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		C9BE4EADF91B447DC05EBA5A56B5BA27 /* NSLayoutConstraint+SYKit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSLayoutConstraint+SYKit.h"; path = "Common/NSLayoutConstraint+SYKit.h"; sourceTree = "<group>"; };
+		CB0F6D259F67646C2555A11D0CA2B7B4 /* metamacros.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = metamacros.h; path = Mantle/extobjc/metamacros.h; sourceTree = "<group>"; };
+		CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		CDFB4B3BBAC2BACFADB1EE082A3D7609 /* NSObject+MTLComparisonAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSObject+MTLComparisonAdditions.m"; path = "Mantle/NSObject+MTLComparisonAdditions.m"; sourceTree = "<group>"; };
+		CE2C5C7C4084D8B0F0BB7D480E930543 /* NSValueTransformer+MTLInversionAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSValueTransformer+MTLInversionAdditions.h"; path = "Mantle/NSValueTransformer+MTLInversionAdditions.h"; sourceTree = "<group>"; };
+		D1684F3922F1EE8CC37A3A068BB0DD2A /* SYButton.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SYButton.h; path = Common/SYButton.h; sourceTree = "<group>"; };
+		D202B0B8199D0BEBBCE0AFD8ED7BC8E4 /* Mantle.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Mantle.xcconfig; sourceTree = "<group>"; };
+		D334DA217F0B53587E54DAFAA086C5C4 /* MTLReflection.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MTLReflection.m; path = Mantle/MTLReflection.m; sourceTree = "<group>"; };
+		D9DC6877C6DEDF4393DB4D09D376EAC3 /* NSDictionary+MTLJSONKeyPath.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSDictionary+MTLJSONKeyPath.h"; path = "Mantle/NSDictionary+MTLJSONKeyPath.h"; sourceTree = "<group>"; };
+		DAC0482A47ABE573907F53D2D8F5423F /* SYButton.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SYButton.m; path = Common/SYButton.m; sourceTree = "<group>"; };
+		DAF9FCC2AF01CD98316C3AC442748A05 /* UIScreen+SYKit.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIScreen+SYKit.m"; path = "Common/UIScreen+SYKit.m"; sourceTree = "<group>"; };
+		DFE8A28F6747FE849D875DD314AFD093 /* ResourceBundle-SYSearchField-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-SYSearchField-Info.plist"; sourceTree = "<group>"; };
+		DFFD1F3BCFFE6D48FDE1020BF3BC8FE3 /* NSLayoutConstraint+SYKit.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSLayoutConstraint+SYKit.m"; path = "Common/NSLayoutConstraint+SYKit.m"; sourceTree = "<group>"; };
+		E0F9CAFA15D11FCDACCF3EB8AB446515 /* SYSearchField.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = SYSearchField.bundle; path = SYSearchField.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		E24B77F996753F860730395259828381 /* SYWindow.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SYWindow.m; path = Common/SYWindow.m; sourceTree = "<group>"; };
+		E4BB68AB8CA0BC8070C3AC858A835916 /* UIView+SYKit.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIView+SYKit.m"; path = "Common/UIView+SYKit.m"; sourceTree = "<group>"; };
+		E67FD5DEAD634F4F82AF3A53134D6FE2 /* MTLModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MTLModel.h; path = Mantle/MTLModel.h; sourceTree = "<group>"; };
+		EA04330C5C587BFA289C88DE1A8F895D /* NSDictionary+MTLMappingAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSDictionary+MTLMappingAdditions.m"; path = "Mantle/NSDictionary+MTLMappingAdditions.m"; sourceTree = "<group>"; };
+		EB6445A3FDE134AE7E45A21ABC1A5F1E /* SYGradientView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SYGradientView.h; path = Common/SYGradientView.h; sourceTree = "<group>"; };
+		EBAFD983E3856F28E678111424D1C8C5 /* UIView+SYKit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIView+SYKit.h"; path = "Common/UIView+SYKit.h"; sourceTree = "<group>"; };
+		ED1937242334804558A610DB993DCC15 /* UIImage+SYKit.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImage+SYKit.m"; path = "Common/UIImage+SYKit.m"; sourceTree = "<group>"; };
+		EF818EA67719700812703A290804EE61 /* NSString+SYKit.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSString+SYKit.m"; path = "Common/NSString+SYKit.m"; sourceTree = "<group>"; };
+		F22DDFA775AF3EFBF1507723F9BB1AFB /* UIDevice+SYKit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIDevice+SYKit.h"; path = "Common/UIDevice+SYKit.h"; sourceTree = "<group>"; };
+		FA0E3B3D374EB6F872DE45DBD5959C6C /* MTLJSONAdapter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MTLJSONAdapter.h; path = Mantle/MTLJSONAdapter.h; sourceTree = "<group>"; };
+		FECDC119591E03D9A0F0C6DC04A01824 /* Pods-SYPictureMetadataExample-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SYPictureMetadataExample-acknowledgements.plist"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		287B92E73B5529305B03CAF5E02A37BD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2F92251D980FFC0E04FFCE6420D8CD2A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				545F67B4D1CF5698FCEF9F96209F15CC /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		47ED6F13E7DBE1E3CAF7C3880FE7543E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DBC3F2C0591E56B7DA7F7E28140F434E /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5A7AA549FEC170B088322BD413E87F95 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1F9EB9740876757565137CF513205807 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		82E23767320A4061102738EBA133175B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8FE8B5CFBBB2FF4D4CCFFDFAFFD3CE5E /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2557535E13599197C87EF81782C8FDC4 /* Pods-SYPictureMetadataExample */ = {
+			isa = PBXGroup;
+			children = (
+				6192ABFFDE995C458AC716A7C60551DB /* Pods-SYPictureMetadataExample-acknowledgements.markdown */,
+				FECDC119591E03D9A0F0C6DC04A01824 /* Pods-SYPictureMetadataExample-acknowledgements.plist */,
+				8D8494460D511EE72EEA4C6F6ED11015 /* Pods-SYPictureMetadataExample-dummy.m */,
+				50B565D21A041DA1417288D6EFAB1B35 /* Pods-SYPictureMetadataExample-frameworks.sh */,
+				B2CD02ABC8B9AC3E0B11A2AE321BDFFC /* Pods-SYPictureMetadataExample-resources.sh */,
+				7AFCCC641058EBD2ED9BCE4C0D5E2C6F /* Pods-SYPictureMetadataExample.debug.xcconfig */,
+				64CDE3B5B7B82B94A7FB47A9D9A09026 /* Pods-SYPictureMetadataExample.release.xcconfig */,
+			);
+			name = "Pods-SYPictureMetadataExample";
+			path = "Target Support Files/Pods-SYPictureMetadataExample";
+			sourceTree = "<group>";
+		};
+		3B7CC74776495DD805648604C9927294 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				147137040640ECC584DE51F450A34192 /* loupe.png */,
+				2850A5A1BA2F88589B7E7AEC69A98DB9 /* loupe@2x.png */,
+				9C675890181A1F4876180851F4C659B0 /* loupe@3x.png */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		3BB1306B041B8CFFF082E12EE9530DA7 /* JGMethodSwizzler */ = {
+			isa = PBXGroup;
+			children = (
+				B7073AAFB57A9CEC9B145588AFABF689 /* JGMethodSwizzler.h */,
+				7CFB5E1BB17009CC6455F3CB4E77BACA /* JGMethodSwizzler.m */,
+				684C51E653C5B575F50624892F3ED0DB /* Support Files */,
+			);
+			name = JGMethodSwizzler;
+			path = JGMethodSwizzler;
+			sourceTree = "<group>";
+		};
+		48C4CF20242D1724AD75D4663DF6BC52 /* Mantle */ = {
+			isa = PBXGroup;
+			children = (
+				44F6CE35732E188377BC62BB888A18A5 /* Mantle.h */,
+				FA0E3B3D374EB6F872DE45DBD5959C6C /* MTLJSONAdapter.h */,
+				73CD6F97954A50CCF4A7FDCF170A5CE2 /* MTLJSONAdapter.m */,
+				E67FD5DEAD634F4F82AF3A53134D6FE2 /* MTLModel.h */,
+				4586B5F54B47E3597AEE6DE186EBC207 /* MTLModel.m */,
+				8B8A9602B92F995651DC85416660CAA4 /* MTLModel+NSCoding.h */,
+				178C7F68D86171716C1D624E2BCC5E31 /* MTLModel+NSCoding.m */,
+				99F216D61155BA8DA4CC2A8C4F42F937 /* MTLReflection.h */,
+				D334DA217F0B53587E54DAFAA086C5C4 /* MTLReflection.m */,
+				695DBAB58DE50D441327804565853236 /* MTLTransformerErrorHandling.h */,
+				363127FD0FD6A774C88420F74C5D6899 /* MTLTransformerErrorHandling.m */,
+				8F99EACCEFD60AB1B7682ACAEAAC4820 /* MTLValueTransformer.h */,
+				6A761DB38326ED32D6CF028CD1C784F6 /* MTLValueTransformer.m */,
+				94FEC38A4B8EA02B6AF48ABBE0B4E0DD /* NSArray+MTLManipulationAdditions.h */,
+				25D625B4A20D6510CC89B586C1204371 /* NSArray+MTLManipulationAdditions.m */,
+				D9DC6877C6DEDF4393DB4D09D376EAC3 /* NSDictionary+MTLJSONKeyPath.h */,
+				6B68748D1A2ABEEECE3007AAB5050B6A /* NSDictionary+MTLJSONKeyPath.m */,
+				C406EA7FA2D7DA7716919A3729AF53F6 /* NSDictionary+MTLManipulationAdditions.h */,
+				BB6FD80A9E06131FE6802A4A955FB0CC /* NSDictionary+MTLManipulationAdditions.m */,
+				09CCCD1F5F2C58F7EDA27C53EE40A62A /* NSDictionary+MTLMappingAdditions.h */,
+				EA04330C5C587BFA289C88DE1A8F895D /* NSDictionary+MTLMappingAdditions.m */,
+				250659BAEC857366A9760A65F3FC4B32 /* NSError+MTLModelException.h */,
+				22C2758F3694EAAD883078D58E72F629 /* NSError+MTLModelException.m */,
+				4DEEFDDC72638C3147927105D2D17963 /* NSObject+MTLComparisonAdditions.h */,
+				CDFB4B3BBAC2BACFADB1EE082A3D7609 /* NSObject+MTLComparisonAdditions.m */,
+				CE2C5C7C4084D8B0F0BB7D480E930543 /* NSValueTransformer+MTLInversionAdditions.h */,
+				23F4FF649A4C5F5DFCC66F62A09A7E51 /* NSValueTransformer+MTLInversionAdditions.m */,
+				6B471EC38C0E9BAE19AF2A544CAD2979 /* NSValueTransformer+MTLPredefinedTransformerAdditions.h */,
+				A1C3A5E32ECCFC3B712DF980AE968E88 /* NSValueTransformer+MTLPredefinedTransformerAdditions.m */,
+				E943EC1977F06DD8B0227945851E6F66 /* extobjc */,
+				6949E4C450C61DA23ABE7B1CB7030A57 /* Support Files */,
+			);
+			name = Mantle;
+			path = Mantle;
+			sourceTree = "<group>";
+		};
+		63723901866E644E214C4B5A1161013C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				072661DB3B58B40D20D167BA550326BD /* libJGMethodSwizzler.a */,
+				3CF86261F63AB525BEE5C02F026A2188 /* libMantle.a */,
+				4E858186162CA3AF0D41B2A2DBF28911 /* libPods-SYPictureMetadataExample.a */,
+				C6871CA46A1C640D27860DA4C71DFE3F /* libSYKit.a */,
+				E0F9CAFA15D11FCDACCF3EB8AB446515 /* SYSearchField.bundle */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		684C51E653C5B575F50624892F3ED0DB /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				0C61F5B65C22212B6A3E646C3CB066BE /* JGMethodSwizzler.xcconfig */,
+				489C251232E46537F5E416356A01DA65 /* JGMethodSwizzler-dummy.m */,
+				8AA0AB9526F9E9F8A4ACABEA9F422DD9 /* JGMethodSwizzler-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/JGMethodSwizzler";
+			sourceTree = "<group>";
+		};
+		6949E4C450C61DA23ABE7B1CB7030A57 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				D202B0B8199D0BEBBCE0AFD8ED7BC8E4 /* Mantle.xcconfig */,
+				5955BCFE20591063F51CC42AAF3DF8ED /* Mantle-dummy.m */,
+				734BE8F32FE6F1C6061DA2672460D523 /* Mantle-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/Mantle";
+			sourceTree = "<group>";
+		};
+		73A6A32F936820552A71C817E2236E66 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				DFE8A28F6747FE849D875DD314AFD093 /* ResourceBundle-SYSearchField-Info.plist */,
+				419FCF73D17C435562C38BE769490BCE /* SYKit.xcconfig */,
+				948A3F87575E66D972501A6BDA8700B2 /* SYKit-dummy.m */,
+				A1257DF06A10FC1B9A24C25458CAE0D8 /* SYKit-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/SYKit";
+			sourceTree = "<group>";
+		};
+		7531C8F8DE19F1AA3C8A7AC97A91DC29 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
+				E4794A17D850C25A1482AFB72283E226 /* Pods */,
+				63723901866E644E214C4B5A1161013C /* Products */,
+				EABBBC523C9358E3DE2E603069F21C2D /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7531C8F8DE19F1AA3C8A7AC97A91DC29 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D230F878DA01A809229D0DCC4548528A /* SYKit */ = {
+			isa = PBXGroup;
+			children = (
+				801B6711403154A46959254C863DC103 /* CGTools.h */,
+				0A43A5AC07CF7D8D53CF985BAC6F1DB1 /* CGTools.m */,
+				27C1B053CA82021E069D71EE54F49B06 /* NSAttributedString+SYKit.h */,
+				049D846D5FCFAEC42E6F0A2B997275FC /* NSAttributedString+SYKit.m */,
+				600C4FA9763A1AB5EC02817A794D226B /* NSData+SYKit.h */,
+				33AC712AF2B2E401658A807DB224E98A /* NSData+SYKit.m */,
+				C9BE4EADF91B447DC05EBA5A56B5BA27 /* NSLayoutConstraint+SYKit.h */,
+				DFFD1F3BCFFE6D48FDE1020BF3BC8FE3 /* NSLayoutConstraint+SYKit.m */,
+				413DF42446294ED24FAEDD85233EBE73 /* NSObject+SYKit.h */,
+				83A195ADD8D9C6DC0916DBF432808F1A /* NSObject+SYKit.m */,
+				C369E1926370FDF0F671E6A2B0B9CD87 /* NSString+SYKit.h */,
+				EF818EA67719700812703A290804EE61 /* NSString+SYKit.m */,
+				D1684F3922F1EE8CC37A3A068BB0DD2A /* SYButton.h */,
+				DAC0482A47ABE573907F53D2D8F5423F /* SYButton.m */,
+				EB6445A3FDE134AE7E45A21ABC1A5F1E /* SYGradientView.h */,
+				7E12FA13D2680BA54CB7CCE20062779E /* SYGradientView.m */,
+				85CEA964900B74C62C2A84D5C5D3153A /* SYScreenHelper.h */,
+				6E26878804E96A4D4E2A3684C8323AE2 /* SYScreenHelper.m */,
+				2BCF7222A82113DC4A55F2A1063F21D6 /* SYSearchField.h */,
+				8AE1244B4BE65E0E4BE6CC4ADAEE404D /* SYSearchField.m */,
+				4DF193B8E6DB495097106A3FAEE2C90C /* SYShapeView.h */,
+				3D08B129A6B66DDA0BDB2BB7A7453FEF /* SYShapeView.m */,
+				3672FCB6800514075A1CF0CEEBFC40C6 /* SYWindow.h */,
+				E24B77F996753F860730395259828381 /* SYWindow.m */,
+				83FFEF514962C028DA7A41026B9D37BA /* UIButton+SYKit.h */,
+				67F4341A1598DB5E2C5E4689EE3667B5 /* UIButton+SYKit.m */,
+				F22DDFA775AF3EFBF1507723F9BB1AFB /* UIDevice+SYKit.h */,
+				50C4074987BB56300C320326BCC4D6CA /* UIDevice+SYKit.m */,
+				7FB6DDA4F36B55DBE0BAB6325C264E21 /* UIImage+SYKit.h */,
+				ED1937242334804558A610DB993DCC15 /* UIImage+SYKit.m */,
+				75760A10E5B128E61266AF0E9B175AFF /* UIScreen+SYKit.h */,
+				DAF9FCC2AF01CD98316C3AC442748A05 /* UIScreen+SYKit.m */,
+				6C5B6E1DE60D3753EFF3FB0C5894B434 /* UIScrollView+SYKit.h */,
+				07C14315B8AF4A0D0F89F4CDA7CD9DA6 /* UIScrollView+SYKit.m */,
+				A881AA28E1B7743A440014E302AFF249 /* UITableViewCell+SYKit.h */,
+				4DAEE30DB1BAFDF387FA9A5D839E90C7 /* UITableViewCell+SYKit.m */,
+				EBAFD983E3856F28E678111424D1C8C5 /* UIView+SYKit.h */,
+				E4BB68AB8CA0BC8070C3AC858A835916 /* UIView+SYKit.m */,
+				3B7CC74776495DD805648604C9927294 /* Resources */,
+				73A6A32F936820552A71C817E2236E66 /* Support Files */,
+			);
+			name = SYKit;
+			path = SYKit;
+			sourceTree = "<group>";
+		};
+		E4794A17D850C25A1482AFB72283E226 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3BB1306B041B8CFFF082E12EE9530DA7 /* JGMethodSwizzler */,
+				48C4CF20242D1724AD75D4663DF6BC52 /* Mantle */,
+				D230F878DA01A809229D0DCC4548528A /* SYKit */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		E943EC1977F06DD8B0227945851E6F66 /* extobjc */ = {
+			isa = PBXGroup;
+			children = (
+				76709AD9737358A74505506D0C9A4DE3 /* EXTKeyPathCoding.h */,
+				4A7B3738391980B8989E874BFD08766B /* EXTRuntimeExtensions.h */,
+				61C7E0BC6052DE96276CEC5898F66627 /* EXTRuntimeExtensions.m */,
+				B160C043B8643ED11F93E154C198DC36 /* EXTScope.h */,
+				2F356F0BFD67DA07777503CAFFF94179 /* EXTScope.m */,
+				CB0F6D259F67646C2555A11D0CA2B7B4 /* metamacros.h */,
+			);
+			name = extobjc;
+			sourceTree = "<group>";
+		};
+		EABBBC523C9358E3DE2E603069F21C2D /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				2557535E13599197C87EF81782C8FDC4 /* Pods-SYPictureMetadataExample */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		2025915E8FF7C0DCED7596AFBD1D477C /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1F871B2B505D5C2E316DFA0618C43847 /* EXTKeyPathCoding.h in Headers */,
+				781277601C831DBEB14A4BA9551CE079 /* EXTRuntimeExtensions.h in Headers */,
+				A99D00C50186853EB4A698ABB95AA039 /* EXTScope.h in Headers */,
+				7786994F2F7D9F1CB44AB55AAAB6028E /* Mantle.h in Headers */,
+				2018607C3D61886864802AF58E0DFC61 /* metamacros.h in Headers */,
+				5D1C187A3CC472F98EA3F1BACA399E34 /* MTLJSONAdapter.h in Headers */,
+				975A5DF19EBCF7C921369697F4ABB709 /* MTLModel+NSCoding.h in Headers */,
+				7461C0190AE22F99B1C81A8EF335E872 /* MTLModel.h in Headers */,
+				3776420239ED0180EF58CFD77989B4A1 /* MTLReflection.h in Headers */,
+				A69D3FE7C23DEF1824371EC0817A08E4 /* MTLTransformerErrorHandling.h in Headers */,
+				AFA0E7524AF6ED96E138C8E512481FE5 /* MTLValueTransformer.h in Headers */,
+				5119FD722E1101AAC5CBD401B0553128 /* NSArray+MTLManipulationAdditions.h in Headers */,
+				2A0C164601ABC8BA083D05AADB9164AE /* NSDictionary+MTLJSONKeyPath.h in Headers */,
+				913E45D2159D0F30BB5EF796B2C297EF /* NSDictionary+MTLManipulationAdditions.h in Headers */,
+				60346BDB74B30FBDD1ECAB0A6CCFA5C2 /* NSDictionary+MTLMappingAdditions.h in Headers */,
+				5741DD6D20B53BEEC0865588554936D3 /* NSError+MTLModelException.h in Headers */,
+				27C806DD37E3CC8EE961EE669FAE33FA /* NSObject+MTLComparisonAdditions.h in Headers */,
+				0F8BC4F32DAF44B2979D14030416A084 /* NSValueTransformer+MTLInversionAdditions.h in Headers */,
+				E7542B2C536DB2C543894587075D1289 /* NSValueTransformer+MTLPredefinedTransformerAdditions.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C43A8B595725B106265709C22EEDD825 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CDB9622D0CA5954B7D1E4F4C82985FFE /* CGTools.h in Headers */,
+				56BABD243777DD8F4E01F5971E02F588 /* NSAttributedString+SYKit.h in Headers */,
+				3C26D174C32F72E08DFD412843CEFC8E /* NSData+SYKit.h in Headers */,
+				AEC2EB870402360C192DCD22422B2319 /* NSLayoutConstraint+SYKit.h in Headers */,
+				DC170433D255E3ACF2156B48C1EEC2C9 /* NSObject+SYKit.h in Headers */,
+				F5EF1CC369E90026A825BEE4A40FD913 /* NSString+SYKit.h in Headers */,
+				E2DF50443558722A4AB52CB30092EB97 /* SYButton.h in Headers */,
+				A76DF80C3E734D9EDF8367DC91DDF2BF /* SYGradientView.h in Headers */,
+				50506EE059B3628467BFF2AF81D9E9E0 /* SYScreenHelper.h in Headers */,
+				27D89056A58198B32839F8AA6868EF54 /* SYSearchField.h in Headers */,
+				6117889BF98B61FD40C12BB4C217AA2D /* SYShapeView.h in Headers */,
+				D9A0EA92EC0FC22AACB7BC602605BF63 /* SYWindow.h in Headers */,
+				5BE25D651102C0F7874521CA1A9FC808 /* UIButton+SYKit.h in Headers */,
+				44C375DC19EB890EA68DEA121CD822D2 /* UIDevice+SYKit.h in Headers */,
+				5EDD8906C4E16AB90458BC79D2AD0F16 /* UIImage+SYKit.h in Headers */,
+				BE21A06B2D66686F7DFFEBE9BCACF2B1 /* UIScreen+SYKit.h in Headers */,
+				BB97C120EE59A93538B285E0DF2DA419 /* UIScrollView+SYKit.h in Headers */,
+				4DC0AA7B7A3E91B3CFF653F31DCA8470 /* UITableViewCell+SYKit.h in Headers */,
+				D22D5689461A0E91D8AAD0C54260F80B /* UIView+SYKit.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C7A25D3B201357FE16F25F63A72FAB78 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2B16DE546A6A8AF4854B6AE7344DE1B2 /* JGMethodSwizzler.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		0B8BEAE98AA1B08E073B0548BB3E602B /* Pods-SYPictureMetadataExample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 65D57FBE2BF7BB57B65A2BA5229AC5F9 /* Build configuration list for PBXNativeTarget "Pods-SYPictureMetadataExample" */;
+			buildPhases = (
+				59315F75179391FE2289EBCE958DABE5 /* Sources */,
+				5A7AA549FEC170B088322BD413E87F95 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5F2CA4FF4D864F70383E2FBEE00FBA40 /* PBXTargetDependency */,
+				8E85490B314AB73E9473DFE727F51B86 /* PBXTargetDependency */,
+				3A63043E655D4F69F9B6E06A7E5A7E9F /* PBXTargetDependency */,
+			);
+			name = "Pods-SYPictureMetadataExample";
+			productName = "Pods-SYPictureMetadataExample";
+			productReference = 4E858186162CA3AF0D41B2A2DBF28911 /* libPods-SYPictureMetadataExample.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		4BB957C31F95888404EAD9C8947C351E /* SYKit-SYSearchField */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3F7FB51EC969B174586D599D1AA3A644 /* Build configuration list for PBXNativeTarget "SYKit-SYSearchField" */;
+			buildPhases = (
+				347388249042667C5F20036A73343B27 /* Sources */,
+				287B92E73B5529305B03CAF5E02A37BD /* Frameworks */,
+				EFDA311D270CC6336F5BD1B1E41CE572 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "SYKit-SYSearchField";
+			productName = "SYKit-SYSearchField";
+			productReference = E0F9CAFA15D11FCDACCF3EB8AB446515 /* SYSearchField.bundle */;
+			productType = "com.apple.product-type.bundle";
+		};
+		7C214356709EB3EA286F3E87E9ABE638 /* JGMethodSwizzler */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 66DC9510EFF7EC3EE55E09584196482B /* Build configuration list for PBXNativeTarget "JGMethodSwizzler" */;
+			buildPhases = (
+				E67AA28ABABE1A820E3DBB37035B2522 /* Sources */,
+				47ED6F13E7DBE1E3CAF7C3880FE7543E /* Frameworks */,
+				C7A25D3B201357FE16F25F63A72FAB78 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = JGMethodSwizzler;
+			productName = JGMethodSwizzler;
+			productReference = 072661DB3B58B40D20D167BA550326BD /* libJGMethodSwizzler.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		8E2F85A9EA167EFA71B3DCB5DF170059 /* Mantle */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 697C5D321F145E584E7A44A336A8952E /* Build configuration list for PBXNativeTarget "Mantle" */;
+			buildPhases = (
+				0A2554079B309EEE6BA23649E401207F /* Sources */,
+				82E23767320A4061102738EBA133175B /* Frameworks */,
+				2025915E8FF7C0DCED7596AFBD1D477C /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Mantle;
+			productName = Mantle;
+			productReference = 3CF86261F63AB525BEE5C02F026A2188 /* libMantle.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		CFDFA2639A663B6445253E9AF8DC4DDA /* SYKit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ECF48BB5B00EB08CBAA0EBE8FE2361EB /* Build configuration list for PBXNativeTarget "SYKit" */;
+			buildPhases = (
+				15422FA3A5685A2EA5225A6739CD3DD6 /* Sources */,
+				2F92251D980FFC0E04FFCE6420D8CD2A /* Frameworks */,
+				C43A8B595725B106265709C22EEDD825 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CDA85FEEAE9447173CED63173156FED6 /* PBXTargetDependency */,
+				BB322FCA57395740F17C1E5227568EA1 /* PBXTargetDependency */,
+			);
+			name = SYKit;
+			productName = SYKit;
+			productReference = C6871CA46A1C640D27860DA4C71DFE3F /* libSYKit.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0700;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = 63723901866E644E214C4B5A1161013C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7C214356709EB3EA286F3E87E9ABE638 /* JGMethodSwizzler */,
+				8E2F85A9EA167EFA71B3DCB5DF170059 /* Mantle */,
+				0B8BEAE98AA1B08E073B0548BB3E602B /* Pods-SYPictureMetadataExample */,
+				CFDFA2639A663B6445253E9AF8DC4DDA /* SYKit */,
+				4BB957C31F95888404EAD9C8947C351E /* SYKit-SYSearchField */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EFDA311D270CC6336F5BD1B1E41CE572 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6572487AF3AFEC23F4E63E0DDD31A1F9 /* loupe.png in Resources */,
+				C9AC35B0293809E9CB33E46B0F4D1900 /* loupe@2x.png in Resources */,
+				93DF4C350D1A6EC770F2DC5C0B06E2A4 /* loupe@3x.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0A2554079B309EEE6BA23649E401207F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D232DCD1D6C1A99B64C232658CA91CFA /* EXTRuntimeExtensions.m in Sources */,
+				1D0907809FA58944DCF0338BEEF823E3 /* EXTScope.m in Sources */,
+				1A05BF934A67A1D58510863477450A6D /* Mantle-dummy.m in Sources */,
+				CEEE61762F8D1BD8204156907D28645D /* MTLJSONAdapter.m in Sources */,
+				85E5CBDBCFE9FBBA39E9846951DD72C0 /* MTLModel+NSCoding.m in Sources */,
+				61ED4B5B249526AFD6F7C6DB4D487A8A /* MTLModel.m in Sources */,
+				68F1A50AA6DA6C67C24B969731946E90 /* MTLReflection.m in Sources */,
+				2020A86F9E1845CA1319EA46E3C29BB8 /* MTLTransformerErrorHandling.m in Sources */,
+				7BBE9CAF9699F22BA250F649B4E0CC8F /* MTLValueTransformer.m in Sources */,
+				F80F292BF60B8252720516F0EB281D55 /* NSArray+MTLManipulationAdditions.m in Sources */,
+				48EBAF945D6600BFAC95C945559C4767 /* NSDictionary+MTLJSONKeyPath.m in Sources */,
+				90724BCD9F75D989C3C93A4FD54365B2 /* NSDictionary+MTLManipulationAdditions.m in Sources */,
+				8BDD736A5462C351DA5F156B89B2CE97 /* NSDictionary+MTLMappingAdditions.m in Sources */,
+				49165C856AE6C700F8B8AC7C1659C39E /* NSError+MTLModelException.m in Sources */,
+				C797198D3A3E1766F4052BB5DDA8906E /* NSObject+MTLComparisonAdditions.m in Sources */,
+				E804714E174AF44903629AFD1415E8FD /* NSValueTransformer+MTLInversionAdditions.m in Sources */,
+				241783C8D5E43984BF8BA587B5974B1E /* NSValueTransformer+MTLPredefinedTransformerAdditions.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		15422FA3A5685A2EA5225A6739CD3DD6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AB3322A21932CEEB89EED42CB7122DAD /* CGTools.m in Sources */,
+				C7532BFCA9285A891690589167970E0C /* NSAttributedString+SYKit.m in Sources */,
+				2879EE0CFED2DDE9FC98782965DBDC30 /* NSData+SYKit.m in Sources */,
+				FF0D1EC47ADA19C5D55B1FFCBD20D753 /* NSLayoutConstraint+SYKit.m in Sources */,
+				4FCCCA8B1CF8ACABA35D89849FA94F53 /* NSObject+SYKit.m in Sources */,
+				DD2378AF1C6BD5DC2894AB1FB9A8BBCD /* NSString+SYKit.m in Sources */,
+				B77DDA534DFFABA613D61A4A54A8D297 /* SYButton.m in Sources */,
+				010FB32391DD914308C175B7732BE2F8 /* SYGradientView.m in Sources */,
+				2DF09C7D7437DA87EEDB91F942F31295 /* SYKit-dummy.m in Sources */,
+				5A55F2B28525C70D0B152121D8FF17C4 /* SYScreenHelper.m in Sources */,
+				6FB4B6F7C17B903EC01E7864C8CE2F6A /* SYSearchField.m in Sources */,
+				4483948B13B5B09848B048AB8203CEC8 /* SYShapeView.m in Sources */,
+				D3386F293B3C922504DE94C488A7609D /* SYWindow.m in Sources */,
+				3D3DEA8435219ACFA76990829AD8A6A6 /* UIButton+SYKit.m in Sources */,
+				ABC3307BAFD60D90ECBF23DF5B6DEA94 /* UIDevice+SYKit.m in Sources */,
+				49A8948F14FFA56C0C2F36F418452CEF /* UIImage+SYKit.m in Sources */,
+				EF1FB178BA33D17E522BDE3B44AA7324 /* UIScreen+SYKit.m in Sources */,
+				8C016FAEAF5A16E17045C8797FBBD767 /* UIScrollView+SYKit.m in Sources */,
+				D2ED70CD4A24A072616089B72FBF882E /* UITableViewCell+SYKit.m in Sources */,
+				D8FE91CE6401B6D596A2168E603430E7 /* UIView+SYKit.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		347388249042667C5F20036A73343B27 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		59315F75179391FE2289EBCE958DABE5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D600FD1F59579E0EAC99C3A1364DC3BF /* Pods-SYPictureMetadataExample-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E67AA28ABABE1A820E3DBB37035B2522 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				39CB850EF4296921B301F2F60C5A094A /* JGMethodSwizzler-dummy.m in Sources */,
+				46BAB6394E367A6742A1EC295A24F0C1 /* JGMethodSwizzler.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3A63043E655D4F69F9B6E06A7E5A7E9F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SYKit;
+			target = CFDFA2639A663B6445253E9AF8DC4DDA /* SYKit */;
+			targetProxy = DE338D4EB46D304D9A19FD7F2FA56F63 /* PBXContainerItemProxy */;
+		};
+		5F2CA4FF4D864F70383E2FBEE00FBA40 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = JGMethodSwizzler;
+			target = 7C214356709EB3EA286F3E87E9ABE638 /* JGMethodSwizzler */;
+			targetProxy = C19C5466C542E4106DABED7F5E75F104 /* PBXContainerItemProxy */;
+		};
+		8E85490B314AB73E9473DFE727F51B86 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Mantle;
+			target = 8E2F85A9EA167EFA71B3DCB5DF170059 /* Mantle */;
+			targetProxy = 4CEC44A1DF6716B27BF3AC6BD1668EDB /* PBXContainerItemProxy */;
+		};
+		BB322FCA57395740F17C1E5227568EA1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "SYKit-SYSearchField";
+			target = 4BB957C31F95888404EAD9C8947C351E /* SYKit-SYSearchField */;
+			targetProxy = D0BF199F3169757BA0A3E29088C58A9F /* PBXContainerItemProxy */;
+		};
+		CDA85FEEAE9447173CED63173156FED6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = JGMethodSwizzler;
+			target = 7C214356709EB3EA286F3E87E9ABE638 /* JGMethodSwizzler */;
+			targetProxy = D0BE93CE2E494A5728F6DF298ABA75A4 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		015A368F878AC3E2CEAE21DDE8026304 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		036770FE90998BF5D5941043C81286F8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D202B0B8199D0BEBBCE0AFD8ED7BC8E4 /* Mantle.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Mantle/Mantle-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		0BE3C7AA111E544B45AAF9F7667555DB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 419FCF73D17C435562C38BE769490BCE /* SYKit.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/SYKit/SYKit-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		1B49C08A226903DF9F86B33ECCA9D07C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 419FCF73D17C435562C38BE769490BCE /* SYKit.xcconfig */;
+			buildSettings = {
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/SYKit";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/SYKit/ResourceBundle-SYSearchField-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				PRODUCT_NAME = SYSearchField;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
+		};
+		3229872994631536351A721D3BD74551 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 419FCF73D17C435562C38BE769490BCE /* SYKit.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/SYKit/SYKit-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		3646EB15D2F1C47CBC359B1244E8AD31 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7AFCCC641058EBD2ED9BCE4C0D5E2C6F /* Pods-SYPictureMetadataExample.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MACH_O_TYPE = staticlib;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		44CDBB6D11DE06DB64D6268622BDC47E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		6A11109D651C34842165895A2B1CF6BC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 419FCF73D17C435562C38BE769490BCE /* SYKit.xcconfig */;
+			buildSettings = {
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/SYKit";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/SYKit/ResourceBundle-SYSearchField-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				PRODUCT_NAME = SYSearchField;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
+		9260F016D68AB559ACFAC4FF20615027 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D202B0B8199D0BEBBCE0AFD8ED7BC8E4 /* Mantle.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Mantle/Mantle-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		A16EF19D8B9378EBFEF75BCCFE7EA416 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0C61F5B65C22212B6A3E646C3CB066BE /* JGMethodSwizzler.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/JGMethodSwizzler/JGMethodSwizzler-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		B395EEFC8F018A8DD10FA8FAF874D016 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0C61F5B65C22212B6A3E646C3CB066BE /* JGMethodSwizzler.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/JGMethodSwizzler/JGMethodSwizzler-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		EC99E3C4B96E38A6D8CDE0A4D69FE08A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 64CDE3B5B7B82B94A7FB47A9D9A09026 /* Pods-SYPictureMetadataExample.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MACH_O_TYPE = staticlib;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				015A368F878AC3E2CEAE21DDE8026304 /* Debug */,
+				44CDBB6D11DE06DB64D6268622BDC47E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3F7FB51EC969B174586D599D1AA3A644 /* Build configuration list for PBXNativeTarget "SYKit-SYSearchField" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6A11109D651C34842165895A2B1CF6BC /* Debug */,
+				1B49C08A226903DF9F86B33ECCA9D07C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		65D57FBE2BF7BB57B65A2BA5229AC5F9 /* Build configuration list for PBXNativeTarget "Pods-SYPictureMetadataExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3646EB15D2F1C47CBC359B1244E8AD31 /* Debug */,
+				EC99E3C4B96E38A6D8CDE0A4D69FE08A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		66DC9510EFF7EC3EE55E09584196482B /* Build configuration list for PBXNativeTarget "JGMethodSwizzler" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B395EEFC8F018A8DD10FA8FAF874D016 /* Debug */,
+				A16EF19D8B9378EBFEF75BCCFE7EA416 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		697C5D321F145E584E7A44A336A8952E /* Build configuration list for PBXNativeTarget "Mantle" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9260F016D68AB559ACFAC4FF20615027 /* Debug */,
+				036770FE90998BF5D5941043C81286F8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ECF48BB5B00EB08CBAA0EBE8FE2361EB /* Build configuration list for PBXNativeTarget "SYKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0BE3C7AA111E544B45AAF9F7667555DB /* Debug */,
+				3229872994631536351A721D3BD74551 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}

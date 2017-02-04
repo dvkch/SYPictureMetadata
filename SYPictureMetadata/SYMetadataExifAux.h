@@ -2,7 +2,7 @@
 //  SYMetadataExifAux.h
 //  SYPictureMetadataExample
 //
-//  Created by rominet on 12/16/12.
+//  Created by Stan Chevallier on 12/16/12.
 //  Copyright (c) 2012 Syan. All rights reserved.
 //
 
@@ -10,14 +10,18 @@
 
 @interface SYMetadataExifAux : SYMetadataBase
 
-@property (readonly, nonatomic, getter = getLensInfo)           NSArray*    lensInfo;
-@property (readonly, nonatomic, getter = getLensModel)          NSString*   lensModel;
-@property (readonly, nonatomic, getter = getSerialNumber)       NSString*   serialNumber;
-@property (readonly, nonatomic, getter = getLensID)             NSNumber*   lensID;
-@property (readonly, nonatomic, getter = getLensSerialNumber)   NSString*   lensSerialNumber;
-@property (readonly, nonatomic, getter = getImageNumber)        NSNumber*   imageNumber;
-@property (readonly, nonatomic, getter = getFlashCompensation)  NSObject*   flashCompensation;
-@property (readonly, nonatomic, getter = getOwnerName)          NSString*   ownerName;
-@property (readonly, nonatomic, getter = getFirmware)           NSObject*   firmware;
+@property (nonatomic, copy, readonly) NSArray <NSNumber *>  *lensInfo;
+@property (nonatomic, copy, readonly) NSString              *lensModel;
+@property (nonatomic, copy, readonly) NSString              *serialNumber;
+@property (nonatomic, copy, readonly) NSNumber              *lensID;
+@property (nonatomic, copy, readonly) NSString              *lensSerialNumber;
+@property (nonatomic, copy, readonly) NSNumber              *imageNumber;
+@property (nonatomic, copy, readonly) NSObject              *flashCompensation;
+@property (nonatomic, copy, readonly) NSString              *ownerName;
+@property (nonatomic, copy, readonly) NSObject              *firmware;
+@property (nonatomic, copy, readonly) NSNumber              *focusMode;
+@property (nonatomic, copy, readonly) NSNumber              *focusDistance;
+@property (nonatomic, copy, readonly) NSArray               *afInfo;
+@property (nonatomic, copy, readonly) NSNumber              *imageStabilization;
 
 @end

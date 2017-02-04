@@ -2,31 +2,31 @@
 //  SYMetadataBase.h
 //  SYPictureMetadataExample
 //
-//  Created by rominet on 12/13/12.
+//  Created by Stan Chevallier on 12/13/12.
 //  Copyright (c) 2012 Syan. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
+#import <Mantle.h>
 
-@interface SYMetadataBase : NSObject {
-@protected
-    NSDictionary *_dic;
-}
+#define SYPaste1(a,b)                   a##b
+#define SYPaste(a,b)                    SYPaste1(a,b)
+#define SYStringSel(sel)                NSStringFromSelector(@selector(sel))
 
--(id)initWithDic:(NSDictionary*)dic;
+// keys not available in public header, but still read by iOS
+extern CFStringRef const kSYImagePropertyExifAuxAutoFocusInfo;
+extern CFStringRef const kSYImagePropertyExifAuxImageStabilization;
+extern CFStringRef const kSYImagePropertyCIFFMaxAperture;
+extern CFStringRef const kSYImagePropertyCIFFMinAperture;
+extern CFStringRef const kSYImagePropertyCIFFUniqueModelID;
+extern CFStringRef const kSYImagePropertyPictureStyle;
 
-@property (readonly, nonatomic, getter = getDictionary) NSDictionary* dictionary;
+@interface MTLValueTransformer (SY)
++ (instancetype)sy_nonZeroIntegerValueTransformer;
+@end
 
--(NSObject*)objectForKeyString:(NSString*)key;
--(NSObject*)objectForKeyStringRef:(CFStringRef)key;
+@interface SYMetadataBase : MTLModel <MTLJSONSerializing>
 
--(NSString*)stringForKeyString:(NSString*)key;
--(NSString*)stringForKeyStringRef:(CFStringRef)key;
-
--(NSNumber*)numberForKeyString:(NSString*)key;
--(NSNumber*)numberForKeyStringRef:(CFStringRef)key;
-
--(NSArray*)arrayForKeyString:(NSString*)key;
--(NSArray*)arrayForKeyStringRef:(CFStringRef)key;
+- (NSDictionary *)generatedDictionary;
 
 @end
