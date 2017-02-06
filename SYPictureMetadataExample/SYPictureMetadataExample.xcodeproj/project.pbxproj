@@ -7,8 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0206EE87E2DB68B4B7C43495 /* Pods_SYPictureMetadataExample_tvOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8FF8EC932A3F5EAB2410E44 /* Pods_SYPictureMetadataExample_tvOS.framework */; };
-		8257D8B2EADD589BA28757CC /* Pods_SYPictureMetadataExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B3D8F4DFEB881EFAF2EBB5C /* Pods_SYPictureMetadataExample.framework */; };
+		2B41D64A23B72B7374A862A3 /* libPods-SYPictureMetadataExample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 621FAA45F418A13D86793197 /* libPods-SYPictureMetadataExample.a */; };
 		9764B9471E434D4000DD31A9 /* SYMetadata.m in Sources */ = {isa = PBXBuildFile; fileRef = 9764B91E1E434D4000DD31A9 /* SYMetadata.m */; };
 		9764B9481E434D4000DD31A9 /* SYMetadata8BIM.m in Sources */ = {isa = PBXBuildFile; fileRef = 9764B9201E434D4000DD31A9 /* SYMetadata8BIM.m */; };
 		9764B9491E434D4000DD31A9 /* SYMetadataBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 9764B9221E434D4000DD31A9 /* SYMetadataBase.m */; };
@@ -65,6 +64,7 @@
 		97AF041D1E489FE800AACB7F /* SYMetadataRaw.m in Sources */ = {isa = PBXBuildFile; fileRef = 9764B9441E434D4000DD31A9 /* SYMetadataRaw.m */; };
 		97AF041E1E489FE800AACB7F /* SYMetadataTIFF.m in Sources */ = {isa = PBXBuildFile; fileRef = 9764B9461E434D4000DD31A9 /* SYMetadataTIFF.m */; };
 		97AF041F1E489FE800AACB7F /* NSDictionary+SY.m in Sources */ = {isa = PBXBuildFile; fileRef = 9764B9681E44BB2C00DD31A9 /* NSDictionary+SY.m */; };
+		9D8DFDF070132A3B8D4BE620 /* libPods-SYPictureMetadataExample-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A06FF21C0DBC118BD78BCAD /* libPods-SYPictureMetadataExample-tvOS.a */; };
 		F80C7264167A0AF000A9110A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F80C7263167A0AF000A9110A /* UIKit.framework */; };
 		F80C7266167A0AF000A9110A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F80C7265167A0AF000A9110A /* Foundation.framework */; };
 		F80C7268167A0AF000A9110A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F80C7267167A0AF000A9110A /* CoreGraphics.framework */; };
@@ -78,8 +78,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		2B3D8F4DFEB881EFAF2EBB5C /* Pods_SYPictureMetadataExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SYPictureMetadataExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0A06FF21C0DBC118BD78BCAD /* libPods-SYPictureMetadataExample-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SYPictureMetadataExample-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		60AF7B2A810A6A3461214FF4 /* Pods-SYPictureMetadataExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SYPictureMetadataExample.release.xcconfig"; path = "Pods/Target Support Files/Pods-SYPictureMetadataExample/Pods-SYPictureMetadataExample.release.xcconfig"; sourceTree = "<group>"; };
+		621FAA45F418A13D86793197 /* libPods-SYPictureMetadataExample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SYPictureMetadataExample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7550A80FE971E2F5F4542092 /* Pods-SYPictureMetadataExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SYPictureMetadataExample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SYPictureMetadataExample/Pods-SYPictureMetadataExample.debug.xcconfig"; sourceTree = "<group>"; };
 		9764B91D1E434D4000DD31A9 /* SYMetadata.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYMetadata.h; sourceTree = "<group>"; };
 		9764B91E1E434D4000DD31A9 /* SYMetadata.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYMetadata.m; sourceTree = "<group>"; };
@@ -145,7 +146,6 @@
 		97AF04041E489FBF00AACB7F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		97AF04061E489FBF00AACB7F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9879C06CA6D40CA30683F9AB /* Pods-SYPictureMetadataExample-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SYPictureMetadataExample-tvOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-SYPictureMetadataExample-tvOS/Pods-SYPictureMetadataExample-tvOS.release.xcconfig"; sourceTree = "<group>"; };
-		D8FF8EC932A3F5EAB2410E44 /* Pods_SYPictureMetadataExample_tvOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SYPictureMetadataExample_tvOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC814759A79A15EC876F2DE6 /* Pods-SYPictureMetadataExample-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SYPictureMetadataExample-tvOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SYPictureMetadataExample-tvOS/Pods-SYPictureMetadataExample-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
 		F80C725F167A0AF000A9110A /* SYPictureMetadataExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SYPictureMetadataExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F80C7263167A0AF000A9110A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -169,7 +169,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0206EE87E2DB68B4B7C43495 /* Pods_SYPictureMetadataExample_tvOS.framework in Frameworks */,
+				9D8DFDF070132A3B8D4BE620 /* libPods-SYPictureMetadataExample-tvOS.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -182,7 +182,7 @@
 				F80C7290167A0C0400A9110A /* AssetsLibrary.framework in Frameworks */,
 				F80C7264167A0AF000A9110A /* UIKit.framework in Frameworks */,
 				F80C7266167A0AF000A9110A /* Foundation.framework in Frameworks */,
-				8257D8B2EADD589BA28757CC /* Pods_SYPictureMetadataExample.framework in Frameworks */,
+				2B41D64A23B72B7374A862A3 /* libPods-SYPictureMetadataExample.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -328,8 +328,8 @@
 				F80C7263167A0AF000A9110A /* UIKit.framework */,
 				F80C7265167A0AF000A9110A /* Foundation.framework */,
 				F80C7267167A0AF000A9110A /* CoreGraphics.framework */,
-				2B3D8F4DFEB881EFAF2EBB5C /* Pods_SYPictureMetadataExample.framework */,
-				D8FF8EC932A3F5EAB2410E44 /* Pods_SYPictureMetadataExample_tvOS.framework */,
+				621FAA45F418A13D86793197 /* libPods-SYPictureMetadataExample.a */,
+				0A06FF21C0DBC118BD78BCAD /* libPods-SYPictureMetadataExample-tvOS.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";

@@ -1,6 +1,0 @@
-framework module SYKit {
-  umbrella header "SYKit-iOS-umbrella.h"
-
-  export *
-  module * { export * }
-}

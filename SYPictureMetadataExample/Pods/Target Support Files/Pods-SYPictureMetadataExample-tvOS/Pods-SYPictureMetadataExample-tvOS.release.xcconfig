@@ -1,9 +1,9 @@
 CLANG_MODULES_AUTOLINK = YES
-FRAMEWORK_SEARCH_PATHS = $(inherited) "$PODS_CONFIGURATION_BUILD_DIR/Mantle-tvOS" "$PODS_CONFIGURATION_BUILD_DIR/SYKit-tvOS"
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
-LD_RUNPATH_SEARCH_PATHS = $(inherited) '@executable_path/Frameworks' '@loader_path/Frameworks'
-OTHER_CFLAGS = $(inherited) -iquote "$PODS_CONFIGURATION_BUILD_DIR/Mantle-tvOS/Mantle.framework/Headers" -iquote "$PODS_CONFIGURATION_BUILD_DIR/SYKit-tvOS/SYKit.framework/Headers"
-OTHER_LDFLAGS = $(inherited) -framework "Mantle" -framework "SYKit"
+HEADER_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/Mantle" "${PODS_ROOT}/Headers/Public/SYKit"
+LIBRARY_SEARCH_PATHS = $(inherited) "$PODS_CONFIGURATION_BUILD_DIR/Mantle-tvOS" "$PODS_CONFIGURATION_BUILD_DIR/SYKit-tvOS"
+OTHER_CFLAGS = $(inherited) -isystem "${PODS_ROOT}/Headers/Public" -isystem "${PODS_ROOT}/Headers/Public/Mantle" -isystem "${PODS_ROOT}/Headers/Public/SYKit"
+OTHER_LDFLAGS = $(inherited) -ObjC -l"Mantle-tvOS" -l"SYKit-tvOS" -framework "Foundation"
 PODS_BUILD_DIR = $BUILD_DIR
 PODS_CONFIGURATION_BUILD_DIR = $PODS_BUILD_DIR/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)
 PODS_ROOT = ${SRCROOT}/Pods
