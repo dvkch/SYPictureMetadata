@@ -71,7 +71,7 @@
 {
     if ([key isEqualToString:SYStringSel(creatorContactInfo)])
     {
-        return [MTLJSONAdapter dictionaryTransformerWithModelClass:[SYMetadataIPTCContactInfo class]];
+        return [NSValueTransformer sy_dictionaryTransformerForModelOfClass:[SYMetadataIPTCContactInfo class]];
     }
     
     return [super JSONTransformerForKey:key];

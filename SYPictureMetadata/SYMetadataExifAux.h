@@ -10,18 +10,18 @@
 
 @interface SYMetadataExifAux : SYMetadataBase
 
-@property (nonatomic, copy, readonly) NSArray <NSNumber *>  *lensInfo;
-@property (nonatomic, copy, readonly) NSString              *lensModel;
-@property (nonatomic, copy, readonly) NSString              *serialNumber;
-@property (nonatomic, copy, readonly) NSNumber              *lensID;
-@property (nonatomic, copy, readonly) NSString              *lensSerialNumber;
-@property (nonatomic, copy, readonly) NSNumber              *imageNumber;
-@property (nonatomic, copy, readonly) NSObject              *flashCompensation;
-@property (nonatomic, copy, readonly) NSString              *ownerName;
-@property (nonatomic, copy, readonly) NSObject              *firmware;
-@property (nonatomic, copy, readonly) NSNumber              *focusMode;
-@property (nonatomic, copy, readonly) NSNumber              *focusDistance;
-@property (nonatomic, copy, readonly) NSArray               *afInfo;
-@property (nonatomic, copy, readonly) NSNumber              *imageStabilization;
+@property SYMETADATA_PROPERTY_COPY NSArray <NSNumber *>  *lensInfo;
+@property SYMETADATA_PROPERTY_COPY NSString              *lensModel;
+@property SYMETADATA_PROPERTY_COPY NSString              *serialNumber;
+@property SYMETADATA_PROPERTY_COPY NSNumber              *lensID;
+@property SYMETADATA_PROPERTY_COPY NSString              *lensSerialNumber;
+@property SYMETADATA_PROPERTY_COPY NSNumber              *imageNumber;
+@property SYMETADATA_PROPERTY_COPY NSObject              *flashCompensation;
+@property SYMETADATA_PROPERTY_COPY NSString              *ownerName;
+@property SYMETADATA_PROPERTY_COPY NSObject              *firmware;
+@property SYMETADATA_PROPERTY_COPY NSNumber              *focusMode;
+@property SYMETADATA_PROPERTY_COPY NSNumber              *focusDistance;
+@property SYMETADATA_PROPERTY_COPY NSArray               *afInfo;
+@property SYMETADATA_PROPERTY_COPY NSNumber              *imageStabilization;
 
 @end

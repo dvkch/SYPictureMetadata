@@ -10,11 +10,13 @@
 
 @implementation NSDictionary (SY)
 
-+ (NSDictionary *)sy_differencesFrom:(NSDictionary *)dictionaryOld to:(NSDictionary *)dictionaryNew;
++ (NSDictionary *)sy_differencesFrom:(NSDictionary *)dictionaryOld
+                                  to:(NSDictionary *)dictionaryNew
+                 includeValuesInDiff:(BOOL)includeValuesInDiff;
 {
-    NSString *valueAdded    = @"added";
-    NSString *valueUpdated  = @"updated";
-    NSString *valueRemoved  = @"removed";
+    NSString *formatAdded    = (includeValuesInDiff ? @"Added: %@"          : @"Added"  );
+    NSString *formatUpdated  = (includeValuesInDiff ? @"Updated: %@ -> %@"  : @"Updated");
+    NSString *formatRemoved  = (includeValuesInDiff ? @"Removed: %@"        : @"Removed");
     
     NSMutableSet *allKeys = [NSMutableSet set];
     [allKeys addObjectsFromArray:dictionaryOld.allKeys];
@@ -26,30 +28,45 @@
         id valueOld = dictionaryOld[key];
         id valueNew = dictionaryNew[key];
         
+        if (valueOld && valueNew && [valueOld isEqual:valueNew])
+            continue;
+        
+        BOOL oldIsNilOrDic = !valueOld || [valueOld isKindOfClass:[NSDictionary class]];
+        BOOL newIsNilOrDic = !valueNew || [valueNew isKindOfClass:[NSDictionary class]];
+        
+        if (oldIsNilOrDic && newIsNilOrDic)
+        {
+            NSDictionary *subDiffs = [self sy_differencesFrom:valueOld
+                                                           to:valueNew
+                                          includeValuesInDiff:includeValuesInDiff];
+            [diffs setObject:subDiffs forKey:key];
+            continue;
+        }
+        
+        NSString *valueOldString = [valueOld description];
+        NSString *valueNewString = [valueNew description];
+        
+        if ([valueOld isKindOfClass:[NSArray class]])
+            valueOldString = [valueOld componentsJoinedByString:@", "];
+        if ([valueNew isKindOfClass:[NSArray class]])
+            valueNewString = [valueNew componentsJoinedByString:@", "];
+        
         if ( valueOld && !valueNew)
         {
-            [diffs setObject:valueRemoved forKey:key];
+            [diffs setObject:[NSString stringWithFormat:formatRemoved, valueOldString]
+                      forKey:key];
             continue;
         }
         
         if (!valueOld &&  valueNew)
         {
-            [diffs setObject:valueAdded forKey:key];
+            [diffs setObject:[NSString stringWithFormat:formatAdded, valueNewString]
+                      forKey:key];
             continue;
         }
         
-        if ([valueOld isEqual:valueNew])
-            continue;
-        
-        if ([valueOld isKindOfClass:[NSDictionary class]] &&
-            [valueNew isKindOfClass:[NSDictionary class]])
-        {
-            NSDictionary *subDiffs = [self sy_differencesFrom:valueOld to:valueNew];
-            [diffs setObject:subDiffs forKey:key];
-            continue;
-        }
-        
-        [diffs setObject:valueUpdated forKey:key];
+        [diffs setObject:[NSString stringWithFormat:formatUpdated, valueOldString, valueNewString]
+                  forKey:key];
     }
     
     return [diffs copy];

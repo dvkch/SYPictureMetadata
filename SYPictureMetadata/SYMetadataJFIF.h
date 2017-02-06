@@ -10,10 +10,10 @@
 
 @interface SYMetadataJFIF : SYMetadataBase
 
-@property (nonatomic, copy,   readonly) NSArray     *version;
-@property (nonatomic, copy,   readonly) NSNumber    *xDensity;
-@property (nonatomic, copy,   readonly) NSNumber    *yDensity;
-@property (nonatomic, copy,   readonly) NSNumber    *densityUnit;
-@property (nonatomic, copy,   readonly) NSNumber    *isProgressive;
+@property SYMETADATA_PROPERTY_COPY NSArray     *version;
+@property SYMETADATA_PROPERTY_COPY NSNumber    *xDensity;
+@property SYMETADATA_PROPERTY_COPY NSNumber    *yDensity;
+@property SYMETADATA_PROPERTY_COPY NSNumber    *densityUnit;
+@property SYMETADATA_PROPERTY_COPY NSNumber    *isProgressive;
 
 @end

@@ -10,10 +10,10 @@
 
 @interface SYMetadataGIF : SYMetadataBase
 
-@property (nonatomic, copy, readonly)   NSNumber                *loopCount;
-@property (nonatomic, copy, readonly)   NSNumber                *delayTime;
-@property (nonatomic, copy, readonly)   NSArray <NSNumber *>    *imageColorMap;
-@property (nonatomic, copy, readonly)   NSNumber                *hasGlobalColorMap;
-@property (nonatomic, copy, readonly)   NSNumber                *unclampedDelayTime;
+@property SYMETADATA_PROPERTY_COPY   NSNumber                *loopCount;
+@property SYMETADATA_PROPERTY_COPY   NSNumber                *delayTime;
+@property SYMETADATA_PROPERTY_COPY   NSArray <NSNumber *>    *imageColorMap;
+@property SYMETADATA_PROPERTY_COPY   NSNumber                *hasGlobalColorMap;
+@property SYMETADATA_PROPERTY_COPY   NSNumber                *unclampedDelayTime;
 
 @end

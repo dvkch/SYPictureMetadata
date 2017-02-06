@@ -29,23 +29,23 @@ typedef enum : NSUInteger {
 
 @interface SYMetadataMakerNikon : SYMetadataBase
 
-@property (nonatomic, copy, readonly) NSArray <NSNumber *>  *isoSetting;
-@property (nonatomic, copy, readonly) NSString              *colorMode;
-@property (nonatomic, copy, readonly) NSString              *quality;
-@property (nonatomic, copy, readonly) NSString              *whiteBalanceMode;
-@property (nonatomic, copy, readonly) NSString              *sharpenMode;
-@property (nonatomic, copy, readonly) NSString              *focusMode;
-@property (nonatomic, copy, readonly) NSString              *flashSetting;
-@property (nonatomic, copy, readonly) NSString              *isoSelection;
-@property (nonatomic, copy, readonly) NSObject              *flashExposureComp;
-@property (nonatomic, copy, readonly) NSString              *imageAdjustment;
-@property (nonatomic, copy, readonly) NSObject              *lensAdapter;
-@property (nonatomic, copy, readonly) NSNumber              *lensType;
-@property (nonatomic, copy, readonly) NSObject              *lensInfo;
-@property (nonatomic, copy, readonly) NSNumber              *focusDistance;
-@property (nonatomic, copy, readonly) NSNumber              *digitalZoom;
-@property (nonatomic, copy, readonly) NSNumber              *shootingMode;
-@property (nonatomic, copy, readonly) NSString              *cameraSerialNumber;
-@property (nonatomic, copy, readonly) NSNumber              *shutterCount;
+@property SYMETADATA_PROPERTY_COPY NSArray <NSNumber *>  *isoSetting;
+@property SYMETADATA_PROPERTY_COPY NSString              *colorMode;
+@property SYMETADATA_PROPERTY_COPY NSString              *quality;
+@property SYMETADATA_PROPERTY_COPY NSString              *whiteBalanceMode;
+@property SYMETADATA_PROPERTY_COPY NSString              *sharpenMode;
+@property SYMETADATA_PROPERTY_COPY NSString              *focusMode;
+@property SYMETADATA_PROPERTY_COPY NSString              *flashSetting;
+@property SYMETADATA_PROPERTY_COPY NSString              *isoSelection;
+@property SYMETADATA_PROPERTY_COPY NSObject              *flashExposureComp;
+@property SYMETADATA_PROPERTY_COPY NSString              *imageAdjustment;
+@property SYMETADATA_PROPERTY_COPY NSObject              *lensAdapter;
+@property SYMETADATA_PROPERTY_COPY NSNumber              *lensType;
+@property SYMETADATA_PROPERTY_COPY NSObject              *lensInfo;
+@property SYMETADATA_PROPERTY_COPY NSNumber              *focusDistance;
+@property SYMETADATA_PROPERTY_COPY NSNumber              *digitalZoom;
+@property SYMETADATA_PROPERTY_COPY NSNumber              *shootingMode;
+@property SYMETADATA_PROPERTY_COPY NSString              *cameraSerialNumber;
+@property SYMETADATA_PROPERTY_COPY NSNumber              *shutterCount;
 
 @end

@@ -30,22 +30,22 @@ typedef enum : NSUInteger {
 
 @interface SYMetadataPNG : SYMetadataBase
 
-@property (nonatomic, copy, readonly) NSNumber              *gamma;
-@property (nonatomic, copy, readonly) NSNumber              *interlaceType;
-@property (nonatomic, copy, readonly) NSNumber              *xPixelsPerMeter;
-@property (nonatomic, copy, readonly) NSNumber              *yPixelsPerMeter;
-@property (nonatomic, copy, readonly) NSNumber              *sRGBIntent;
-@property (nonatomic, copy, readonly) NSArray <NSNumber *>  *chromaticities;
-@property (nonatomic, copy, readonly) NSString              *author;
-@property (nonatomic, copy, readonly) NSString              *copyright;
-@property (nonatomic, copy, readonly) NSString              *creationTime;
-@property (nonatomic, copy, readonly) NSString              *descr;
-@property (nonatomic, copy, readonly) NSString              *modificationTime;
-@property (nonatomic, copy, readonly) NSString              *software;
-@property (nonatomic, copy, readonly) NSString              *title;
-@property (nonatomic, copy, readonly) NSNumber              *loopCount;
-@property (nonatomic, copy, readonly) NSNumber              *delayTime;
-@property (nonatomic, copy, readonly) NSNumber              *unclampedDelayTime;
-@property (nonatomic, copy, readonly) NSNumber              *compressionFilter;
+@property SYMETADATA_PROPERTY_COPY NSNumber              *gamma;
+@property SYMETADATA_PROPERTY_COPY NSNumber              *interlaceType;
+@property SYMETADATA_PROPERTY_COPY NSNumber              *xPixelsPerMeter;
+@property SYMETADATA_PROPERTY_COPY NSNumber              *yPixelsPerMeter;
+@property SYMETADATA_PROPERTY_COPY NSNumber              *sRGBIntent;
+@property SYMETADATA_PROPERTY_COPY NSArray <NSNumber *>  *chromaticities;
+@property SYMETADATA_PROPERTY_COPY NSString              *author;
+@property SYMETADATA_PROPERTY_COPY NSString              *copyright;
+@property SYMETADATA_PROPERTY_COPY NSString              *creationTime;
+@property SYMETADATA_PROPERTY_COPY NSString              *descr;
+@property SYMETADATA_PROPERTY_COPY NSString              *modificationTime;
+@property SYMETADATA_PROPERTY_COPY NSString              *software;
+@property SYMETADATA_PROPERTY_COPY NSString              *title;
+@property SYMETADATA_PROPERTY_COPY NSNumber              *loopCount;
+@property SYMETADATA_PROPERTY_COPY NSNumber              *delayTime;
+@property SYMETADATA_PROPERTY_COPY NSNumber              *unclampedDelayTime;
+@property SYMETADATA_PROPERTY_COPY NSNumber              *compressionFilter;
 
 @end

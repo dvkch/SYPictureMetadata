@@ -19,7 +19,6 @@
 		9764B9501E434D4000DD31A9 /* SYMetadataIPTC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9764B9301E434D4000DD31A9 /* SYMetadataIPTC.m */; };
 		9764B9511E434D4000DD31A9 /* SYMetadataJFIF.m in Sources */ = {isa = PBXBuildFile; fileRef = 9764B9321E434D4000DD31A9 /* SYMetadataJFIF.m */; };
 		9764B9531E434D4000DD31A9 /* SYMetadataMakerCanon.m in Sources */ = {isa = PBXBuildFile; fileRef = 9764B9361E434D4000DD31A9 /* SYMetadataMakerCanon.m */; };
-		9764B9541E434D4000DD31A9 /* SYMetadataMakerFuji.m in Sources */ = {isa = PBXBuildFile; fileRef = 9764B9381E434D4000DD31A9 /* SYMetadataMakerFuji.m */; };
 		9764B9551E434D4000DD31A9 /* SYMetadataMakerMinolta.m in Sources */ = {isa = PBXBuildFile; fileRef = 9764B93A1E434D4000DD31A9 /* SYMetadataMakerMinolta.m */; };
 		9764B9561E434D4000DD31A9 /* SYMetadataMakerNikon.m in Sources */ = {isa = PBXBuildFile; fileRef = 9764B93C1E434D4000DD31A9 /* SYMetadataMakerNikon.m */; };
 		9764B9571E434D4000DD31A9 /* SYMetadataMakerOlympus.m in Sources */ = {isa = PBXBuildFile; fileRef = 9764B93E1E434D4000DD31A9 /* SYMetadataMakerOlympus.m */; };
@@ -30,6 +29,13 @@
 		9764B9631E4377F600DD31A9 /* Test images in Resources */ = {isa = PBXBuildFile; fileRef = 9764B9621E4377F600DD31A9 /* Test images */; };
 		9764B9661E43909E00DD31A9 /* SYMetadataIPTCContactInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 9764B9651E43909E00DD31A9 /* SYMetadataIPTCContactInfo.m */; };
 		9764B9691E44BB2C00DD31A9 /* NSDictionary+SY.m in Sources */ = {isa = PBXBuildFile; fileRef = 9764B9681E44BB2C00DD31A9 /* NSDictionary+SY.m */; };
+		977765151E47A5E1001749E0 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 977765141E47A5E1001749E0 /* Launch Screen.storyboard */; };
+		97A8EC9E1E47E2FC00A58AF5 /* SYMetadataMakerFuji.m in Sources */ = {isa = PBXBuildFile; fileRef = 97A8EC9D1E47E2FC00A58AF5 /* SYMetadataMakerFuji.m */; };
+		97A8ECA11E47E4EB00A58AF5 /* SYSummaryVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 97A8ECA01E47E4EB00A58AF5 /* SYSummaryVC.m */; };
+		97A8ECA51E47E58600A58AF5 /* SYSummaryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 97A8ECA31E47E58600A58AF5 /* SYSummaryCell.m */; };
+		97A8ECA61E47E58600A58AF5 /* SYSummaryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 97A8ECA41E47E58600A58AF5 /* SYSummaryCell.xib */; };
+		97A8ECAB1E47E98D00A58AF5 /* SYImagesVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 97A8ECAA1E47E98D00A58AF5 /* SYImagesVC.m */; };
+		97A8ECAD1E47EDA700A58AF5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 97A8ECAC1E47EDA700A58AF5 /* Assets.xcassets */; };
 		9F7C1083A70D51105DE2F778 /* libPods-SYPictureMetadataExample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F44D1CCC76BCDA6DCC62609 /* libPods-SYPictureMetadataExample.a */; };
 		F80C7264167A0AF000A9110A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F80C7263167A0AF000A9110A /* UIKit.framework */; };
 		F80C7266167A0AF000A9110A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F80C7265167A0AF000A9110A /* Foundation.framework */; };
@@ -37,10 +43,7 @@
 		F80C726E167A0AF100A9110A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F80C726C167A0AF100A9110A /* InfoPlist.strings */; };
 		F80C7270167A0AF100A9110A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F80C726F167A0AF100A9110A /* main.m */; };
 		F80C7274167A0AF100A9110A /* SYAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F80C7273167A0AF100A9110A /* SYAppDelegate.m */; };
-		F80C7276167A0AF100A9110A /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = F80C7275167A0AF100A9110A /* Default.png */; };
-		F80C7278167A0AF100A9110A /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F80C7277167A0AF100A9110A /* Default@2x.png */; };
-		F80C727A167A0AF100A9110A /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F80C7279167A0AF100A9110A /* Default-568h@2x.png */; };
-		F80C7283167A0AF100A9110A /* SYViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F80C7282167A0AF100A9110A /* SYViewController.m */; };
+		F80C7283167A0AF100A9110A /* SYImageVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F80C7282167A0AF100A9110A /* SYImageVC.m */; };
 		F80C728B167A0B6300A9110A /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F80C728A167A0B6300A9110A /* Storyboard.storyboard */; };
 		F80C7290167A0C0400A9110A /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F80C728F167A0C0400A9110A /* AssetsLibrary.framework */; };
 		F80C7295167A18FA00A9110A /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F80C7294167A18FA00A9110A /* ImageIO.framework */; };
@@ -74,8 +77,6 @@
 		9764B9321E434D4000DD31A9 /* SYMetadataJFIF.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYMetadataJFIF.m; sourceTree = "<group>"; };
 		9764B9351E434D4000DD31A9 /* SYMetadataMakerCanon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYMetadataMakerCanon.h; sourceTree = "<group>"; };
 		9764B9361E434D4000DD31A9 /* SYMetadataMakerCanon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYMetadataMakerCanon.m; sourceTree = "<group>"; };
-		9764B9371E434D4000DD31A9 /* SYMetadataMakerFuji.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYMetadataMakerFuji.h; sourceTree = "<group>"; };
-		9764B9381E434D4000DD31A9 /* SYMetadataMakerFuji.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYMetadataMakerFuji.m; sourceTree = "<group>"; };
 		9764B9391E434D4000DD31A9 /* SYMetadataMakerMinolta.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYMetadataMakerMinolta.h; sourceTree = "<group>"; };
 		9764B93A1E434D4000DD31A9 /* SYMetadataMakerMinolta.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYMetadataMakerMinolta.m; sourceTree = "<group>"; };
 		9764B93B1E434D4000DD31A9 /* SYMetadataMakerNikon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYMetadataMakerNikon.h; sourceTree = "<group>"; };
@@ -95,6 +96,17 @@
 		9764B9651E43909E00DD31A9 /* SYMetadataIPTCContactInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYMetadataIPTCContactInfo.m; sourceTree = "<group>"; };
 		9764B9671E44BB2C00DD31A9 /* NSDictionary+SY.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+SY.h"; sourceTree = "<group>"; };
 		9764B9681E44BB2C00DD31A9 /* NSDictionary+SY.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+SY.m"; sourceTree = "<group>"; };
+		977765141E47A5E1001749E0 /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		97A8EC9C1E47E2FC00A58AF5 /* SYMetadataMakerFuji.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYMetadataMakerFuji.h; sourceTree = "<group>"; };
+		97A8EC9D1E47E2FC00A58AF5 /* SYMetadataMakerFuji.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYMetadataMakerFuji.m; sourceTree = "<group>"; };
+		97A8EC9F1E47E4EB00A58AF5 /* SYSummaryVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYSummaryVC.h; sourceTree = "<group>"; };
+		97A8ECA01E47E4EB00A58AF5 /* SYSummaryVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYSummaryVC.m; sourceTree = "<group>"; };
+		97A8ECA21E47E58600A58AF5 /* SYSummaryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYSummaryCell.h; sourceTree = "<group>"; };
+		97A8ECA31E47E58600A58AF5 /* SYSummaryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYSummaryCell.m; sourceTree = "<group>"; };
+		97A8ECA41E47E58600A58AF5 /* SYSummaryCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SYSummaryCell.xib; sourceTree = "<group>"; };
+		97A8ECA91E47E98D00A58AF5 /* SYImagesVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYImagesVC.h; sourceTree = "<group>"; };
+		97A8ECAA1E47E98D00A58AF5 /* SYImagesVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYImagesVC.m; sourceTree = "<group>"; };
+		97A8ECAC1E47EDA700A58AF5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F80C725F167A0AF000A9110A /* SYPictureMetadataExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SYPictureMetadataExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F80C7263167A0AF000A9110A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		F80C7265167A0AF000A9110A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -105,11 +117,8 @@
 		F80C7271167A0AF100A9110A /* SYPictureMetadataExample-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SYPictureMetadataExample-Prefix.pch"; sourceTree = "<group>"; };
 		F80C7272167A0AF100A9110A /* SYAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SYAppDelegate.h; sourceTree = "<group>"; };
 		F80C7273167A0AF100A9110A /* SYAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SYAppDelegate.m; sourceTree = "<group>"; };
-		F80C7275167A0AF100A9110A /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
-		F80C7277167A0AF100A9110A /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
-		F80C7279167A0AF100A9110A /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		F80C7281167A0AF100A9110A /* SYViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SYViewController.h; sourceTree = "<group>"; };
-		F80C7282167A0AF100A9110A /* SYViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SYViewController.m; sourceTree = "<group>"; };
+		F80C7281167A0AF100A9110A /* SYImageVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SYImageVC.h; sourceTree = "<group>"; };
+		F80C7282167A0AF100A9110A /* SYImageVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SYImageVC.m; sourceTree = "<group>"; };
 		F80C728A167A0B6300A9110A /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
 		F80C728F167A0C0400A9110A /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 		F80C7294167A18FA00A9110A /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
@@ -161,8 +170,8 @@
 				9764B9321E434D4000DD31A9 /* SYMetadataJFIF.m */,
 				9764B9351E434D4000DD31A9 /* SYMetadataMakerCanon.h */,
 				9764B9361E434D4000DD31A9 /* SYMetadataMakerCanon.m */,
-				9764B9371E434D4000DD31A9 /* SYMetadataMakerFuji.h */,
-				9764B9381E434D4000DD31A9 /* SYMetadataMakerFuji.m */,
+				97A8EC9C1E47E2FC00A58AF5 /* SYMetadataMakerFuji.h */,
+				97A8EC9D1E47E2FC00A58AF5 /* SYMetadataMakerFuji.m */,
 				9764B9391E434D4000DD31A9 /* SYMetadataMakerMinolta.h */,
 				9764B93A1E434D4000DD31A9 /* SYMetadataMakerMinolta.m */,
 				9764B93B1E434D4000DD31A9 /* SYMetadataMakerNikon.h */,
@@ -182,6 +191,29 @@
 			);
 			name = SYPictureMetadata;
 			path = ../SYPictureMetadata;
+			sourceTree = "<group>";
+		};
+		97A8ECA71E47E58B00A58AF5 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				97A8ECA21E47E58600A58AF5 /* SYSummaryCell.h */,
+				97A8ECA31E47E58600A58AF5 /* SYSummaryCell.m */,
+				97A8ECA41E47E58600A58AF5 /* SYSummaryCell.xib */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
+		97A8ECA81E47E59000A58AF5 /* VCs */ = {
+			isa = PBXGroup;
+			children = (
+				97A8EC9F1E47E4EB00A58AF5 /* SYSummaryVC.h */,
+				97A8ECA01E47E4EB00A58AF5 /* SYSummaryVC.m */,
+				97A8ECA91E47E98D00A58AF5 /* SYImagesVC.h */,
+				97A8ECAA1E47E98D00A58AF5 /* SYImagesVC.m */,
+				F80C7281167A0AF100A9110A /* SYImageVC.h */,
+				F80C7282167A0AF100A9110A /* SYImageVC.m */,
+			);
+			name = VCs;
 			sourceTree = "<group>";
 		};
 		E97092C5FF2032C4B5013B11 /* Pods */ = {
@@ -229,12 +261,14 @@
 		F80C7269167A0AF000A9110A /* SYPictureMetadataExample */ = {
 			isa = PBXGroup;
 			children = (
+				97A8ECA81E47E59000A58AF5 /* VCs */,
+				97A8ECA71E47E58B00A58AF5 /* Cells */,
 				F80C7272167A0AF100A9110A /* SYAppDelegate.h */,
 				F80C7273167A0AF100A9110A /* SYAppDelegate.m */,
-				F80C7281167A0AF100A9110A /* SYViewController.h */,
-				F80C7282167A0AF100A9110A /* SYViewController.m */,
 				F80C726A167A0AF000A9110A /* Supporting Files */,
 				F80C728A167A0B6300A9110A /* Storyboard.storyboard */,
+				977765141E47A5E1001749E0 /* Launch Screen.storyboard */,
+				97A8ECAC1E47EDA700A58AF5 /* Assets.xcassets */,
 			);
 			path = SYPictureMetadataExample;
 			sourceTree = "<group>";
@@ -246,9 +280,6 @@
 				F80C726C167A0AF100A9110A /* InfoPlist.strings */,
 				F80C726F167A0AF100A9110A /* main.m */,
 				F80C7271167A0AF100A9110A /* SYPictureMetadataExample-Prefix.pch */,
-				F80C7275167A0AF100A9110A /* Default.png */,
-				F80C7277167A0AF100A9110A /* Default@2x.png */,
-				F80C7279167A0AF100A9110A /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -314,11 +345,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				F80C726E167A0AF100A9110A /* InfoPlist.strings in Resources */,
-				F80C7276167A0AF100A9110A /* Default.png in Resources */,
-				F80C7278167A0AF100A9110A /* Default@2x.png in Resources */,
 				9764B9631E4377F600DD31A9 /* Test images in Resources */,
-				F80C727A167A0AF100A9110A /* Default-568h@2x.png in Resources */,
+				97A8ECA61E47E58600A58AF5 /* SYSummaryCell.xib in Resources */,
 				F80C728B167A0B6300A9110A /* Storyboard.storyboard in Resources */,
+				97A8ECAD1E47EDA700A58AF5 /* Assets.xcassets in Resources */,
+				977765151E47A5E1001749E0 /* Launch Screen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -379,11 +410,14 @@
 			files = (
 				9764B9691E44BB2C00DD31A9 /* NSDictionary+SY.m in Sources */,
 				9764B95A1E434D4000DD31A9 /* SYMetadataRaw.m in Sources */,
+				97A8ECAB1E47E98D00A58AF5 /* SYImagesVC.m in Sources */,
 				9764B95B1E434D4000DD31A9 /* SYMetadataTIFF.m in Sources */,
 				9764B94B1E434D4000DD31A9 /* SYMetadataDNG.m in Sources */,
 				9764B94E1E434D4000DD31A9 /* SYMetadataGIF.m in Sources */,
 				9764B94C1E434D4000DD31A9 /* SYMetadataExif.m in Sources */,
 				9764B94A1E434D4000DD31A9 /* SYMetadataCIFF.m in Sources */,
+				97A8ECA11E47E4EB00A58AF5 /* SYSummaryVC.m in Sources */,
+				97A8ECA51E47E58600A58AF5 /* SYSummaryCell.m in Sources */,
 				9764B9501E434D4000DD31A9 /* SYMetadataIPTC.m in Sources */,
 				9764B9471E434D4000DD31A9 /* SYMetadata.m in Sources */,
 				9764B9551E434D4000DD31A9 /* SYMetadataMakerMinolta.m in Sources */,
@@ -398,9 +432,9 @@
 				9764B9571E434D4000DD31A9 /* SYMetadataMakerOlympus.m in Sources */,
 				9764B94F1E434D4000DD31A9 /* SYMetadataGPS.m in Sources */,
 				9764B9581E434D4000DD31A9 /* SYMetadataMakerPentax.m in Sources */,
-				9764B9541E434D4000DD31A9 /* SYMetadataMakerFuji.m in Sources */,
 				9764B9531E434D4000DD31A9 /* SYMetadataMakerCanon.m in Sources */,
-				F80C7283167A0AF100A9110A /* SYViewController.m in Sources */,
+				F80C7283167A0AF100A9110A /* SYImageVC.m in Sources */,
+				97A8EC9E1E47E2FC00A58AF5 /* SYMetadataMakerFuji.m in Sources */,
 				9764B94D1E434D4000DD31A9 /* SYMetadataExifAux.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -431,7 +465,6 @@
 				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_IMPLICIT_SIGN_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
@@ -486,7 +519,6 @@
 				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_IMPLICIT_SIGN_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;

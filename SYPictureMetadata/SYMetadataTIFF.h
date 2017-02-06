@@ -41,26 +41,26 @@ typedef enum {
 
 @interface SYMetadataTIFF : SYMetadataBase
 
-@property (nonatomic, copy,   readonly) NSNumber    *compression;
-@property (nonatomic, assign, readonly) SYPictureTiffPhotometricInterpretation  photometricInterpretation;
-@property (nonatomic, copy,   readonly) NSString    *documentName;
-@property (nonatomic, copy,   readonly) NSString    *imageDescription;
-@property (nonatomic, copy,   readonly) NSString    *make;
-@property (nonatomic, copy,   readonly) NSString    *model;
-@property (nonatomic, assign, readonly) NSNumber    *orientation;
-@property (nonatomic, copy,   readonly) NSNumber    *xResolution;
-@property (nonatomic, copy,   readonly) NSNumber    *yResolution;
-@property (nonatomic, copy,   readonly) NSNumber    *resolutionUnit;
-@property (nonatomic, copy,   readonly) NSString    *software;
-@property (nonatomic, copy,   readonly) NSArray     *transferFunction;
-@property (nonatomic, copy,   readonly) NSString    *dateTime;
-@property (nonatomic, copy,   readonly) NSString    *artist;
-@property (nonatomic, copy,   readonly) NSString    *hostComputer;
-@property (nonatomic, copy,   readonly) NSString    *copyright;
-@property (nonatomic, copy,   readonly) NSArray     *whitePoint;
-@property (nonatomic, copy,   readonly) NSArray     *primaryChromaticities;
-@property (nonatomic, copy,   readonly) NSNumber    *tileWidth;
-@property (nonatomic, copy,   readonly) NSNumber    *tileLength;
+@property SYMETADATA_PROPERTY_COPY NSNumber    *compression;
+@property SYMETADATA_PROPERTY_COPY NSNumber    *photometricInterpretation;
+@property SYMETADATA_PROPERTY_COPY NSString    *documentName;
+@property SYMETADATA_PROPERTY_COPY NSString    *imageDescription;
+@property SYMETADATA_PROPERTY_COPY NSString    *make;
+@property SYMETADATA_PROPERTY_COPY NSString    *model;
+@property SYMETADATA_PROPERTY_COPY NSNumber    *orientation;
+@property SYMETADATA_PROPERTY_COPY NSNumber    *xResolution;
+@property SYMETADATA_PROPERTY_COPY NSNumber    *yResolution;
+@property SYMETADATA_PROPERTY_COPY NSNumber    *resolutionUnit;
+@property SYMETADATA_PROPERTY_COPY NSString    *software;
+@property SYMETADATA_PROPERTY_COPY NSArray     *transferFunction;
+@property SYMETADATA_PROPERTY_COPY NSString    *dateTime;
+@property SYMETADATA_PROPERTY_COPY NSString    *artist;
+@property SYMETADATA_PROPERTY_COPY NSString    *hostComputer;
+@property SYMETADATA_PROPERTY_COPY NSString    *copyright;
+@property SYMETADATA_PROPERTY_COPY NSArray     *whitePoint;
+@property SYMETADATA_PROPERTY_COPY NSArray     *primaryChromaticities;
+@property SYMETADATA_PROPERTY_COPY NSNumber    *tileWidth;
+@property SYMETADATA_PROPERTY_COPY NSNumber    *tileLength;
 
 @end
 

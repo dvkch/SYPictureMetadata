@@ -21,12 +21,22 @@ extern CFStringRef const kSYImagePropertyCIFFMinAperture;
 extern CFStringRef const kSYImagePropertyCIFFUniqueModelID;
 extern CFStringRef const kSYImagePropertyPictureStyle;
 
+// allows to easily switch between read-only and R/W properties
+#define SYMETADATA_PROPERTY_COPY    (nonatomic, copy)
+#define SYMETADATA_PROPERTY_STRONG  (nonatomic, strong)
+
 @interface MTLValueTransformer (SY)
 + (instancetype)sy_nonZeroIntegerValueTransformer;
+@end
+
+@interface NSValueTransformer (SY)
++ (instancetype)sy_dictionaryTransformerForModelOfClass:(Class)modelClass;
+- (Class)sy_dictionaryTransformerModelClass;
 @end
 
 @interface SYMetadataBase : MTLModel <MTLJSONSerializing>
 
 - (NSDictionary *)generatedDictionary;
++ (NSArray <NSString *> *)supportedKeys;
 
 @end

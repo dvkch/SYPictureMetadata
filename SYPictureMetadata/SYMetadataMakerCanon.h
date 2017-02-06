@@ -22,17 +22,17 @@ typedef enum : NSUInteger {
 
 @interface SYMetadataMakerCanon : SYMetadataBase
 
-@property (nonatomic, copy, readonly) NSString  *ownerName;
-@property (nonatomic, copy, readonly) NSNumber  *cameraSerialNumber;
-@property (nonatomic, copy, readonly) NSNumber  *imageSerialNumber;
-@property (nonatomic, copy, readonly) NSNumber  *flashExposureComp;
-@property (nonatomic, copy, readonly) NSNumber  *continuousDrive;
-@property (nonatomic, copy, readonly) NSString  *lensModel;
-@property (nonatomic, copy, readonly) NSString  *firmware;
-@property (nonatomic, copy, readonly) NSNumber  *aspectRatioInfo;
-@property (nonatomic, copy, readonly) NSNumber  *whiteBalanceIndex;
-@property (nonatomic, copy, readonly) NSNumber  *uniqueModelID;
-@property (nonatomic, copy, readonly) NSNumber  *maxAperture;
-@property (nonatomic, copy, readonly) NSNumber  *minAperture;
+@property SYMETADATA_PROPERTY_COPY NSString  *ownerName;
+@property SYMETADATA_PROPERTY_COPY NSNumber  *cameraSerialNumber;
+@property SYMETADATA_PROPERTY_COPY NSNumber  *imageSerialNumber;
+@property SYMETADATA_PROPERTY_COPY NSNumber  *flashExposureComp;
+@property SYMETADATA_PROPERTY_COPY NSNumber  *continuousDrive;
+@property SYMETADATA_PROPERTY_COPY NSString  *lensModel;
+@property SYMETADATA_PROPERTY_COPY NSString  *firmware;
+@property SYMETADATA_PROPERTY_COPY NSNumber  *aspectRatioInfo;
+@property SYMETADATA_PROPERTY_COPY NSNumber  *whiteBalanceIndex;
+@property SYMETADATA_PROPERTY_COPY NSNumber  *uniqueModelID;
+@property SYMETADATA_PROPERTY_COPY NSNumber  *maxAperture;
+@property SYMETADATA_PROPERTY_COPY NSNumber  *minAperture;
 
 @end

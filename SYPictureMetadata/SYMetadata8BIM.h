@@ -10,7 +10,7 @@
 
 @interface SYMetadata8BIM : SYMetadataBase
 
-@property (nonatomic, copy, readonly) NSArray <NSString *>  *layerNames;
-@property (nonatomic, copy, readonly) NSNumber              *version;
+@property SYMETADATA_PROPERTY_COPY NSArray <NSString *>  *layerNames;
+@property SYMETADATA_PROPERTY_COPY NSNumber              *version;
 
 @end

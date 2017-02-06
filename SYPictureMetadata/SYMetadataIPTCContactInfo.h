@@ -10,13 +10,13 @@
 
 @interface SYMetadataIPTCContactInfo : SYMetadataBase
 
-@property (nonatomic, copy, readonly) NSString  *city;
-@property (nonatomic, copy, readonly) NSString  *country;
-@property (nonatomic, copy, readonly) NSString  *address;
-@property (nonatomic, copy, readonly) NSString  *postalCode;
-@property (nonatomic, copy, readonly) NSString  *stateProvince;
-@property (nonatomic, copy, readonly) NSString  *emails;
-@property (nonatomic, copy, readonly) NSString  *phones;
-@property (nonatomic, copy, readonly) NSString  *webURLs;
+@property SYMETADATA_PROPERTY_COPY NSString  *city;
+@property SYMETADATA_PROPERTY_COPY NSString  *country;
+@property SYMETADATA_PROPERTY_COPY NSString  *address;
+@property SYMETADATA_PROPERTY_COPY NSString  *postalCode;
+@property SYMETADATA_PROPERTY_COPY NSString  *stateProvince;
+@property SYMETADATA_PROPERTY_COPY NSString  *emails;
+@property SYMETADATA_PROPERTY_COPY NSString  *phones;
+@property SYMETADATA_PROPERTY_COPY NSString  *webURLs;
 
 @end

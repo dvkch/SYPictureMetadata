@@ -46,25 +46,13 @@
 + (instancetype)metadataWithAsset:(ALAsset *)asset
 {
     ALAssetRepresentation *representation = [asset defaultRepresentation];
-
-    SYMetadata *instance = [self metadataWithDictionary:[representation metadata]];
-    if (instance)
-        instance->_asset = asset;
-    
-    return instance;
+    return [self metadataWithDictionary:[representation metadata]];
 }
 
 + (instancetype)metadataWithAssetURL:(NSURL *)assetURL
 {
     NSDictionary *dictionary = [self dictionaryWithAssetURL:assetURL];
-    if (!dictionary)
-        return nil;
-    
-    SYMetadata *instance = [self metadataWithDictionary:dictionary];
-    if (instance)
-        instance->_assetURL = assetURL;
-    
-    return instance;
+    return [self metadataWithDictionary:dictionary];
 }
 
 + (instancetype)metadataWithFileURL:(NSURL *)fileURL
@@ -86,11 +74,65 @@
     
     CFRelease(source);
     
-    SYMetadata *instance = [self metadataWithDictionary:dictionary];
-    if (instance)
-        instance->_fileURL = fileURL;
+    return [self metadataWithDictionary:dictionary];
+}
+
++ (instancetype)metadataWithImageData:(NSData *)imageData
+{
+    if (!imageData.length)
+        return nil;
     
-    return instance;
+    CGImageSourceRef source = CGImageSourceCreateWithData((__bridge CFDataRef) imageData, NULL);
+    if (source == NULL)
+        return nil;
+    
+    NSDictionary *dictionary;
+    
+    NSDictionary *options = @{(NSString *)kCGImageSourceShouldCache:@(NO)};
+    CFDictionaryRef properties = CGImageSourceCopyPropertiesAtIndex(source, 0, (__bridge CFDictionaryRef)options);
+    if (properties) {
+        dictionary = (__bridge NSDictionary*)properties;
+    }
+    
+    CFRelease(source);
+    
+    return [self metadataWithDictionary:dictionary];
+}
+
+#pragma mark - Writing
+
+// https://github.com/Nikita2k/SimpleExif/blob/master/Classes/ios/UIImage%2BExif.m
++ (NSData *)dataWithImageData:(NSData *)imageData andMetadata:(SYMetadata *)metadata
+{
+    CGImageSourceRef source = CGImageSourceCreateWithData((__bridge CFDataRef) imageData, NULL);
+    if (!source) {
+        NSLog(@"Error: Could not create image source");
+        return nil;
+    }
+    
+    CFStringRef sourceImageType = CGImageSourceGetType(source);
+    
+    // create a new data object and write the new image into it
+    NSMutableData *data = [NSMutableData data];
+    CGImageDestinationRef destination = CGImageDestinationCreateWithData((__bridge CFMutableDataRef)data, sourceImageType, 1, NULL);
+    
+    if (!destination) {
+        NSLog(@"Error: Could not create image destination");
+        CFRelease(source);
+        return nil;
+    }
+    
+    // add the image contained in the image source to the destination, overidding the old metadata with our modified metadata
+    CGImageDestinationAddImageFromSource(destination, source, 0, (__bridge CFDictionaryRef)metadata.generatedDictionary);
+    BOOL success = CGImageDestinationFinalize(destination);
+    
+    if (!success)
+        NSLog(@"Error: Could not create data from image destination");
+    
+    CFRelease(destination);
+    CFRelease(source);
+    
+    return (success ? data : nil);
 }
 
 #pragma mark - Getting metadata
@@ -193,32 +235,18 @@
     Class objectClass = classMappings[key];
     
     if (objectClass)
-        return [MTLJSONAdapter dictionaryTransformerWithModelClass:objectClass];
+        return [NSValueTransformer sy_dictionaryTransformerForModelOfClass:objectClass];
     
     return [super JSONTransformerForKey:key];
 }
 
 #pragma mark - Tests
 
-+ (BOOL)testWithFileURL:(NSURL *)fileURL
-{
-    NSLog(@"---------------------------------");
-    NSLog(@"Loading %@", fileURL.lastPathComponent);
-    
-    SYMetadata *metadata = [SYMetadata metadataWithFileURL:fileURL];
-    NSDictionary *diffs = [metadata differencesFromOriginalMetadataToModel];
-    
-    if (diffs.count)
-        NSLog(@"Differences:\n%@", diffs);
-    else
-        NSLog(@"No differences");
-    
-    return (diffs.count == 0);
-}
-
 - (NSDictionary *)differencesFromOriginalMetadataToModel
 {
-    return [NSDictionary sy_differencesFrom:self.originalDictionary to:[self generatedDictionary]];
+    return [NSDictionary sy_differencesFrom:self.originalDictionary
+                                         to:[self generatedDictionary]
+                        includeValuesInDiff:YES];
 }
 
 @end

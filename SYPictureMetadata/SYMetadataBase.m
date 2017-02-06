@@ -8,25 +8,43 @@
 
 #import "SYMetadataBase.h"
 #import <ImageIO/ImageIO.h>
+#import <objc/runtime.h>
 
-#if __IPHONE_OS_VERSION_MIN_REQUIRED < 80000
-// keys available on iOS 8+
-CFStringRef const kCGImagePropertyAPNGLoopCount                 = CFSTR("LoopCount");
+#if TARGET_IPHONE_SIMULATOR && __IPHONE_OS_VERSION_MIN_REQUIRED < 90000
+// keys needed for simulator < 9.0
 CFStringRef const kCGImagePropertyAPNGDelayTime                 = CFSTR("DelayTime");
+CFStringRef const kCGImagePropertyAPNGLoopCount                 = CFSTR("LoopCount");
 CFStringRef const kCGImagePropertyAPNGUnclampedDelayTime        = CFSTR("UnclampedDelayTime");
-CFStringRef const kCGImagePropertyGPSHPositioningError          = CFSTR("HPositioningError");
+CFStringRef const kCGImagePropertyMakerFujiDictionary           = CFSTR("{MakerFuji}");
+CFStringRef const kCGImagePropertyMakerMinoltaDictionary        = CFSTR("{MakerMinolta}");
+CFStringRef const kCGImagePropertyMakerOlympusDictionary        = CFSTR("{MakerOlympus}");
+CFStringRef const kCGImagePropertyMakerPentaxDictionary         = CFSTR("{MakerPentax}");
+#endif
+
+#if TARGET_IPHONE_SIMULATOR && __IPHONE_OS_VERSION_MIN_REQUIRED < 100000
+// keys needed for simulator < 10.0
 CFStringRef const kCGImageProperty8BIMVersion                   = CFSTR("Version");
 #endif
 
-#if __IPHONE_OS_VERSION_MIN_REQUIRED < 90000
-// keys available on iOS 9+
+#if TARGET_OS_IPHONE && __IPHONE_OS_VERSION_MIN_REQUIRED < 80000
+// keys available since iOS 8+, exported here for < 8.0
+CFStringRef const kCGImagePropertyGPSHPositioningError          = CFSTR("HPositioningError");
+#endif
+
+#if TARGET_OS_IPHONE && __IPHONE_OS_VERSION_MIN_REQUIRED < 90000
+// keys available since iOS 9+, exported here for < 9.0
 CFStringRef const kCGImagePropertyTIFFTileWidth                 = CFSTR("TileWidth");
 CFStringRef const kCGImagePropertyTIFFTileLength                = CFSTR("TileLength");
 CFStringRef const kCGImagePropertyPNGCompressionFilter          = CFSTR("kCGImagePropertyPNGCompressionFilter");
+// keys available since iOS 8+ according to header, but not actually available...
+CFStringRef const kCGImageProperty8BIMVersion                   = CFSTR("Version");
+CFStringRef const kCGImagePropertyAPNGDelayTime                 = CFSTR("DelayTime");
+CFStringRef const kCGImagePropertyAPNGLoopCount                 = CFSTR("LoopCount");
+CFStringRef const kCGImagePropertyAPNGUnclampedDelayTime        = CFSTR("UnclampedDelayTime");
 #endif
 
-#if __IPHONE_OS_VERSION_MIN_REQUIRED < 100000
-// keys available on iOS 10+
+#if TARGET_OS_IPHONE && __IPHONE_OS_VERSION_MIN_REQUIRED < 100000
+// keys available since iOS 10+, exported here for < 10.0
 CFStringRef const kCGImagePropertyDNGBlackLevel                 = CFSTR("BlackLevel");
 CFStringRef const kCGImagePropertyDNGWhiteLevel                 = CFSTR("WhiteLevel");
 CFStringRef const kCGImagePropertyDNGCalibrationIlluminant1     = CFSTR("CalibrationIlluminant1");
@@ -49,7 +67,7 @@ CFStringRef const kCGImagePropertyDNGWarpFisheye                = CFSTR("WarpFis
 CFStringRef const kCGImagePropertyDNGFixVignetteRadial          = CFSTR("FixVignetteRadial");
 #endif
 
-// not defined in ImageIO
+// not defined in ImageIO but still read by iOS
 CFStringRef const kSYImagePropertyPictureStyle                  = CFSTR("{PictureStyle}");
 CFStringRef const kSYImagePropertyExifAuxAutoFocusInfo          = CFSTR("AFInfo");
 CFStringRef const kSYImagePropertyExifAuxImageStabilization     = CFSTR("ImageStabilization");
@@ -72,6 +90,29 @@ CFStringRef const kSYImagePropertyCIFFUniqueModelID             = CFSTR("UniqueM
     } reverseBlock:^id(id value, BOOL *success, NSError *__autoreleasing *error) {
         return value;
     }];
+}
+
++ (NSArray <NSString *> *)supportedKeys
+{
+    NSMutableArray <NSString *> *keys = [NSMutableArray array];
+    
+    NSDictionary *mappings = [self JSONKeyPathsByPropertyKey];
+    for (NSString *key in mappings)
+    {
+        [keys addObject:mappings[key]];
+        
+        NSValueTransformer *transformer = [self JSONTransformerForKey:key];
+        Class modelClass = [transformer sy_dictionaryTransformerModelClass];
+        
+        if ([(NSObject *)modelClass respondsToSelector:@selector(supportedKeys)])
+        {
+            NSArray <NSString *> *subkeys = [modelClass supportedKeys];
+            for (NSString *subkey in subkeys)
+                [keys addObject:[@[mappings[key], subkey] componentsJoinedByString:@"."]];
+        }
+    }
+    
+    return [keys copy];
 }
 
 - (NSDictionary *)generatedDictionary
@@ -99,6 +140,26 @@ CFStringRef const kSYImagePropertyCIFFUniqueModelID             = CFSTR("UniqueM
             return nil;
         return value;
     }];
+}
+
+@end
+
+@implementation NSValueTransformer (SY)
+
++ (instancetype)sy_dictionaryTransformerForModelOfClass:(Class)modelClass
+{
+    NSValueTransformer <MTLTransformerErrorHandling> *instance = [MTLJSONAdapter dictionaryTransformerWithModelClass:modelClass];
+    
+    if (instance)
+        objc_setAssociatedObject(instance, @selector(sy_dictionaryTransformerModelClass), NSStringFromClass(modelClass), OBJC_ASSOCIATION_COPY);
+    
+    return instance;
+}
+
+- (Class)sy_dictionaryTransformerModelClass
+{
+    NSString *classString = objc_getAssociatedObject(self, @selector(sy_dictionaryTransformerModelClass));
+    return (classString ? NSClassFromString(classString) : nil);
 }
 
 @end

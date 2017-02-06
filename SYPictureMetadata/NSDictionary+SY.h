@@ -11,7 +11,8 @@
 @interface NSDictionary (SY)
 
 + (NSDictionary *)sy_differencesFrom:(NSDictionary *)dictionaryOld
-                                  to:(NSDictionary *)dictionaryNew;
+                                  to:(NSDictionary *)dictionaryNew
+                 includeValuesInDiff:(BOOL)includeValuesInDiff;
 
 - (NSArray <NSString *> *)sy_allKeypaths;
 
