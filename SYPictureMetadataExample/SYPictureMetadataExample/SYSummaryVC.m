@@ -261,7 +261,6 @@ typedef enum : NSUInteger {
     return [details componentsJoinedByString:@"\n"];
 }
 
-
 #pragma mark - TableView
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
