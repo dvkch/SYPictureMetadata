@@ -26,12 +26,12 @@ CFStringRef const kCGImagePropertyMakerPentaxDictionary         = CFSTR("{MakerP
 CFStringRef const kCGImageProperty8BIMVersion                   = CFSTR("Version");
 #endif
 
-#if TARGET_OS_IPHONE && __IPHONE_OS_VERSION_MIN_REQUIRED < 80000
+#if !TARGET_IPHONE_SIMULATOR && __IPHONE_OS_VERSION_MIN_REQUIRED < 80000
 // keys available since iOS 8+, exported here for < 8.0
 CFStringRef const kCGImagePropertyGPSHPositioningError          = CFSTR("HPositioningError");
 #endif
 
-#if TARGET_OS_IPHONE && __IPHONE_OS_VERSION_MIN_REQUIRED < 90000
+#if !TARGET_IPHONE_SIMULATOR && __IPHONE_OS_VERSION_MIN_REQUIRED < 90000
 // keys available since iOS 9+, exported here for < 9.0
 CFStringRef const kCGImagePropertyTIFFTileWidth                 = CFSTR("TileWidth");
 CFStringRef const kCGImagePropertyTIFFTileLength                = CFSTR("TileLength");
@@ -43,7 +43,7 @@ CFStringRef const kCGImagePropertyAPNGLoopCount                 = CFSTR("LoopCou
 CFStringRef const kCGImagePropertyAPNGUnclampedDelayTime        = CFSTR("UnclampedDelayTime");
 #endif
 
-#if TARGET_OS_IPHONE && __IPHONE_OS_VERSION_MIN_REQUIRED < 100000
+#if !TARGET_IPHONE_SIMULATOR && __IPHONE_OS_VERSION_MIN_REQUIRED < 100000
 // keys available since iOS 10+, exported here for < 10.0
 CFStringRef const kCGImagePropertyDNGBlackLevel                 = CFSTR("BlackLevel");
 CFStringRef const kCGImagePropertyDNGWhiteLevel                 = CFSTR("WhiteLevel");

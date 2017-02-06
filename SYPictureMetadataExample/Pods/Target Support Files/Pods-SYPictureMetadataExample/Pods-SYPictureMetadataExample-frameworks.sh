@@ -87,6 +87,17 @@ strip_invalid_archs() {
   fi
 }
 
+
+if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_framework "$BUILT_PRODUCTS_DIR/JGMethodSwizzler/JGMethodSwizzler.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/Mantle-iOS/Mantle.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/SYKit-iOS/SYKit.framework"
+fi
+if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_framework "$BUILT_PRODUCTS_DIR/JGMethodSwizzler/JGMethodSwizzler.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/Mantle-iOS/Mantle.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/SYKit-iOS/SYKit.framework"
+fi
 if [ "${COCOAPODS_PARALLEL_CODE_SIGN}" == "true" ]; then
   wait
 fi

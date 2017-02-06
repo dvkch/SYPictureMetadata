@@ -14,8 +14,8 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "7C214356709EB3EA286F3E87E9ABE638"
-               BuildableName = "libJGMethodSwizzler.a"
+               BlueprintIdentifier = "7FA89B7C2CAB154348DD5C669E1B1FBA"
+               BuildableName = "JGMethodSwizzler.framework"
                BlueprintName = "JGMethodSwizzler"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
@@ -45,8 +45,8 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "7C214356709EB3EA286F3E87E9ABE638"
-            BuildableName = "libJGMethodSwizzler.a"
+            BlueprintIdentifier = "7FA89B7C2CAB154348DD5C669E1B1FBA"
+            BuildableName = "JGMethodSwizzler.framework"
             BlueprintName = "JGMethodSwizzler"
             ReferencedContainer = "container:Pods.xcodeproj">
          </BuildableReference>

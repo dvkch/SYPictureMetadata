@@ -72,10 +72,12 @@
 @property (nonatomic, copy, readonly)   NSString  *profileName;
 
 + (instancetype)metadataWithDictionary:(NSDictionary *)dictionary;
-+ (instancetype)metadataWithAsset:(ALAsset *)asset;
-+ (instancetype)metadataWithAssetURL:(NSURL *)assetURL;
++ (instancetype)metadataWithAsset:(ALAsset *)asset __TVOS_PROHIBITED;
++ (instancetype)metadataWithAssetURL:(NSURL *)assetURL __TVOS_PROHIBITED;
 + (instancetype)metadataWithFileURL:(NSURL *)fileURL;
 + (instancetype)metadataWithImageData:(NSData *)imageData;
+
++ (NSDictionary *)dictionaryWithAssetURL:(NSURL *)assetURL __TVOS_PROHIBITED;
 
 + (NSData *)dataWithImageData:(NSData *)imageData andMetadata:(SYMetadata *)metadata;
 

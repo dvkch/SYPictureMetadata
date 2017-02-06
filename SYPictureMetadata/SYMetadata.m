@@ -6,10 +6,13 @@
 //  Copyright (c) 2012 Syan. All rights reserved.
 //
 
-#import <AssetsLibrary/AssetsLibrary.h>
 #import <ImageIO/ImageIO.h>
 #import "SYMetadata.h"
 #import "NSDictionary+SY.h"
+
+#if !TARGET_OS_TV
+#import <AssetsLibrary/AssetsLibrary.h>
+#endif
 
 #define SYKeyForMetadata(name)          NSStringFromSelector(@selector(metadata##name))
 #define SYDictionaryForMetadata(name)   SYPaste(SYPaste(kCGImageProperty,name),Dictionary)
@@ -45,8 +48,12 @@
 
 + (instancetype)metadataWithAsset:(ALAsset *)asset
 {
+#if !TARGET_OS_TV
     ALAssetRepresentation *representation = [asset defaultRepresentation];
     return [self metadataWithDictionary:[representation metadata]];
+#else
+    return nil;
+#endif
 }
 
 + (instancetype)metadataWithAssetURL:(NSURL *)assetURL
@@ -139,6 +146,7 @@
 
 + (NSDictionary *)dictionaryWithAssetURL:(NSURL *)assetURL
 {
+#if !TARGET_OS_TV
     __block ALAsset *assetAtUrl = nil;
     ALAssetsLibrary* library = [[ALAssetsLibrary alloc] init];
     
@@ -156,6 +164,9 @@
     
     ALAssetRepresentation *representation = [assetAtUrl defaultRepresentation];
     return [representation metadata];
+#else
+    return nil;
+#endif
 }
 
 #pragma mark - Mapping

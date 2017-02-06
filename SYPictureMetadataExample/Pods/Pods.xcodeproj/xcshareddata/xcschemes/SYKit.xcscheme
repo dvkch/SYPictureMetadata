@@ -14,8 +14,8 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "CFDFA2639A663B6445253E9AF8DC4DDA"
-               BuildableName = "libSYKit.a"
+               BlueprintIdentifier = "762C2E0BFE6D0F9515D5CF85D54F9CC9"
+               BuildableName = "SYKit.framework"
                BlueprintName = "SYKit"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
@@ -45,8 +45,8 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "CFDFA2639A663B6445253E9AF8DC4DDA"
-            BuildableName = "libSYKit.a"
+            BlueprintIdentifier = "762C2E0BFE6D0F9515D5CF85D54F9CC9"
+            BuildableName = "SYKit.framework"
             BlueprintName = "SYKit"
             ReferencedContainer = "container:Pods.xcodeproj">
          </BuildableReference>

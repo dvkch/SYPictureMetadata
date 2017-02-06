@@ -14,8 +14,8 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "0B8BEAE98AA1B08E073B0548BB3E602B"
-               BuildableName = "libPods-SYPictureMetadataExample.a"
+               BlueprintIdentifier = "14E1EDD4D3FE365F9130E5C2A052D4B4"
+               BuildableName = "Pods_SYPictureMetadataExample.framework"
                BlueprintName = "Pods-SYPictureMetadataExample"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
@@ -45,8 +45,8 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "0B8BEAE98AA1B08E073B0548BB3E602B"
-            BuildableName = "libPods-SYPictureMetadataExample.a"
+            BlueprintIdentifier = "14E1EDD4D3FE365F9130E5C2A052D4B4"
+            BuildableName = "Pods_SYPictureMetadataExample.framework"
             BlueprintName = "Pods-SYPictureMetadataExample"
             ReferencedContainer = "container:Pods.xcodeproj">
          </BuildableReference>

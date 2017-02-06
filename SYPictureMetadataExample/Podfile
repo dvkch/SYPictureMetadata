@@ -1,9 +1,16 @@
 source 'https://github.com/CocoaPods/Specs.git'
 
 inhibit_all_warnings!
+use_frameworks!
 
 target :'SYPictureMetadataExample' do
 	platform :ios, '8.0'
+	pod 'Mantle'
+	pod 'SYKit'
+end
+
+target :'SYPictureMetadataExample-tvOS' do
+	platform :tvos, '9.0'
 	pod 'Mantle'
 	pod 'SYKit'
 end

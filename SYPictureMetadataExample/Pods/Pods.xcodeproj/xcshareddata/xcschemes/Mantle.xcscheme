@@ -14,8 +14,8 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "8E2F85A9EA167EFA71B3DCB5DF170059"
-               BuildableName = "libMantle.a"
+               BlueprintIdentifier = "B0D2BC4789FBEF0D9C6C1391CEEFF838"
+               BuildableName = "Mantle.framework"
                BlueprintName = "Mantle"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
@@ -45,8 +45,8 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "8E2F85A9EA167EFA71B3DCB5DF170059"
-            BuildableName = "libMantle.a"
+            BlueprintIdentifier = "B0D2BC4789FBEF0D9C6C1391CEEFF838"
+            BuildableName = "Mantle.framework"
             BlueprintName = "Mantle"
             ReferencedContainer = "container:Pods.xcodeproj">
          </BuildableReference>

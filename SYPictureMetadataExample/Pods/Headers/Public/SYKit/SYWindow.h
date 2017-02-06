@@ -1,1 +1,0 @@
-../../../SYKit/Common/SYWindow.h

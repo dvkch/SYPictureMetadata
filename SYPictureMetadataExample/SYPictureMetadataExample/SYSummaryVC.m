@@ -9,7 +9,7 @@
 #import "SYSummaryVC.h"
 #import "SYSummaryCell.h"
 #import "SYMetadata.h"
-#import <UIImage+SYKit.h>
+#import "UIImage+SYKit.h"
 #import "NSDictionary+SY.h"
 #import <AssetsLibrary/AssetsLibrary.h>
 

@@ -1,0 +1,6 @@
+framework module SYKit {
+  umbrella header "SYKit-tvOS-umbrella.h"
+
+  export *
+  module * { export * }
+}

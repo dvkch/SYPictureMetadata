@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0206EE87E2DB68B4B7C43495 /* Pods_SYPictureMetadataExample_tvOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8FF8EC932A3F5EAB2410E44 /* Pods_SYPictureMetadataExample_tvOS.framework */; };
+		8257D8B2EADD589BA28757CC /* Pods_SYPictureMetadataExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B3D8F4DFEB881EFAF2EBB5C /* Pods_SYPictureMetadataExample.framework */; };
 		9764B9471E434D4000DD31A9 /* SYMetadata.m in Sources */ = {isa = PBXBuildFile; fileRef = 9764B91E1E434D4000DD31A9 /* SYMetadata.m */; };
 		9764B9481E434D4000DD31A9 /* SYMetadata8BIM.m in Sources */ = {isa = PBXBuildFile; fileRef = 9764B9201E434D4000DD31A9 /* SYMetadata8BIM.m */; };
 		9764B9491E434D4000DD31A9 /* SYMetadataBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 9764B9221E434D4000DD31A9 /* SYMetadataBase.m */; };
@@ -36,7 +38,33 @@
 		97A8ECA61E47E58600A58AF5 /* SYSummaryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 97A8ECA41E47E58600A58AF5 /* SYSummaryCell.xib */; };
 		97A8ECAB1E47E98D00A58AF5 /* SYImagesVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 97A8ECAA1E47E98D00A58AF5 /* SYImagesVC.m */; };
 		97A8ECAD1E47EDA700A58AF5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 97A8ECAC1E47EDA700A58AF5 /* Assets.xcassets */; };
-		9F7C1083A70D51105DE2F778 /* libPods-SYPictureMetadataExample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F44D1CCC76BCDA6DCC62609 /* libPods-SYPictureMetadataExample.a */; };
+		97AF03FA1E489FBF00AACB7F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 97AF03F91E489FBF00AACB7F /* main.m */; };
+		97AF03FD1E489FBF00AACB7F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 97AF03FC1E489FBF00AACB7F /* AppDelegate.m */; };
+		97AF04001E489FBF00AACB7F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 97AF03FF1E489FBF00AACB7F /* ViewController.m */; };
+		97AF04031E489FBF00AACB7F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97AF04011E489FBF00AACB7F /* Main.storyboard */; };
+		97AF04051E489FBF00AACB7F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 97AF04041E489FBF00AACB7F /* Assets.xcassets */; };
+		97AF040A1E489FE800AACB7F /* SYMetadata.m in Sources */ = {isa = PBXBuildFile; fileRef = 9764B91E1E434D4000DD31A9 /* SYMetadata.m */; };
+		97AF040B1E489FE800AACB7F /* SYMetadata8BIM.m in Sources */ = {isa = PBXBuildFile; fileRef = 9764B9201E434D4000DD31A9 /* SYMetadata8BIM.m */; };
+		97AF040C1E489FE800AACB7F /* SYMetadataBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 9764B9221E434D4000DD31A9 /* SYMetadataBase.m */; };
+		97AF040D1E489FE800AACB7F /* SYMetadataCIFF.m in Sources */ = {isa = PBXBuildFile; fileRef = 9764B9241E434D4000DD31A9 /* SYMetadataCIFF.m */; };
+		97AF040E1E489FE800AACB7F /* SYMetadataDNG.m in Sources */ = {isa = PBXBuildFile; fileRef = 9764B9261E434D4000DD31A9 /* SYMetadataDNG.m */; };
+		97AF040F1E489FE800AACB7F /* SYMetadataExif.m in Sources */ = {isa = PBXBuildFile; fileRef = 9764B9281E434D4000DD31A9 /* SYMetadataExif.m */; };
+		97AF04101E489FE800AACB7F /* SYMetadataExifAux.m in Sources */ = {isa = PBXBuildFile; fileRef = 9764B92A1E434D4000DD31A9 /* SYMetadataExifAux.m */; };
+		97AF04111E489FE800AACB7F /* SYMetadataGIF.m in Sources */ = {isa = PBXBuildFile; fileRef = 9764B92C1E434D4000DD31A9 /* SYMetadataGIF.m */; };
+		97AF04121E489FE800AACB7F /* SYMetadataGPS.m in Sources */ = {isa = PBXBuildFile; fileRef = 9764B92E1E434D4000DD31A9 /* SYMetadataGPS.m */; };
+		97AF04131E489FE800AACB7F /* SYMetadataIPTC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9764B9301E434D4000DD31A9 /* SYMetadataIPTC.m */; };
+		97AF04141E489FE800AACB7F /* SYMetadataIPTCContactInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 9764B9651E43909E00DD31A9 /* SYMetadataIPTCContactInfo.m */; };
+		97AF04151E489FE800AACB7F /* SYMetadataJFIF.m in Sources */ = {isa = PBXBuildFile; fileRef = 9764B9321E434D4000DD31A9 /* SYMetadataJFIF.m */; };
+		97AF04161E489FE800AACB7F /* SYMetadataMakerCanon.m in Sources */ = {isa = PBXBuildFile; fileRef = 9764B9361E434D4000DD31A9 /* SYMetadataMakerCanon.m */; };
+		97AF04171E489FE800AACB7F /* SYMetadataMakerFuji.m in Sources */ = {isa = PBXBuildFile; fileRef = 97A8EC9D1E47E2FC00A58AF5 /* SYMetadataMakerFuji.m */; };
+		97AF04181E489FE800AACB7F /* SYMetadataMakerMinolta.m in Sources */ = {isa = PBXBuildFile; fileRef = 9764B93A1E434D4000DD31A9 /* SYMetadataMakerMinolta.m */; };
+		97AF04191E489FE800AACB7F /* SYMetadataMakerNikon.m in Sources */ = {isa = PBXBuildFile; fileRef = 9764B93C1E434D4000DD31A9 /* SYMetadataMakerNikon.m */; };
+		97AF041A1E489FE800AACB7F /* SYMetadataMakerOlympus.m in Sources */ = {isa = PBXBuildFile; fileRef = 9764B93E1E434D4000DD31A9 /* SYMetadataMakerOlympus.m */; };
+		97AF041B1E489FE800AACB7F /* SYMetadataMakerPentax.m in Sources */ = {isa = PBXBuildFile; fileRef = 9764B9401E434D4000DD31A9 /* SYMetadataMakerPentax.m */; };
+		97AF041C1E489FE800AACB7F /* SYMetadataPNG.m in Sources */ = {isa = PBXBuildFile; fileRef = 9764B9421E434D4000DD31A9 /* SYMetadataPNG.m */; };
+		97AF041D1E489FE800AACB7F /* SYMetadataRaw.m in Sources */ = {isa = PBXBuildFile; fileRef = 9764B9441E434D4000DD31A9 /* SYMetadataRaw.m */; };
+		97AF041E1E489FE800AACB7F /* SYMetadataTIFF.m in Sources */ = {isa = PBXBuildFile; fileRef = 9764B9461E434D4000DD31A9 /* SYMetadataTIFF.m */; };
+		97AF041F1E489FE800AACB7F /* NSDictionary+SY.m in Sources */ = {isa = PBXBuildFile; fileRef = 9764B9681E44BB2C00DD31A9 /* NSDictionary+SY.m */; };
 		F80C7264167A0AF000A9110A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F80C7263167A0AF000A9110A /* UIKit.framework */; };
 		F80C7266167A0AF000A9110A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F80C7265167A0AF000A9110A /* Foundation.framework */; };
 		F80C7268167A0AF000A9110A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F80C7267167A0AF000A9110A /* CoreGraphics.framework */; };
@@ -50,7 +78,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		2F44D1CCC76BCDA6DCC62609 /* libPods-SYPictureMetadataExample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SYPictureMetadataExample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2B3D8F4DFEB881EFAF2EBB5C /* Pods_SYPictureMetadataExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SYPictureMetadataExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		60AF7B2A810A6A3461214FF4 /* Pods-SYPictureMetadataExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SYPictureMetadataExample.release.xcconfig"; path = "Pods/Target Support Files/Pods-SYPictureMetadataExample/Pods-SYPictureMetadataExample.release.xcconfig"; sourceTree = "<group>"; };
 		7550A80FE971E2F5F4542092 /* Pods-SYPictureMetadataExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SYPictureMetadataExample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SYPictureMetadataExample/Pods-SYPictureMetadataExample.debug.xcconfig"; sourceTree = "<group>"; };
 		9764B91D1E434D4000DD31A9 /* SYMetadata.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYMetadata.h; sourceTree = "<group>"; };
@@ -107,6 +135,18 @@
 		97A8ECA91E47E98D00A58AF5 /* SYImagesVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYImagesVC.h; sourceTree = "<group>"; };
 		97A8ECAA1E47E98D00A58AF5 /* SYImagesVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYImagesVC.m; sourceTree = "<group>"; };
 		97A8ECAC1E47EDA700A58AF5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		97AF03F61E489FBF00AACB7F /* SYPictureMetadataExample-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SYPictureMetadataExample-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		97AF03F91E489FBF00AACB7F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		97AF03FB1E489FBF00AACB7F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		97AF03FC1E489FBF00AACB7F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		97AF03FE1E489FBF00AACB7F /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		97AF03FF1E489FBF00AACB7F /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		97AF04021E489FBF00AACB7F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		97AF04041E489FBF00AACB7F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		97AF04061E489FBF00AACB7F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9879C06CA6D40CA30683F9AB /* Pods-SYPictureMetadataExample-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SYPictureMetadataExample-tvOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-SYPictureMetadataExample-tvOS/Pods-SYPictureMetadataExample-tvOS.release.xcconfig"; sourceTree = "<group>"; };
+		D8FF8EC932A3F5EAB2410E44 /* Pods_SYPictureMetadataExample_tvOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SYPictureMetadataExample_tvOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DC814759A79A15EC876F2DE6 /* Pods-SYPictureMetadataExample-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SYPictureMetadataExample-tvOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SYPictureMetadataExample-tvOS/Pods-SYPictureMetadataExample-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
 		F80C725F167A0AF000A9110A /* SYPictureMetadataExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SYPictureMetadataExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F80C7263167A0AF000A9110A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		F80C7265167A0AF000A9110A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -125,6 +165,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		97AF03F31E489FBF00AACB7F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0206EE87E2DB68B4B7C43495 /* Pods_SYPictureMetadataExample_tvOS.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F80C725C167A0AF000A9110A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -134,7 +182,7 @@
 				F80C7290167A0C0400A9110A /* AssetsLibrary.framework in Frameworks */,
 				F80C7264167A0AF000A9110A /* UIKit.framework in Frameworks */,
 				F80C7266167A0AF000A9110A /* Foundation.framework in Frameworks */,
-				9F7C1083A70D51105DE2F778 /* libPods-SYPictureMetadataExample.a in Frameworks */,
+				8257D8B2EADD589BA28757CC /* Pods_SYPictureMetadataExample.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -216,11 +264,36 @@
 			name = VCs;
 			sourceTree = "<group>";
 		};
+		97AF03F71E489FBF00AACB7F /* SYPictureMetadataExample-tvOS */ = {
+			isa = PBXGroup;
+			children = (
+				97AF03FB1E489FBF00AACB7F /* AppDelegate.h */,
+				97AF03FC1E489FBF00AACB7F /* AppDelegate.m */,
+				97AF03FE1E489FBF00AACB7F /* ViewController.h */,
+				97AF03FF1E489FBF00AACB7F /* ViewController.m */,
+				97AF04011E489FBF00AACB7F /* Main.storyboard */,
+				97AF04041E489FBF00AACB7F /* Assets.xcassets */,
+				97AF04061E489FBF00AACB7F /* Info.plist */,
+				97AF03F81E489FBF00AACB7F /* Supporting Files */,
+			);
+			path = "SYPictureMetadataExample-tvOS";
+			sourceTree = "<group>";
+		};
+		97AF03F81E489FBF00AACB7F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				97AF03F91E489FBF00AACB7F /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		E97092C5FF2032C4B5013B11 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
 				7550A80FE971E2F5F4542092 /* Pods-SYPictureMetadataExample.debug.xcconfig */,
 				60AF7B2A810A6A3461214FF4 /* Pods-SYPictureMetadataExample.release.xcconfig */,
+				DC814759A79A15EC876F2DE6 /* Pods-SYPictureMetadataExample-tvOS.debug.xcconfig */,
+				9879C06CA6D40CA30683F9AB /* Pods-SYPictureMetadataExample-tvOS.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -231,6 +304,7 @@
 				9764B9621E4377F600DD31A9 /* Test images */,
 				9764B91C1E434D4000DD31A9 /* SYPictureMetadata */,
 				F80C7269167A0AF000A9110A /* SYPictureMetadataExample */,
+				97AF03F71E489FBF00AACB7F /* SYPictureMetadataExample-tvOS */,
 				F80C7262167A0AF000A9110A /* Frameworks */,
 				F80C7260167A0AF000A9110A /* Products */,
 				E97092C5FF2032C4B5013B11 /* Pods */,
@@ -241,6 +315,7 @@
 			isa = PBXGroup;
 			children = (
 				F80C725F167A0AF000A9110A /* SYPictureMetadataExample.app */,
+				97AF03F61E489FBF00AACB7F /* SYPictureMetadataExample-tvOS.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -253,7 +328,8 @@
 				F80C7263167A0AF000A9110A /* UIKit.framework */,
 				F80C7265167A0AF000A9110A /* Foundation.framework */,
 				F80C7267167A0AF000A9110A /* CoreGraphics.framework */,
-				2F44D1CCC76BCDA6DCC62609 /* libPods-SYPictureMetadataExample.a */,
+				2B3D8F4DFEB881EFAF2EBB5C /* Pods_SYPictureMetadataExample.framework */,
+				D8FF8EC932A3F5EAB2410E44 /* Pods_SYPictureMetadataExample_tvOS.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -287,6 +363,26 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		97AF03F51E489FBF00AACB7F /* SYPictureMetadataExample-tvOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 97AF04091E489FBF00AACB7F /* Build configuration list for PBXNativeTarget "SYPictureMetadataExample-tvOS" */;
+			buildPhases = (
+				54C0A5A96C06672CA7C8B72A /* [CP] Check Pods Manifest.lock */,
+				97AF03F21E489FBF00AACB7F /* Sources */,
+				97AF03F31E489FBF00AACB7F /* Frameworks */,
+				97AF03F41E489FBF00AACB7F /* Resources */,
+				E46ACA96F7206A51EA11674C /* [CP] Embed Pods Frameworks */,
+				6A1F9263C730BCEEAB2CCA6B /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "SYPictureMetadataExample-tvOS";
+			productName = "SYPictureMetadataExample-tvOS";
+			productReference = 97AF03F61E489FBF00AACB7F /* SYPictureMetadataExample-tvOS.app */;
+			productType = "com.apple.product-type.application";
+		};
 		F80C725E167A0AF000A9110A /* SYPictureMetadataExample */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = F80C7286167A0AF100A9110A /* Build configuration list for PBXNativeTarget "SYPictureMetadataExample" */;
@@ -317,6 +413,11 @@
 				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = Syan;
 				TargetAttributes = {
+					97AF03F51E489FBF00AACB7F = {
+						CreatedOnToolsVersion = 8.2;
+						DevelopmentTeam = 79RY8264V4;
+						ProvisioningStyle = Automatic;
+					};
 					F80C725E167A0AF000A9110A = {
 						DevelopmentTeam = 79RY8264V4;
 					};
@@ -328,6 +429,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = F80C7254167A0AF000A9110A;
 			productRefGroup = F80C7260167A0AF000A9110A /* Products */;
@@ -335,11 +437,21 @@
 			projectRoot = "";
 			targets = (
 				F80C725E167A0AF000A9110A /* SYPictureMetadataExample */,
+				97AF03F51E489FBF00AACB7F /* SYPictureMetadataExample-tvOS */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		97AF03F41E489FBF00AACB7F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				97AF04051E489FBF00AACB7F /* Assets.xcassets in Resources */,
+				97AF04031E489FBF00AACB7F /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F80C725D167A0AF000A9110A /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -386,6 +498,36 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SYPictureMetadataExample/Pods-SYPictureMetadataExample-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		54C0A5A96C06672CA7C8B72A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		6A1F9263C730BCEEAB2CCA6B /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SYPictureMetadataExample-tvOS/Pods-SYPictureMetadataExample-tvOS-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		816B69B1590D0ABAA155C37A /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -401,9 +543,56 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SYPictureMetadataExample/Pods-SYPictureMetadataExample-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		E46ACA96F7206A51EA11674C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SYPictureMetadataExample-tvOS/Pods-SYPictureMetadataExample-tvOS-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		97AF03F21E489FBF00AACB7F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				97AF041F1E489FE800AACB7F /* NSDictionary+SY.m in Sources */,
+				97AF041D1E489FE800AACB7F /* SYMetadataRaw.m in Sources */,
+				97AF041E1E489FE800AACB7F /* SYMetadataTIFF.m in Sources */,
+				97AF040E1E489FE800AACB7F /* SYMetadataDNG.m in Sources */,
+				97AF04111E489FE800AACB7F /* SYMetadataGIF.m in Sources */,
+				97AF040F1E489FE800AACB7F /* SYMetadataExif.m in Sources */,
+				97AF040D1E489FE800AACB7F /* SYMetadataCIFF.m in Sources */,
+				97AF04131E489FE800AACB7F /* SYMetadataIPTC.m in Sources */,
+				97AF040A1E489FE800AACB7F /* SYMetadata.m in Sources */,
+				97AF04181E489FE800AACB7F /* SYMetadataMakerMinolta.m in Sources */,
+				97AF040B1E489FE800AACB7F /* SYMetadata8BIM.m in Sources */,
+				97AF04141E489FE800AACB7F /* SYMetadataIPTCContactInfo.m in Sources */,
+				97AF04191E489FE800AACB7F /* SYMetadataMakerNikon.m in Sources */,
+				97AF04001E489FBF00AACB7F /* ViewController.m in Sources */,
+				97AF040C1E489FE800AACB7F /* SYMetadataBase.m in Sources */,
+				97AF041C1E489FE800AACB7F /* SYMetadataPNG.m in Sources */,
+				97AF04151E489FE800AACB7F /* SYMetadataJFIF.m in Sources */,
+				97AF041A1E489FE800AACB7F /* SYMetadataMakerOlympus.m in Sources */,
+				97AF03FD1E489FBF00AACB7F /* AppDelegate.m in Sources */,
+				97AF04121E489FE800AACB7F /* SYMetadataGPS.m in Sources */,
+				97AF041B1E489FE800AACB7F /* SYMetadataMakerPentax.m in Sources */,
+				97AF04171E489FE800AACB7F /* SYMetadataMakerFuji.m in Sources */,
+				97AF04161E489FE800AACB7F /* SYMetadataMakerCanon.m in Sources */,
+				97AF03FA1E489FBF00AACB7F /* main.m in Sources */,
+				97AF04101E489FE800AACB7F /* SYMetadataExifAux.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F80C725B167A0AF000A9110A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -442,6 +631,14 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		97AF04011E489FBF00AACB7F /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				97AF04021E489FBF00AACB7F /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
 		F80C726C167A0AF100A9110A /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -453,12 +650,65 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		97AF04071E489FBF00AACB7F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DC814759A79A15EC876F2DE6 /* Pods-SYPictureMetadataExample-tvOS.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = 79RY8264V4;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = "SYPictureMetadataExample-tvOS/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "me.syan.SYPictureMetadataExample-tvOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 10.1;
+			};
+			name = Debug;
+		};
+		97AF04081E489FBF00AACB7F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9879C06CA6D40CA30683F9AB /* Pods-SYPictureMetadataExample-tvOS.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 79RY8264V4;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = "SYPictureMetadataExample-tvOS/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = "me.syan.SYPictureMetadataExample-tvOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 10.1;
+			};
+			name = Release;
+		};
 		F80C7284167A0AF100A9110A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
@@ -513,6 +763,7 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
@@ -591,6 +842,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		97AF04091E489FBF00AACB7F /* Build configuration list for PBXNativeTarget "SYPictureMetadataExample-tvOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				97AF04071E489FBF00AACB7F /* Debug */,
+				97AF04081E489FBF00AACB7F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		F80C7259167A0AF000A9110A /* Build configuration list for PBXProject "SYPictureMetadataExample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
