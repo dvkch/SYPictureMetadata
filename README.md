@@ -68,3 +68,11 @@ You'll find links that helped me a lot in comments inside this library where app
 - <https://www.adobe.com/content/dam/Adobe/en/products/photoshop/pdfs/dng_spec_1.4.0.0.pdf>
 
 Credits to chrfb (<http://chrfb.deviantart.com>) for the beautiful icons I used in the tab buttons.
+
+License
+===
+
+Use it as you like in every project you want, redistribute with mentions of my name and don't blame me if it breaks :)
+
+-- dvkch
+ 
