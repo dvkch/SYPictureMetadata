@@ -37,13 +37,14 @@ CFStringRef const kCGImagePropertyTIFFTileWidth                 = CFSTR("TileWid
 CFStringRef const kCGImagePropertyTIFFTileLength                = CFSTR("TileLength");
 CFStringRef const kCGImagePropertyPNGCompressionFilter          = CFSTR("kCGImagePropertyPNGCompressionFilter");
 // keys available since iOS 8+ according to header, but not actually available...
-CFStringRef const kCGImageProperty8BIMVersion                   = CFSTR("Version");
 CFStringRef const kCGImagePropertyAPNGDelayTime                 = CFSTR("DelayTime");
 CFStringRef const kCGImagePropertyAPNGLoopCount                 = CFSTR("LoopCount");
 CFStringRef const kCGImagePropertyAPNGUnclampedDelayTime        = CFSTR("UnclampedDelayTime");
 #endif
 
 #if !TARGET_IPHONE_SIMULATOR && __IPHONE_OS_VERSION_MIN_REQUIRED < 100000
+// keys available since iOS 8+ according to header, but not actually available...
+CFStringRef const kCGImageProperty8BIMVersion                   = CFSTR("Version");
 // keys available since iOS 10+, exported here for < 10.0
 CFStringRef const kCGImagePropertyDNGBlackLevel                 = CFSTR("BlackLevel");
 CFStringRef const kCGImagePropertyDNGWhiteLevel                 = CFSTR("WhiteLevel");
