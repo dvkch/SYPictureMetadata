@@ -2,7 +2,7 @@ Pod::Spec.new do |s|
   s.ios.deployment_target  = '7.0'
   s.tvos.deployment_target = '9.0'
   s.name     = 'SYPictureMetadata'
-  s.version  = '1.4.2'
+  s.version  = '1.4.3'
   s.license  = 'Custom'
   s.summary  = 'Easy access to EXIF metadata of an image'
   s.homepage = 'https://github.com/dvkch/SYPictureMetadata'

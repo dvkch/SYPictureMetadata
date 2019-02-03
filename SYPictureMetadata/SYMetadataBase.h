@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "Mantle.h"
+#import <Mantle/Mantle.h>
 
 #define SYPaste1(a,b)                   a##b
 #define SYPaste(a,b)                    SYPaste1(a,b)
