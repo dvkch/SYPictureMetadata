@@ -218,8 +218,8 @@ You'll find links that helped me a lot in comments inside this library where app
 - <https://raw.githubusercontent.com/wiki/drewnoakes/metadata-extractor/docs/CIFFspecV1R04.pdf>
 - <https://www.adobe.com/content/dam/Adobe/en/products/photoshop/pdfs/dng_spec_1.4.0.0.pdf>
 - <https://www.awaresystems.be/imaging/tiff/tifftags/privateifd/gps.html>
-
-Credits to chrfb (<http://chrfb.deviantart.com>) for the beautiful icons I used in the tab buttons.
+- <https://docs.oracle.com/javase/9/docs/api/javax/imageio/metadata/doc-files/tiff_metadata.html#ImageMetadata>
+- <https://openimageio.readthedocs.io/en/release-2.1.11.0/stdmetadata.html>
 
 ## License
 

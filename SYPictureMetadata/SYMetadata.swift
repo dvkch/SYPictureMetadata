@@ -32,6 +32,7 @@ public class SYMetadata: SYMetadataBase {
         super.init(dictionary: dictionary)
     }
     
+    @available(iOS 10.0, tvOS 10.0, macCatalyst 13.0, macOS 10.15, *)
     public static func metadata(asset: PHAsset, networkAccessAllowed: Bool, completion: @escaping (SYMetadata?, Error?) -> Void) {
         let options = PHImageRequestOptions()
         options.isNetworkAccessAllowed = networkAccessAllowed
@@ -47,7 +48,7 @@ public class SYMetadata: SYMetadataBase {
             }
         }
         
-        #if targetEnvironment(macCatalyst)
+        #if os(macOS) || targetEnvironment(macCatalyst)
         PHImageManager.default().requestImageDataAndOrientation(for: asset, options: options) { (data, _, _, _) in  completion(data) }
         #else
         PHImageManager.default().requestImageData(for: asset, options: options) { (data, _, _, _) in completion(data) }
