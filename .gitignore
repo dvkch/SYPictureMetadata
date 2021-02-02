@@ -19,4 +19,5 @@ profile
 DerivedData
 .idea/
 
-ImageIO.rtf
+# Cocoapods
+Pods/
