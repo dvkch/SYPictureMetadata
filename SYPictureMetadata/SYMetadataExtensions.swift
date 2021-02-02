@@ -13,3 +13,18 @@ extension CFString {
         return (self as NSString) as String
     }
 }
+
+internal protocol OptionalType {
+    associatedtype Wrapped
+    func map<U>(_ f: (Wrapped) throws -> U) rethrows -> U?
+    var value: Wrapped? { get }
+}
+
+extension Optional: OptionalType {
+    internal var value: (Wrapped)? {
+        switch self {
+        case .none:             return nil
+        case .some(let value):  return value
+        }
+    }
+}

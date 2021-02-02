@@ -8,21 +8,6 @@
 
 import Foundation
 
-internal protocol OptionalType {
-    associatedtype Wrapped
-    func map<U>(_ f: (Wrapped) throws -> U) rethrows -> U?
-    var value: Wrapped? { get }
-}
-
-extension Optional: OptionalType {
-    internal var value: (Wrapped)? {
-        switch self {
-        case .none:             return nil
-        case .some(let value):  return value
-        }
-    }
-}
-
 @objcMembers public class SYMetadataBase : NSObject {
 
     // MARK: Init
@@ -70,11 +55,30 @@ extension Optional: OptionalType {
     }
     
     // MARK: Debug
-    public private(set) var debugReadKeys: [String] = []
-    public private(set) var debugWrittenKeys: [String] = []
+    internal var debugReadKeys: Set<String> = []
+    public var allDebugReadKeys: Set<String> {
+        var keys = debugReadKeys
+        self.childrenObjects.forEach { (key, child) in
+            if let childKeys = child?.allDebugReadKeys {
+                keys.formUnion(childKeys.map { [key, $0].joined(separator: ".") })
+            }
+        }
+        return keys
+    }
+    internal var debugWrittenKeys: Set<String> = []
+    public var allDebugWrittenKeys: Set<String> {
+        var keys = debugWrittenKeys
+        self.childrenObjects.forEach { (key, child) in
+            if let childKeys = child?.allDebugWrittenKeys {
+                keys.formUnion(childKeys.map { [key, $0].joined(separator: ".") })
+            }
+        }
+        return keys
+    }
 
     // MARK: Values
     internal func getValue<T>(key: String) -> T? {
+        debugReadKeys.insert(key)
         if valuesDictionary[key] == nil || valuesDictionary[key] as? NSObject == kCFNull {
             return nil
         }
@@ -93,6 +97,7 @@ extension Optional: OptionalType {
     }
 
     internal func setValue<T: OptionalType>(key: String, value: T) {
+        debugWrittenKeys.insert(key)
         if let value = value.value {
             valuesDictionary[key] = value
         } else {

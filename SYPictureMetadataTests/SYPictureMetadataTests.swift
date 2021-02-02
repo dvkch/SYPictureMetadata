@@ -9,6 +9,10 @@
 import XCTest
 import SYPictureMetadata
 
+var readKeys = Set<String>()
+var writtenKeys = Set<String>()
+var availableKeys = Set<String>()
+
 class SYPictureMetadataTests: XCTestCase {
 
     // MARK: Hooks
@@ -17,6 +21,26 @@ class SYPictureMetadataTests: XCTestCase {
     }
 
     override func tearDownWithError() throws {
+    }
+    
+    override class func tearDown() {
+        let supported = Keys.supported.read().count
+        let ratioReadAvailable = Int(Float(readKeys.count) / Float(availableKeys.count) * 100)
+        let ratioReadSupported = Int(Float(readKeys.count) / Float(supported) * 100)
+        let ratioWrittenSupported = Int(Float(writtenKeys.count) / Float(supported) * 100)
+        
+        print("STATS :")
+        print(" - read \(ratioReadAvailable)% of keys available in test files")
+        print(" - read \(ratioReadSupported)% of supported keys")
+        print(" - wrote \(ratioWrittenSupported)% of supported keys")
+    }
+    
+    func keepStats(_ metadatas: [SYMetadata]) {
+        metadatas.forEach { (metadata) in
+            readKeys.formUnion(metadata.allDebugReadKeys)
+            writtenKeys.formUnion(metadata.allDebugWrittenKeys)
+            availableKeys.formUnion(metadata.originalDictionary.allKeyPaths)
+        }
     }
 
     // MARK: TestFile
@@ -59,12 +83,18 @@ class SYPictureMetadataTests: XCTestCase {
         XCTAssertEqual(metadata.pixelHeight, 576)
         XCTAssertEqual(metadata.profileName, "sRGB IEC61966-2.1")
         XCTAssertEqual(metadata.orientation, .up)
+
+        // stats
+        keepStats([metadata])
     }
 
     func test8BIM() throws {
         let metadata = try! TestFile.eightBim.readMetadata()
         XCTAssertNotNil(metadata.metadata8BIM)
         XCTAssertEqual(metadata.metadata8BIM?.version, 1)
+
+        // stats
+        keepStats([metadata])
     }
     
     func testAppleGPS() throws {
@@ -90,6 +120,9 @@ class SYPictureMetadataTests: XCTestCase {
         XCTAssertEqual(metadata.metadataGPS?.speed, 1.29)
         XCTAssertEqual(metadata.metadataGPS?.speedRef, .kilometersPerHour)
         XCTAssertEqual(metadata.metadataGPS?.timeStamp, "09:02:18")
+
+        // stats
+        keepStats([metadata])
     }
 
     func testCanon() throws {
@@ -101,6 +134,9 @@ class SYPictureMetadataTests: XCTestCase {
         XCTAssertEqual(metadata.metadataMakerCanon?.minAperture, 28.508758980490853)
         XCTAssertEqual(metadata.metadataMakerCanon?.uniqueModelID, 2147484453)
         XCTAssertEqual(metadata.metadataMakerCanon?.whiteBalanceIndex, 0)
+
+        // stats
+        keepStats([metadata])
     }
 
     func testCIFF() throws {
@@ -117,6 +153,9 @@ class SYPictureMetadataTests: XCTestCase {
         XCTAssertEqual(metadata.metadataCIFF?.recordID, 0)
         XCTAssertEqual(metadata.metadataCIFF?.uniqueModelID, 20512768)
         XCTAssertEqual(metadata.metadataCIFF?.whiteBalanceIndex, 5)
+
+        // stats
+        keepStats([metadata])
     }
 
     func testDNG() throws {
@@ -149,6 +188,9 @@ class SYPictureMetadataTests: XCTestCase {
             0.00055516289005874719,  6.6049619854829273e-06,  0.0005038849469748989,
             5.4925237574105637e-06,  0.00057822690165560385,  7.383049862396093e-06
         ])
+
+        // stats
+        keepStats([metadata])
     }
 
     func testGIF() throws {
@@ -156,6 +198,9 @@ class SYPictureMetadataTests: XCTestCase {
         XCTAssertNotNil(metadata.metadataGIF)
         XCTAssertEqual(metadata.metadataGIF?.delayTime, 0.5)
         XCTAssertEqual(metadata.metadataGIF?.unclampedDelayTime, 0.5)
+
+        // stats
+        keepStats([metadata])
     }
 
     func testIPTC() throws {
@@ -196,6 +241,9 @@ class SYPictureMetadataTests: XCTestCase {
         XCTAssertEqual(metadata.metadataIPTC?.creatorContactInfo?.emails, "david@riecks.com")
         XCTAssertEqual(metadata.metadataIPTC?.creatorContactInfo?.phones, "+1.877.646.5375, +1.217.689.1376")
         XCTAssertEqual(metadata.metadataIPTC?.creatorContactInfo?.webURLs, "http://www.riecks.com/contact.html")
+
+        // stats
+        keepStats([metadata])
     }
 
     func testIPTC2() throws {
@@ -211,6 +259,9 @@ class SYPictureMetadataTests: XCTestCase {
         XCTAssertEqual(metadata.metadataIPTC?.objectName, "Photoshop Document Ttitle")
         XCTAssertEqual(metadata.metadataIPTC?.dateCreated, "20110525")
         XCTAssertEqual(metadata.metadataIPTC?.timeCreated, "092207")
+
+        // stats
+        keepStats([metadata])
     }
 
     func testNikon() throws {
@@ -223,6 +274,9 @@ class SYPictureMetadataTests: XCTestCase {
         XCTAssertEqual(metadata.metadataMakerNikon?.quality, "RAW    ")
         XCTAssertEqual(metadata.metadataMakerNikon?.shootingMode, .continuous)
         XCTAssertEqual(metadata.metadataMakerNikon?.shutterCount, 8834)
+
+        // stats
+        keepStats([metadata])
     }
 
     func testPictureStyle() throws {
@@ -240,6 +294,9 @@ class SYPictureMetadataTests: XCTestCase {
         ]
         let diff = expected.metadataDifferences(from: metadata.pictureStyle ?? [:], includeValuesInDiff: false)
         XCTAssertTrue(diff.isEmpty)
+
+        // stats
+        keepStats([metadata])
     }
 
     func testPNG() throws {
@@ -254,6 +311,9 @@ class SYPictureMetadataTests: XCTestCase {
         XCTAssertEqual(metadata.metadataPNG?.software, "Adobe Photoshop CC 2017 (Macintosh)")
         XCTAssertEqual(metadata.metadataPNG?.xPixelsPerMeter, 11811)
         XCTAssertEqual(metadata.metadataPNG?.yPixelsPerMeter, 11811)
+
+        // stats
+        keepStats([metadata])
     }
 
     func testUnreadable() throws {
@@ -287,6 +347,9 @@ class SYPictureMetadataTests: XCTestCase {
         XCTAssertEqual(reloadedMetadata.metadataIPTC?.keywords, ["Some test keywords", "added by SYMetadata example app"])
         XCTAssertEqual(reloadedMetadata.metadataIPTC?.city, "Lyon")
         XCTAssertEqual(reloadedMetadata.metadataIPTC?.credit, "© Me 2017")
+
+        // stats
+        keepStats([metadata, reloadedMetadata])
     }
     
     func testRemovingChildren() throws {
@@ -319,6 +382,9 @@ class SYPictureMetadataTests: XCTestCase {
         let expectedUpdatedKeys: [String] = ["DateTimeOriginal", "ColorSpace", "PixelYDimension", "DateTimeDigitized", "PixelXDimension"]
         let updatedKeys: [String] = Array((reloadedMetadata.metadataExif?.originalDictionary ?? [:]).keys)
         XCTAssertEqual(updatedKeys.sorted(), expectedUpdatedKeys.sorted())
+
+        // stats
+        keepStats([metadata, reloadedMetadata])
     }
     
     func testUpdatingAndRemovingValues() throws {
@@ -357,6 +423,9 @@ class SYPictureMetadataTests: XCTestCase {
         XCTAssertEqual(reloadedMetadata.metadataTIFF?.copyright, nil)
         XCTAssertEqual(reloadedMetadata.metadataTIFF?.imageDescription, nil)
         XCTAssertEqual(reloadedMetadata.metadataTIFF?.photometricInterpretation, nil)
+
+        // stats
+        keepStats([metadata, reloadedMetadata])
     }
     
     func testStripAll() throws {
@@ -389,5 +458,8 @@ class SYPictureMetadataTests: XCTestCase {
             "{TIFF}.Orientation"
         ]
         XCTAssertEqual(keptKeys.sorted(), expectedKeptKeys.sorted())
+
+        // stats
+        keepStats([reloadedMetadata])
     }
 }

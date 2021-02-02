@@ -7,9 +7,19 @@ Read and write images metadata using `ImageIO` and easy to use models.
 <img src="screenshots/screenshot_set_analysis.png" alt="Data set analysis" width="300"/>
 <img src="screenshots/screenshot_preview.png" alt="Metadata preview" width="300"/>
 
-## Unsupported keys
+## Metadata support
+
+#### ImageIO Keys
 
 A lot of keys have been added to ImageIO since iOS 11, they are mostly about DNG, HEIC and IPTC Ext data and are not currently supported. The full list is available in [Keys/Unsupported.txt](Keys/Unsupported.txt). Feel free to send a PR my way, ideally with a test case :)
+
+Currently we support 325 keys out of 628 defined keys in iOS 14.4, or about 51%.
+
+#### Test coverage
+
+There are basic tests in place currently testing around 32% of defined getters and 3% of defined setters. If you need to support specific attributes in your application you should test those too, and you're welcome to send a PR to increase coverage in this library.
+
+Xcode reports 36.4% of test coverage for this library.
 
 ## Keep in mind
 
@@ -18,8 +28,9 @@ When saving metadata to a file you can encouter the following issues:
 - metadata was not written
 - metadata was modified a bit
 - metadata was added
+- metadata should have been removed but was kept because ImageIO found a similar metadata in another namespace (e.g. removing TIFF.artist doesn't work if IPTC.byLine is present)
 
-This library uses `ImageIO` which has its own limitations and performs its own value checks. This is just a wrapper around the `NSDictionary` structure this framework exposes and is not perfect. Please heavily test your app if you use this library to edit metadata, a set of test images for tests can be found in the example app (currently testing around 216 keys out of 314 supported on iOS 10.2). This library DOES NOT garantee data integrity like `libexif` or `exiv2` would.
+This library uses `ImageIO` which has its own limitations and performs its own value checks. This is just a wrapper around the `NSDictionary` structure this framework exposes and is not perfect. Please heavily test your app if you use this library to edit metadata, a set of test images for tests can be found in the example app. This library DOES NOT garantee data integrity like `libexif` or `exiv2` would.
 
 ## Examples
 

@@ -9,7 +9,8 @@
 import UIKit
 import SYPictureMetadata
 
-// TODO: add tests for "unread keys" (keys present in original dictionary but not read. only available in test scheme!)
+// TODO: add demo for Photos framework
+
 // TODO: use property wrappers when they can reference self
 // TODO: print stats of untested but supported keys (needs property wrappers?)
 

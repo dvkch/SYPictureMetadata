@@ -68,7 +68,7 @@ public class SYMetadata: SYMetadataBase {
         self.init(dictionary: properties)
     }
     
-    // MARK: Iamge Data
+    // MARK: Image Data
     public static func apply(metadata: [String: Any], to originalImageData: Data) throws -> Data {
         // https://github.com/Nikita2k/SimpleExif/blob/master/Classes/ios/UIImage%2BExif.m
         guard let source = CGImageSourceCreateWithData(originalImageData as CFData, nil) else {
