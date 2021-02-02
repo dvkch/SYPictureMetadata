@@ -4,8 +4,8 @@ Read and write images metadata using `ImageIO` and easy to use models.
 
 ## Screenshots
 
-<img src="screenshots/screenshot_set_analysis.png" alt="Data set analysis" width="300"/>
-<img src="screenshots/screenshot_preview.png" alt="Metadata preview" width="300"/>
+<img src="https://raw.githubusercontent.com/dvkch/SYPictureMetadata/master/screenshots/screenshot_set_analysis.png" alt="Data set analysis" width="300"/>
+<img src="https://raw.githubusercontent.com/dvkch/SYPictureMetadata/master/screenshots/screenshot_preview.png" alt="Metadata preview" width="300"/>
 
 ## Metadata support
 
