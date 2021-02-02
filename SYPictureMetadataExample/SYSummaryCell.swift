@@ -13,10 +13,7 @@ class SYSummaryCell: UITableViewCell {
     // MARK: Init
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: .subtitle, reuseIdentifier: reuseIdentifier)
-        contentView.backgroundColor = .black
-        textLabel?.textColor = .white
         textLabel?.numberOfLines = 0
-        detailTextLabel?.textColor = .white
         detailTextLabel?.numberOfLines = 0
     }
     

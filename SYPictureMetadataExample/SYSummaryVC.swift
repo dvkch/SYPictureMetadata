@@ -16,6 +16,7 @@ class SYSummaryVC: UIViewController {
     // MARK: UIViewController
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "Summary"
         tableView.registerCell(SYSummaryCell.self, xib: false)
     }
     

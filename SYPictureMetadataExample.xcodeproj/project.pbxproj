@@ -31,6 +31,7 @@
 		97B7D61723F5F1A10005C01D /* Dictionary+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97B7D61623F5F1A10005C01D /* Dictionary+Extensions.swift */; };
 		97CA919624047F7B00FD181C /* Test images in Resources */ = {isa = PBXBuildFile; fileRef = 977CC0FB23D5F633001BC721 /* Test images */; };
 		97CA91982404808700FD181C /* TestFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97CA91972404808700FD181C /* TestFile.swift */; };
+		97CD867E25C9B8B00039F7ED /* SYOpenPhotoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97CD867D25C9B8B00039F7ED /* SYOpenPhotoVC.swift */; };
 		C146FF431222FD80CFC15267 /* libPods-SYPictureMetadataExample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FDBE36CCBCF7B33064E7F113 /* libPods-SYPictureMetadataExample.a */; };
 /* End PBXBuildFile section */
 
@@ -57,6 +58,7 @@
 		977CC0FB23D5F633001BC721 /* Test images */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "Test images"; sourceTree = "<group>"; };
 		97B7D61623F5F1A10005C01D /* Dictionary+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dictionary+Extensions.swift"; sourceTree = "<group>"; };
 		97CA91972404808700FD181C /* TestFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestFile.swift; sourceTree = "<group>"; };
+		97CD867D25C9B8B00039F7ED /* SYOpenPhotoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SYOpenPhotoVC.swift; sourceTree = "<group>"; };
 		A3CCDEE5C1B6D0225568B966 /* Pods-SYPictureMetadataTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SYPictureMetadataTests.debug.xcconfig"; path = "Target Support Files/Pods-SYPictureMetadataTests/Pods-SYPictureMetadataTests.debug.xcconfig"; sourceTree = "<group>"; };
 		AFD13603F1476EF3D4612412 /* Pods-SYPictureMetadataExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SYPictureMetadataExample.release.xcconfig"; path = "Target Support Files/Pods-SYPictureMetadataExample/Pods-SYPictureMetadataExample.release.xcconfig"; sourceTree = "<group>"; };
 		B2AD4122E297E4264661EA5A /* libPods-SYPictureMetadataTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SYPictureMetadataTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -163,6 +165,7 @@
 				97172ABA23F0430D007F2203 /* SYImagesVC.swift */,
 				97172ABC23F045B3007F2203 /* SYImageVC.swift */,
 				97172ABD23F045B3007F2203 /* SYImageVC.xib */,
+				97CD867D25C9B8B00039F7ED /* SYOpenPhotoVC.swift */,
 				97172AC823F052BB007F2203 /* SYSummaryVC.swift */,
 			);
 			name = ViewControllers;
@@ -408,6 +411,7 @@
 				972C52D223F5F6780053C3E7 /* Foundation+Extensions.swift in Sources */,
 				975D0D2323D5F5CD00DFFC35 /* AppDelegate.swift in Sources */,
 				972C52D423F5F6B00053C3E7 /* SYMetadata+Extensions.swift in Sources */,
+				97CD867E25C9B8B00039F7ED /* SYOpenPhotoVC.swift in Sources */,
 				97B7D61723F5F1A10005C01D /* Dictionary+Extensions.swift in Sources */,
 				97245F4125C9741900E70EFA /* Keys.swift in Sources */,
 			);
@@ -578,6 +582,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 79RY8264V4;
 				INFOPLIST_FILE = SYPictureMetadataExample/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -598,6 +603,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 79RY8264V4;
 				INFOPLIST_FILE = SYPictureMetadataExample/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
