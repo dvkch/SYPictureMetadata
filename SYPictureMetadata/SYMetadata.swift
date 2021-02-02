@@ -36,7 +36,7 @@ public class SYMetadata: SYMetadataBase {
         let options = PHImageRequestOptions()
         options.isNetworkAccessAllowed = networkAccessAllowed
         
-        PHImageManager.default().requestImageData(for: asset, options: options) { (data, dataUTI, orientation, info) in
+        let completion = { (data: Data?) -> Void in
             guard let data = data else { return completion(nil, .photoMissingData) }
             do {
                 let metadata = try SYMetadata(imageData: data)
@@ -46,6 +46,12 @@ public class SYMetadata: SYMetadataBase {
                 completion(nil, (error as! Error))
             }
         }
+        
+        #if targetEnvironment(macCatalyst)
+        PHImageManager.default().requestImageDataAndOrientation(for: asset, options: options) { (data, _, _, _) in  completion(data) }
+        #else
+        PHImageManager.default().requestImageData(for: asset, options: options) { (data, _, _, _) in completion(data) }
+        #endif
     }
     
     public convenience init(fileURL: URL) throws {

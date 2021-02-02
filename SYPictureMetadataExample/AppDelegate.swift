@@ -9,8 +9,6 @@
 import UIKit
 import SYPictureMetadata
 
-// TODO: add demo for Photos framework
-
 // TODO: use property wrappers when they can reference self
 // TODO: print stats of untested but supported keys (needs property wrappers?)
 
