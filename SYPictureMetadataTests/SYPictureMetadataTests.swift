@@ -1,0 +1,260 @@
+//
+//  SYPictureMetadataTests.swift
+//  SYPictureMetadataTests
+//
+//  Created by Stanislas Chevallier on 09/02/2020.
+//  Copyright © 2020 Syan.me. All rights reserved.
+//
+
+import XCTest
+import SYPictureMetadata
+
+class SYPictureMetadataTests: XCTestCase {
+
+    // MARK: Hooks
+    override func setUpWithError() throws {
+        continueAfterFailure = false
+    }
+
+    override func tearDownWithError() throws {
+    }
+
+    // MARK: TestFile
+    func testFileListCompleteAndAvailable() throws {
+        // All files are available
+        TestFile.allCases.forEach { file in
+            XCTAssert(file.url != nil, "Missing file \(file.rawValue)")
+        }
+
+        // File list is complete
+        let knownFiles = TestFile.allCases.map { $0.url! }
+            .map { $0.standardizedFileURL.path }
+            .sorted()
+        let parentDir = TestFile.nikon.url.deletingLastPathComponent()
+        let availableFiles = try! FileManager.default.contentsOfDirectory(at: parentDir, includingPropertiesForKeys: nil, options: .skipsSubdirectoryDescendants)
+            .map { $0.standardizedFileURL.path }
+            .sorted()
+        XCTAssertEqual(availableFiles, knownFiles)
+    }
+    
+    // MARK: Helpers
+    func printJSON(_ metadata: SYMetadataBase?) {
+        var options = JSONSerialization.WritingOptions.prettyPrinted
+        if #available(iOS 11.0, *) {
+            options.insert(.sortedKeys)
+        }
+        let dictionary = metadata?.originalDictionary ?? [:]
+        print(dictionary.jsonString)
+    }
+    
+    // MARK: Metadatas
+    func testMetadata() throws {
+        let metadata = try! TestFile.iptc.readMetadata()
+        XCTAssertNotNil(metadata)
+        XCTAssertEqual(metadata.colorModel, .rgb)
+        XCTAssertEqual(metadata.depth, 8)
+        XCTAssertEqual(metadata.dpiWidth, 72)
+        XCTAssertEqual(metadata.dpiHeight, 72)
+        XCTAssertEqual(metadata.pixelWidth, 343)
+        XCTAssertEqual(metadata.pixelHeight, 576)
+        XCTAssertEqual(metadata.profileName, "sRGB IEC61966-2.1")
+        XCTAssertEqual(metadata.orientation, .up)
+    }
+
+    func test8BIM() throws {
+        let metadata = try! TestFile.eightBim.readMetadata()
+        XCTAssertNotNil(metadata.metadata8BIM)
+        XCTAssertEqual(metadata.metadata8BIM?.version, 1)
+    }
+    
+    func testAppleGPS() throws {
+        let metadata = try! TestFile.appleGPS.readMetadata()
+        XCTAssertNotNil(metadata.metadataMakerApple)
+        XCTAssertNotNil(metadata.metadataGPS)
+        XCTAssertEqual(metadata.metadataGPS?.altitude, 269.21224489795918)
+        XCTAssertEqual(metadata.metadataGPS?.altitudeRef, .aboveSeaLevel)
+        XCTAssertEqual(metadata.metadataGPS?.dateStamp, "2017:01:16")
+        XCTAssertEqual(metadata.metadataGPS?.destBearing, 338.45418326693226)
+        XCTAssertEqual(metadata.metadataGPS?.destBearingRef, .trueDirection)
+        XCTAssertEqual(metadata.metadataGPS?.hPositioningError, 10)
+        XCTAssertEqual(metadata.metadataGPS?.imgDirection, 338.45418326693226)
+        XCTAssertEqual(metadata.metadataGPS?.imgDirectionRef, .trueDirection)
+        XCTAssertEqual(metadata.metadataGPS?.latitude, 50.048949999999998)
+        XCTAssertEqual(metadata.metadataGPS?.latitudeRef, .north)
+        XCTAssertEqual(metadata.metadataGPS?.longitude, 14.43812)
+        XCTAssertEqual(metadata.metadataGPS?.longitudeRef, .east)
+        XCTAssertEqual(metadata.metadataGPS?.speed, 1.29)
+        XCTAssertEqual(metadata.metadataGPS?.speedRef, .kilometersPerHour)
+        XCTAssertEqual(metadata.metadataGPS?.timeStamp, "09:02:18")
+    }
+
+    func testCanon() throws {
+        let metadata = try! TestFile.canon.readMetadata()
+        XCTAssertNotNil(metadata.metadataMakerCanon)
+        XCTAssertEqual(metadata.metadataMakerCanon?.continuousDrive, 0)
+        XCTAssertEqual(metadata.metadataMakerCanon?.lensModel, "EF-S18-135mm f/3.5-5.6 IS STM")
+        XCTAssertEqual(metadata.metadataMakerCanon?.maxAperture, 4.3620309306610308)
+        XCTAssertEqual(metadata.metadataMakerCanon?.minAperture, 28.508758980490853)
+        XCTAssertEqual(metadata.metadataMakerCanon?.uniqueModelID, 2147484453)
+        XCTAssertEqual(metadata.metadataMakerCanon?.whiteBalanceIndex, 0)
+    }
+
+    func testCIFF() throws {
+        let metadata = try! TestFile.ciff.readMetadata()
+        XCTAssertNotNil(metadata.metadataCIFF)
+        XCTAssertEqual(metadata.metadataCIFF?.continuousDrive, 0)
+        XCTAssertEqual(metadata.metadataCIFF?.descr, "High definition CCD image")
+        XCTAssertEqual(metadata.metadataCIFF?.focusMode, 1)
+        XCTAssertEqual(metadata.metadataCIFF?.imageFileName, "CRW_5082.CRW")
+        XCTAssertEqual(metadata.metadataCIFF?.imageName, "CRW:High definition CCD image")
+        XCTAssertEqual(metadata.metadataCIFF?.maxAperture, 2.8903616139540933)
+        XCTAssertEqual(metadata.metadataCIFF?.minAperture, 8)
+        XCTAssertEqual(metadata.metadataCIFF?.measuredEV, 0.375)
+        XCTAssertEqual(metadata.metadataCIFF?.recordID, 0)
+        XCTAssertEqual(metadata.metadataCIFF?.uniqueModelID, 20512768)
+        XCTAssertEqual(metadata.metadataCIFF?.whiteBalanceIndex, 5)
+    }
+
+    func testDNG() throws {
+        let metadata = try! TestFile.dng.readMetadata()
+        XCTAssertNotNil(metadata.metadataDNG)
+        XCTAssertEqual(metadata.metadataDNG?.version, [1, 4])
+        XCTAssertEqual(metadata.metadataDNG?.backwardVersion, [1, 1])
+        XCTAssertEqual(metadata.metadataDNG?.uniqueCameraModel, "Nikon D5300")
+        XCTAssertEqual(metadata.metadataDNG?.blackLevel, [150,  150,  150,  150])
+        XCTAssertEqual(metadata.metadataDNG?.whiteLevel, [3972])
+        XCTAssertEqual(metadata.metadataDNG?.calibrationIlluminant1, 17)
+        XCTAssertEqual(metadata.metadataDNG?.calibrationIlluminant2, 21)
+        XCTAssertEqual(metadata.metadataDNG?.colorMatrix1, [
+            0.96719998121261597, -0.41530001163482666, 0.006399999838322401,
+            -0.41200000047683716, 1.1851999759674072, 0.25709998607635498,
+            -0.093999996781349182, 0.18119999766349792, 0.78939998149871826
+        ])
+        XCTAssertEqual(metadata.metadataDNG?.colorMatrix2, [
+            0.69880002737045288, -0.13840000331401825, -0.071400001645088196,
+            -0.56309998035430908, 1.340999960899353,  0.24469999969005585,
+            -0.148499995470047, 0.22040000557899475, 0.73180001974105835
+        ])
+        XCTAssertEqual(metadata.metadataDNG?.asShotNeutral, [0.52459001541137695,  1,  0.60807597637176514])
+        XCTAssertEqual(metadata.metadataDNG?.baselineExposure, 0.34999999403953552)
+        XCTAssertEqual(metadata.metadataDNG?.baselineNoise, 1)
+        XCTAssertEqual(metadata.metadataDNG?.baselineSharpness, 1)
+        XCTAssertEqual(metadata.metadataDNG?.cameraCalibrationSignature, "com.adobe")
+        XCTAssertEqual(metadata.metadataDNG?.profileCalibrationSignature, "com.adobe")
+        XCTAssertEqual(metadata.metadataDNG?.noiseProfile, [
+            0.00055516289005874719,  6.6049619854829273e-06,  0.0005038849469748989,
+            5.4925237574105637e-06,  0.00057822690165560385,  7.383049862396093e-06
+        ])
+    }
+
+    func testGIF() throws {
+        let metadata = try! TestFile.gif.readMetadata()
+        XCTAssertNotNil(metadata.metadataGIF)
+        XCTAssertEqual(metadata.metadataGIF?.delayTime, 0.5)
+        XCTAssertEqual(metadata.metadataGIF?.unclampedDelayTime, 0.5)
+    }
+
+    func testIPTC() throws {
+        let metadata = try! TestFile.iptc.readMetadata()
+
+        XCTAssertNotNil(metadata.metadataIPTC)
+        XCTAssertEqual(metadata.metadataIPTC?.objectName, "drp2115036d")
+        XCTAssertEqual(metadata.metadataIPTC?.keywords, [
+            "padlock", "lock", "security", "secure", "concepts", "concept", "conceptual", "emotion", "emotional", "emotions", "affection", "love",
+            "close up", "close-up", "outdoors", "outdoor", "outside", "Europe", "Italy", "Tuscany", "Florence", "Firenze", "travel", "tourism"
+        ])
+        XCTAssertEqual(metadata.metadataIPTC?.specialInstructions, "PLUS Registry 01-AA-010 For consideration only. No usage or third party sales granted without prior permission.")
+        XCTAssertEqual(metadata.metadataIPTC?.dateCreated, "20070609")
+        XCTAssertEqual(metadata.metadataIPTC?.timeCreated, "075613")
+        XCTAssertEqual(metadata.metadataIPTC?.digitalCreationDate, "20070609")
+        XCTAssertEqual(metadata.metadataIPTC?.digitalCreationTime, "075613")
+        XCTAssertEqual(metadata.metadataIPTC?.byline, ["David Riecks"])
+        XCTAssertEqual(metadata.metadataIPTC?.city, "Florence")
+        XCTAssertEqual(metadata.metadataIPTC?.subLocation, "Near Ponte Vecchio")
+        XCTAssertEqual(metadata.metadataIPTC?.provinceState, "Tuscany")
+        XCTAssertEqual(metadata.metadataIPTC?.countryPrimaryLocationCode, "IT")
+        XCTAssertEqual(metadata.metadataIPTC?.countryPrimaryLocationName, "Italy")
+        XCTAssertEqual(metadata.metadataIPTC?.headline, "Florence Locks of Love")
+        XCTAssertEqual(metadata.metadataIPTC?.credit, "©2007 David Riecks: www.riecks.com")
+        XCTAssertEqual(metadata.metadataIPTC?.source, "David Riecks Photography")
+        XCTAssertEqual(metadata.metadataIPTC?.copyrightNotice, "©2007 David Riecks, all rights reserved")
+        XCTAssertEqual(metadata.metadataIPTC?.captionAbstract, "Close-up of padlocks on a handrail near the Ponte Vecchio in Firenze (Florence), Italy. This practice has become popular among young lovers, as the legend has it that if you and your loved one attach a padlock to any part of the famous bridge and then throw the key into the Arno River below, your will be eternally bonded. This is one example of the negative impact of mass tourism; as thousands of padlocks need to be removed on a regular basis, since they spoil the view and may damage the structure of the centuries-old bridge. This practice seems to have decreased after the city placed a sign on the bridge noting a 50€ penalty for those caught locking something to the structure.")
+        XCTAssertEqual(metadata.metadataIPTC?.writerEditor, ["David Riecks"])
+        XCTAssertEqual(metadata.metadataIPTC?.starRating, 3)
+        XCTAssertEqual(metadata.metadataIPTC?.rightsUsageTerms, "PLUS Registry 01-AA-010 For consideration only. No usage or third party sales granted without prior permission.")
+
+        XCTAssertNotNil(metadata.metadataIPTC?.creatorContactInfo)
+        XCTAssertEqual(metadata.metadataIPTC?.creatorContactInfo?.city, "Champaign")
+        XCTAssertEqual(metadata.metadataIPTC?.creatorContactInfo?.country, "United States of America")
+        XCTAssertEqual(metadata.metadataIPTC?.creatorContactInfo?.address, "701 W Washington St.")
+        XCTAssertEqual(metadata.metadataIPTC?.creatorContactInfo?.postalCode, "61820")
+        XCTAssertEqual(metadata.metadataIPTC?.creatorContactInfo?.stateProvince, "Illinois")
+        XCTAssertEqual(metadata.metadataIPTC?.creatorContactInfo?.emails, "david@riecks.com")
+        XCTAssertEqual(metadata.metadataIPTC?.creatorContactInfo?.phones, "+1.877.646.5375, +1.217.689.1376")
+        XCTAssertEqual(metadata.metadataIPTC?.creatorContactInfo?.webURLs, "http://www.riecks.com/contact.html")
+    }
+
+    func testIPTC2() throws {
+        let metadata = try! TestFile.iptc2.readMetadata()
+        XCTAssertNotNil(metadata.metadataIPTC)
+        XCTAssertEqual(metadata.metadataIPTC?.byline, ["Photoshop Author"])
+        XCTAssertEqual(metadata.metadataIPTC?.bylineTitle, ["Photoshop Author Title"])
+        XCTAssertEqual(metadata.metadataIPTC?.captionAbstract, "Photoshop Description")
+        XCTAssertEqual(metadata.metadataIPTC?.copyrightNotice, "Photoshop Copyrright Notice")
+        XCTAssertEqual(metadata.metadataIPTC?.digitalCreationDate, "20110525")
+        XCTAssertEqual(metadata.metadataIPTC?.digitalCreationTime, "092207+1200")
+        XCTAssertEqual(metadata.metadataIPTC?.keywords, ["beach", "baywatch", "LA", "sunset"])
+        XCTAssertEqual(metadata.metadataIPTC?.objectName, "Photoshop Document Ttitle")
+        XCTAssertEqual(metadata.metadataIPTC?.dateCreated, "20110525")
+        XCTAssertEqual(metadata.metadataIPTC?.timeCreated, "092207")
+    }
+
+    func testNikon() throws {
+        let metadata = try! TestFile.nikon.readMetadata()
+        XCTAssertNotNil(metadata.metadataMakerNikon)
+        XCTAssertEqual(metadata.metadataMakerNikon?.focusMode, "AF-S  ")
+        XCTAssertEqual(metadata.metadataMakerNikon?.whiteBalanceMode, "AUTO        ")
+        XCTAssertEqual(metadata.metadataMakerNikon?.isoSetting, [0, 1600])
+        XCTAssertEqual(metadata.metadataMakerNikon?.lensType, [.D, .G, .VR])
+        XCTAssertEqual(metadata.metadataMakerNikon?.quality, "RAW    ")
+        XCTAssertEqual(metadata.metadataMakerNikon?.shootingMode, .continuous)
+        XCTAssertEqual(metadata.metadataMakerNikon?.shutterCount, 8834)
+    }
+
+    func testPictureStyle() throws {
+        let metadata = try! TestFile.pictureStyle.readMetadata()
+        XCTAssertNotNil(metadata.metadataPictureStyle)
+        let expected: [String: Any] = [
+            "ColorTone" : ["0", 0, 0],
+            "FilterEffect" : ["None", 0, 0],
+            "Monochrome" : ["0", 0, 0],
+            "PhotoEffect" : ["Off", 0, 0],
+            "PictStyleColorSpace" : ["sRGB", 1, 1],
+            "PictureStyle" : ["4095", 4095, 4095],
+            "SharpnessFreq" : ["0", 0, 0],
+            "ToningEffect" : ["None", 0, 0]
+        ]
+        let diff = expected.metadataDifferences(from: metadata.metadataPictureStyle ?? [:], includeValuesInDiff: false)
+        XCTAssertTrue(diff.isEmpty)
+    }
+
+    func testPNG() throws {
+        let metadata = try! TestFile.png.readMetadata()
+        XCTAssertNotNil(metadata.metadataPNG)
+        XCTAssertEqual(metadata.metadataPNG?.chromaticities, [
+            0.31269000000000002, 0.32899, 0.63999000000000006,
+            0.33000000000000002, 0.21000000000000002, 0.71000000000000008,
+            0.14999000000000001, 0.059990000000000002
+        ])
+        XCTAssertEqual(metadata.metadataPNG?.interlaceType, 0)
+        XCTAssertEqual(metadata.metadataPNG?.software, "Adobe Photoshop CC 2017 (Macintosh)")
+        XCTAssertEqual(metadata.metadataPNG?.xPixelsPerMeter, 11811)
+        XCTAssertEqual(metadata.metadataPNG?.yPixelsPerMeter, 11811)
+    }
+
+    func testUnreadable() throws {
+        XCTAssertThrowsError(try TestFile.unreadable.readMetadata()) { error in
+            XCTAssertEqual(error as? SYMetadata.Error, SYMetadata.Error.cannotCopyPropertiesAtIndexZero)
+        }
+    }
+}
