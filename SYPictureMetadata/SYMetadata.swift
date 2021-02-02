@@ -124,7 +124,7 @@ public class SYMetadata: SYMetadataBase {
     // MARK: Children
     internal override class var childrenMappings: [String: SYMetadataBase.Type] {
         return [
-            kCGImagePropertyTIFFDictionary.string: SYMetadataTifff.self,
+            kCGImagePropertyTIFFDictionary.string: SYMetadataTIFF.self,
             kCGImagePropertyExifDictionary.string: SYMetadataExif.self,
             kCGImagePropertyExifAuxDictionary.string: SYMetadataExifAux.self,
             kCGImagePropertyGIFDictionary.string: SYMetadataGIF.self,
@@ -146,7 +146,7 @@ public class SYMetadata: SYMetadataBase {
         ]
     }
     
-    public var metadataTIFF: SYMetadataTifff? {
+    public var metadataTIFF: SYMetadataTIFF? {
         get { getChildren(key: kCGImagePropertyTIFFDictionary.string) }
         set { setChildren(key: kCGImagePropertyTIFFDictionary.string, value: newValue) }
     }

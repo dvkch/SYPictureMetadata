@@ -9,7 +9,7 @@
 import Foundation
 import ImageIO
 
-@objcMembers public class SYMetadataTifff : SYMetadataBase {
+@objcMembers public class SYMetadataTIFF : SYMetadataBase {
 
     // MARK: Types
     @objc public enum PhotometricInterpretation : Int, CaseIterable {
