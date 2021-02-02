@@ -8,12 +8,20 @@
 
 import Foundation
 
-public protocol OptionalType {
+internal protocol OptionalType {
     associatedtype Wrapped
     func map<U>(_ f: (Wrapped) throws -> U) rethrows -> U?
+    var value: Wrapped? { get }
 }
 
-extension Optional: OptionalType {}
+extension Optional: OptionalType {
+    internal var value: (Wrapped)? {
+        switch self {
+        case .none:             return nil
+        case .some(let value):  return value
+        }
+    }
+}
 
 @objcMembers public class SYMetadataBase : NSObject {
 
@@ -42,7 +50,7 @@ extension Optional: OptionalType {}
     public var currentDictionary: [String: Any] {
         var dictionary = self.valuesDictionary
         for (key, object) in self.childrenObjects {
-            dictionary[key] = object.currentDictionary
+            dictionary[key] = object?.currentDictionary ?? NSNull()
         }
         return dictionary
     }
@@ -52,34 +60,47 @@ extension Optional: OptionalType {}
     internal class var childrenMappings: [String: SYMetadataBase.Type] {
         return [:]
     }
-    private var childrenObjects: [String: SYMetadataBase] = [:]
+    private var childrenObjects: [String: SYMetadataBase?] = [:]
     internal func getChildren<T: SYMetadataBase>(key: String) -> T? {
-        return childrenObjects[key] as? T
+        return childrenObjects[key] as! T?
     }
     internal func setChildren<T: SYMetadataBase>(key: String, value: T?) {
-        childrenObjects[key] = value
+        // using the subscript would remove the value from the dictionary. we want to keep it, this is an intentional remove
+        childrenObjects.updateValue(value, forKey: key)
     }
     
-    // MARK: Values
-    internal func getValue<T: RawRepresentable>(key: String) -> T? {
-        if let value = valuesDictionary[key] as? T.RawValue {
-            return T(rawValue: value)
-        }
-        fatalError("value for key \(key) is not of the expected type \(T.self)")
-    }
+    // MARK: Debug
+    public private(set) var debugReadKeys: [String] = []
+    public private(set) var debugWrittenKeys: [String] = []
 
-    internal func getValue<T>(key: String) -> T {
+    // MARK: Values
+    internal func getValue<T>(key: String) -> T? {
+        if valuesDictionary[key] == nil || valuesDictionary[key] as? NSObject == kCFNull {
+            return nil
+        }
         if let value = valuesDictionary[key] as? T {
             return value
         }
         fatalError("value for key \(key) is not of the expected type \(T.self)")
     }
 
-    internal func setValue<T: RawRepresentable>(key: String, value: T?) {
-        valuesDictionary[key] = value?.rawValue
+    internal func getValue<T: RawRepresentable>(key: String) -> T? {
+        let rawValue: T.RawValue? = getValue(key: key)
+        if let rawValue = rawValue {
+            return T(rawValue: rawValue)
+        }
+        return nil
     }
 
-    internal func setValue<T>(key: String, value: T) {
-        valuesDictionary[key] = value
+    internal func setValue<T: OptionalType>(key: String, value: T) {
+        if let value = value.value {
+            valuesDictionary[key] = value
+        } else {
+            valuesDictionary[key] = NSNull() // needed to remove a value from the metadata
+        }
+    }
+
+    internal func setValue<T: RawRepresentable>(key: String, value: T?) {
+        setValue(key: key, value: value?.rawValue)
     }
 }

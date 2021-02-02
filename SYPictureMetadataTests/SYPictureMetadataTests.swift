@@ -47,7 +47,7 @@ class SYPictureMetadataTests: XCTestCase {
         print(dictionary.jsonString)
     }
     
-    // MARK: Metadatas
+    // MARK: Reading metadata
     func testMetadata() throws {
         let metadata = try! TestFile.iptc.readMetadata()
         XCTAssertNotNil(metadata)
@@ -69,7 +69,11 @@ class SYPictureMetadataTests: XCTestCase {
     
     func testAppleGPS() throws {
         let metadata = try! TestFile.appleGPS.readMetadata()
+
+        let expectedAppleKeys = ["1", "2", "3", "4", "5", "6", "7", "8", "14", "17", "20"]
         XCTAssertNotNil(metadata.metadataMakerApple)
+        XCTAssertEqual(Array((metadata.metadataMakerApple?.originalDictionary ?? [:]).keys).sorted(), expectedAppleKeys.sorted())
+
         XCTAssertNotNil(metadata.metadataGPS)
         XCTAssertEqual(metadata.metadataGPS?.altitude, 269.21224489795918)
         XCTAssertEqual(metadata.metadataGPS?.altitudeRef, .aboveSeaLevel)
@@ -223,7 +227,7 @@ class SYPictureMetadataTests: XCTestCase {
 
     func testPictureStyle() throws {
         let metadata = try! TestFile.pictureStyle.readMetadata()
-        XCTAssertNotNil(metadata.metadataPictureStyle)
+        XCTAssertNotNil(metadata.pictureStyle)
         let expected: [String: Any] = [
             "ColorTone" : ["0", 0, 0],
             "FilterEffect" : ["None", 0, 0],
@@ -234,7 +238,7 @@ class SYPictureMetadataTests: XCTestCase {
             "SharpnessFreq" : ["0", 0, 0],
             "ToningEffect" : ["None", 0, 0]
         ]
-        let diff = expected.metadataDifferences(from: metadata.metadataPictureStyle ?? [:], includeValuesInDiff: false)
+        let diff = expected.metadataDifferences(from: metadata.pictureStyle ?? [:], includeValuesInDiff: false)
         XCTAssertTrue(diff.isEmpty)
     }
 
@@ -256,5 +260,134 @@ class SYPictureMetadataTests: XCTestCase {
         XCTAssertThrowsError(try TestFile.unreadable.readMetadata()) { error in
             XCTAssertEqual(error as? SYMetadata.Error, SYMetadata.Error.cannotCopyPropertiesAtIndexZero)
         }
+    }
+    
+    // MARK: Writing metadata
+    func testWritingIPTC() throws {
+        let imageURL = TestFile.iptc2.url!
+        
+        // load metadata from original file (please handle errors, the type is SYMetadata.Error)
+        let metadata = try! SYMetadata(fileURL: imageURL)
+        
+        // create IPTC container if not present
+        if (metadata.metadataIPTC == nil) {
+            metadata.metadataIPTC = SYMetadataIPTC()
+        }
+        
+        // edit metadata
+        metadata.metadataIPTC?.keywords  = ["Some test keywords", "added by SYMetadata example app"];
+        metadata.metadataIPTC?.city      = "Lyon";
+        metadata.metadataIPTC?.credit    = "© Me 2017";
+        
+        // create new image data with original image data and edited metadata
+        let originalImageData = try! Data(contentsOf: imageURL)
+        let imageDataWithMetadata = try! metadata.apply(to: originalImageData)
+        
+        let reloadedMetadata = try! SYMetadata(imageData: imageDataWithMetadata)
+        XCTAssertEqual(reloadedMetadata.metadataIPTC?.keywords, ["Some test keywords", "added by SYMetadata example app"])
+        XCTAssertEqual(reloadedMetadata.metadataIPTC?.city, "Lyon")
+        XCTAssertEqual(reloadedMetadata.metadataIPTC?.credit, "© Me 2017")
+    }
+    
+    func testRemovingChildren() throws {
+        let imageURL = TestFile.iptc2.url!
+        
+        // load metadata from original file (please handle errors, the type is SYMetadata.Error)
+        let metadata = try! SYMetadata(fileURL: imageURL)
+
+        // make sure we have expected keys
+        XCTAssertNotNil(metadata.metadataExif)
+        let expectedOriginalKeys: [String] = [
+            "ApertureValue", "ColorSpace", "ComponentsConfiguration", "CompressedBitsPerPixel", "Contrast", "CustomRendered", "DateTimeDigitized",
+            "DateTimeOriginal", "DigitalZoomRatio", "ExifVersion", "ExposureBiasValue", "ExposureMode", "ExposureProgram", "ExposureTime",
+            "FileSource", "Flash", "FlashPixVersion", "FNumber", "FocalLength", "FocalLenIn35mmFilm", "GainControl", "ISOSpeedRatings",
+            "LightSource", "MaxApertureValue", "MeteringMode", "PixelXDimension", "PixelYDimension", "Saturation", "SceneCaptureType",
+            "SceneType", "SensingMethod", "Sharpness", "ShutterSpeedValue", "WhiteBalance"
+        ]
+        let existingKeys: [String] = Array((metadata.metadataExif?.originalDictionary ?? [:]).keys)
+        XCTAssertEqual(existingKeys.sorted(), expectedOriginalKeys.sorted())
+
+        // remove EXIF
+        metadata.metadataExif = nil
+        
+        // create new image data with original image data and edited metadata
+        let originalImageData = try! Data(contentsOf: imageURL)
+        let imageDataWithMetadata = try! metadata.apply(to: originalImageData)
+        
+        // Make sure we remove (almost) all keys
+        let reloadedMetadata = try! SYMetadata(imageData: imageDataWithMetadata)
+        let expectedUpdatedKeys: [String] = ["DateTimeOriginal", "ColorSpace", "PixelYDimension", "DateTimeDigitized", "PixelXDimension"]
+        let updatedKeys: [String] = Array((reloadedMetadata.metadataExif?.originalDictionary ?? [:]).keys)
+        XCTAssertEqual(updatedKeys.sorted(), expectedUpdatedKeys.sorted())
+    }
+    
+    func testUpdatingAndRemovingValues() throws {
+        let imageURL = TestFile.iptc2.url!
+        
+        // load metadata from original file (please handle errors, the type is SYMetadata.Error)
+        let metadata = try! SYMetadata(fileURL: imageURL)
+
+        // make sure we have existin data
+        XCTAssertNotNil(metadata.metadataTIFF)
+        XCTAssertEqual(metadata.metadataTIFF?.artist, "Photoshop Author")
+        XCTAssertEqual(metadata.metadataTIFF?.imageDescription, "Photoshop Description")
+
+        // update author
+        // fun fact: I spent days wondering why changing IPTC.artist wasn't working, turns out ImageIO seems to sync it with IPTC.byLine and vice versa if only one is present..
+        metadata.metadataTIFF?.artist = "New Artist"
+        metadata.metadataIPTC?.byline = ["New Artist"]
+
+        // remove copyright
+        metadata.metadataTIFF?.copyright = nil
+        metadata.metadataIPTC?.copyrightNotice = nil
+
+        // remove image description
+        metadata.metadataTIFF?.imageDescription = nil
+        metadata.metadataIPTC?.captionAbstract = nil
+        
+        // remove photometric interpolation
+        metadata.metadataTIFF?.photometricInterpretation = nil
+        
+        // create new image data with original image data and edited metadata
+        let originalImageData = try! Data(contentsOf: imageURL)
+        let imageDataWithMetadata = try! metadata.apply(to: originalImageData)
+        
+        let reloadedMetadata = try! SYMetadata(imageData: imageDataWithMetadata)
+        XCTAssertEqual(reloadedMetadata.metadataTIFF?.artist, "New Artist")
+        XCTAssertEqual(reloadedMetadata.metadataTIFF?.copyright, nil)
+        XCTAssertEqual(reloadedMetadata.metadataTIFF?.imageDescription, nil)
+        XCTAssertEqual(reloadedMetadata.metadataTIFF?.photometricInterpretation, nil)
+    }
+    
+    func testStripAll() throws {
+        let imageURL = TestFile.iptc2.url!
+        
+        // create new image data with original image data and strip all metadata
+        let originalImageData = try! Data(contentsOf: imageURL)
+        let imageDataWithoutMetadata = try! SYMetadata.stripAllMetadata(from: originalImageData)
+        
+        // load metadata for newly cerated image
+        let reloadedMetadata = try! SYMetadata(imageData: imageDataWithoutMetadata)
+        let keptKeys = reloadedMetadata.originalDictionary.allKeyPaths
+        let expectedKeptKeys = [
+            "ColorModel",
+            "Depth",
+            "Orientation",
+            "PixelHeight",
+            "PixelWidth",
+            "ProfileName",
+            "{Exif}",
+            "{Exif}.ColorSpace",
+            "{Exif}.PixelXDimension",
+            "{Exif}.PixelYDimension",
+            "{JFIF}",
+            "{JFIF}.DensityUnit",
+            "{JFIF}.JFIFVersion",
+            "{JFIF}.XDensity",
+            "{JFIF}.YDensity",
+            "{TIFF}",
+            "{TIFF}.Orientation"
+        ]
+        XCTAssertEqual(keptKeys.sorted(), expectedKeptKeys.sorted())
     }
 }

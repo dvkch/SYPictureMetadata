@@ -15,7 +15,7 @@ import Photos
 
 public class SYMetadata: SYMetadataBase {
 
-    public enum Error: Swift.Error {
+    public enum Error: Swift.Error, Equatable {
         case photoMissingData
         case notAFileURL
         case cannotCreateSource
@@ -79,16 +79,22 @@ public class SYMetadata: SYMetadataBase {
             throw Error.cannotDetermineSourceImageType
         }
         
+        let count = CGImageSourceGetCount(source)
+        
         // create a new data object and write the new image into it
         let data = NSMutableData()
-        guard let destination = CGImageDestinationCreateWithData(data as CFMutableData, sourceImageType, 1, nil) else {
+        guard let destination = CGImageDestinationCreateWithData(data as CFMutableData, sourceImageType, count, nil) else {
             throw Error.cannotCreateDestination
         }
         
-        // add the image contained in the image source to the destination, overidding the old metadata with our modified metadata
-        CGImageDestinationAddImageFromSource(destination, source, 0, metadata as CFDictionary)
-        let success = CGImageDestinationFinalize(destination)
-        guard success else {
+        // add the image contained in the image source to the destination, overidding the old metadata with our modified
+        CGImageDestinationSetProperties(destination, metadata as CFDictionary)
+        (0..<count).forEach { (index) in
+            CGImageDestinationAddImageFromSource(destination, source, index, metadata as CFDictionary)
+        }
+        
+        let finalizeSuccess = CGImageDestinationFinalize(destination)
+        guard finalizeSuccess else {
             throw Error.cannotCreateDataFromDestination
         }
         
@@ -100,9 +106,12 @@ public class SYMetadata: SYMetadataBase {
     }
     
     public static func stripAllMetadata(from originalImageData: Data) throws -> Data {
+        let metadata = try SYMetadata(imageData: originalImageData)
         // As per documentation, if you need a key removed, assign it kCFNull
-        let dictionary = SYMetadata.childrenMappings.keys.reduce(into: [String: Any]()) { res, key in res[key] = kCFNull }
-        return try SYMetadata.apply(metadata: dictionary, to: originalImageData)
+        let keysToKeep = [kCGImagePropertyOrientation.string]
+        let keysToClear = metadata.originalDictionary.keys.filter { k in !keysToKeep.contains(k) }
+        let clearDic = keysToClear.reduce(into: [String: Any]()) { res, key in res[key] = kCFNull }
+        return try SYMetadata.apply(metadata: clearDic, to: originalImageData)
     }
     
     // MARK: Children
@@ -118,6 +127,7 @@ public class SYMetadata: SYMetadataBase {
             kCGImagePropertyGPSDictionary.string: SYMetadataGPS.self,
             kCGImagePropertyRawDictionary.string: SYMetadataRaw.self,
             kCGImagePropertyCIFFDictionary.string: SYMetadataCIFF.self,
+            kCGImagePropertyMakerAppleDictionary.string: SYMetadataMakerApple.self,
             kCGImagePropertyMakerCanonDictionary.string: SYMetadataMakerCanon.self,
             kCGImagePropertyMakerNikonDictionary.string: SYMetadataMakerNikon.self,
             kCGImagePropertyMakerMinoltaDictionary.string: SYMetadataMakerMinolta.self,
@@ -178,7 +188,12 @@ public class SYMetadata: SYMetadataBase {
         get { getChildren(key: kCGImagePropertyCIFFDictionary.string) }
         set { setChildren(key: kCGImagePropertyCIFFDictionary.string, value: newValue) }
     }
-    
+
+    public var metadataMakerApple: SYMetadataMakerApple? {
+        get { getChildren(key: kCGImagePropertyMakerAppleDictionary.string) }
+        set { setChildren(key: kCGImagePropertyMakerAppleDictionary.string, value: newValue) }
+    }
+
     public var metadataMakerCanon: SYMetadataMakerCanon? {
         get { getChildren(key: kCGImagePropertyMakerCanonDictionary.string) }
         set { setChildren(key: kCGImagePropertyMakerCanonDictionary.string, value: newValue) }
@@ -208,7 +223,7 @@ public class SYMetadata: SYMetadataBase {
         get { getChildren(key: kCGImagePropertyMakerPentaxDictionary.string) }
         set { setChildren(key: kCGImagePropertyMakerPentaxDictionary.string, value: newValue) }
     }
-    
+
     public var metadata8BIM: SYMetadata8BIM? {
         get { getChildren(key: kCGImageProperty8BIMDictionary.string) }
         set { setChildren(key: kCGImageProperty8BIMDictionary.string, value: newValue) }
@@ -217,16 +232,6 @@ public class SYMetadata: SYMetadataBase {
     public var metadataDNG: SYMetadataDNG? {
         get { getChildren(key: kCGImagePropertyDNGDictionary.string) }
         set { setChildren(key: kCGImagePropertyDNGDictionary.string, value: newValue) }
-    }
-
-    // we don't know how to parse those, so we juste give access to them
-    public var metadataMakerApple: Dictionary<String, Any>? {
-        get { getValue(key: kCGImagePropertyMakerAppleDictionary.string) }
-        set { setValue(key: kCGImagePropertyMakerAppleDictionary.string, value: newValue) }
-    }
-    public var metadataPictureStyle: Dictionary<String, Any>? {
-        get { getValue(key: kSYImagePropertyPictureStyle.string) }
-        set { setValue(key: kSYImagePropertyPictureStyle.string, value: newValue) }
     }
     
     // MARK: Types
@@ -285,5 +290,10 @@ public class SYMetadata: SYMetadataBase {
     
     public var profileName: String? {
         return getValue(key: kCGImagePropertyProfileName.string)
+    }
+
+    public var pictureStyle: Dictionary<String, Any>? {
+        get { getValue(key: kSYImagePropertyPictureStyle.string) }
+        set { setValue(key: kSYImagePropertyPictureStyle.string, value: newValue) }
     }
 }
