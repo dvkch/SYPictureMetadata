@@ -9,7 +9,7 @@
 import Foundation
 import ImageIO
 
-@objcMembers public class SYMetadata8BIM : SYMetadataBase {
+public class SYMetadata8BIM : SYMetadataBase {
 
     // MARK: Values
     public var layerNames: Array<String>? {
@@ -17,7 +17,7 @@ import ImageIO
         set { setValue(key: kCGImageProperty8BIMLayerNames.string, value: newValue) }
     }
     
-    public var version: NSNumber? {
+    public var version: Int? {
         get { getValue(key: kCGImageProperty8BIMVersion.string) }
         set { setValue(key: kCGImageProperty8BIMVersion.string, value: newValue) }
     }

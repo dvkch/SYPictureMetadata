@@ -8,7 +8,7 @@
 
 import Foundation
 
-@objcMembers public class SYMetadataBase : NSObject {
+public class SYMetadataBase : NSObject {
 
     // MARK: Init
     public required init(dictionary: Dictionary<String, Any>) {
@@ -55,6 +55,7 @@ import Foundation
     }
     
     // MARK: Debug
+    #if DEBUG
     internal var debugReadKeys: Set<String> = []
     public var allDebugReadKeys: Set<String> {
         var keys = debugReadKeys
@@ -75,17 +76,35 @@ import Foundation
         }
         return keys
     }
+    #endif
 
     // MARK: Values
     internal func getValue<T>(key: String) -> T? {
+        #if DEBUG
         debugReadKeys.insert(key)
+        #endif
+
         if valuesDictionary[key] == nil || valuesDictionary[key] as? NSObject == kCFNull {
             return nil
         }
-        if let value = valuesDictionary[key] as? T {
-            return value
+        guard let value = valuesDictionary[key] as? T else {
+            fatalError("value for key \(key) is not of the expected type \(T.self)")
         }
-        fatalError("value for key \(key) is not of the expected type \(T.self)")
+
+        #if DEBUG
+        if T.self == Array<NSNumber>.self, let first = (value as! Array<NSNumber>).first {
+            let typeString = NSString(cString: first.objCType, encoding: String.Encoding.ascii.rawValue)!
+            print("-> \(type(of: self)).\(key) is configured as Array<NSNumber>, you could use '\(typeString)' instead")
+        }
+        if T.self == NSNumber.self {
+            let typeString = NSString(cString: (value as! NSNumber).objCType, encoding: String.Encoding.ascii.rawValue)!
+            print("-> \(type(of: self)).\(key) is configured as NSNumber, you could use '\(typeString)' instead")
+        }
+        if T.self == NSObject.self {
+            print("-> \(type(of: self)).\(key) is configured as NSObject, you could use '\(type(of: value))' instead")
+        }
+        #endif
+        return value
     }
 
     internal func getValue<T: RawRepresentable>(key: String) -> T? {
@@ -97,7 +116,10 @@ import Foundation
     }
 
     internal func setValue<T: OptionalType>(key: String, value: T) {
+        #if DEBUG
         debugWrittenKeys.insert(key)
+        #endif
+
         if let value = value.value {
             valuesDictionary[key] = value
         } else {

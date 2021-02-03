@@ -30,6 +30,11 @@ import ImageIO
         static let paeth        = CompressionFilter(rawValue: IMAGEIO_PNG_FILTER_PAETH)
         static let all          = [CompressionFilter.none, sub, .up, .avg, .paeth] // IMAGEIO_PNG_ALL_FILTERS
     }
+    
+    public enum InterlaceType: Int, CaseIterable {
+        case nonInterlaced = 0
+        case adam7Interlace = 1
+    }
 
     // MARK: Values
     public var gamma: NSNumber? {
@@ -37,17 +42,17 @@ import ImageIO
         set { setValue(key: kCGImagePropertyPNGGamma.string, value: newValue) }
     }
     
-    public var interlaceType: NSNumber? {
+    public var interlaceType: InterlaceType? {
         get { getValue(key: kCGImagePropertyPNGInterlaceType.string) }
         set { setValue(key: kCGImagePropertyPNGInterlaceType.string, value: newValue) }
     }
     
-    public var xPixelsPerMeter: NSNumber? {
+    public var xPixelsPerMeter: Int? {
         get { getValue(key: kCGImagePropertyPNGXPixelsPerMeter.string) }
         set { setValue(key: kCGImagePropertyPNGXPixelsPerMeter.string, value: newValue) }
     }
     
-    public var yPixelsPerMeter: NSNumber? {
+    public var yPixelsPerMeter: Int? {
         get { getValue(key: kCGImagePropertyPNGYPixelsPerMeter.string) }
         set { setValue(key: kCGImagePropertyPNGYPixelsPerMeter.string, value: newValue) }
     }
@@ -57,7 +62,7 @@ import ImageIO
         set { setValue(key: kCGImagePropertyPNGsRGBIntent.string, value: newValue) }
     }
     
-    public var chromaticities: Array<NSNumber>? {
+    public var chromaticities: Array<Double>? {
         get { getValue(key: kCGImagePropertyPNGChromaticities.string) }
         set { setValue(key: kCGImagePropertyPNGChromaticities.string, value: newValue) }
     }
@@ -102,12 +107,12 @@ import ImageIO
         set { setValue(key: kCGImagePropertyAPNGLoopCount.string, value: newValue) }
     }
     
-    public var delayTime: NSNumber? {
+    public var delayTime: Double? {
         get { getValue(key: kCGImagePropertyAPNGDelayTime.string) }
         set { setValue(key: kCGImagePropertyAPNGDelayTime.string, value: newValue) }
     }
     
-    public var unclampedDelayTime: NSNumber? {
+    public var unclampedDelayTime: Double? {
         get { getValue(key: kCGImagePropertyAPNGUnclampedDelayTime.string) }
         set { setValue(key: kCGImagePropertyAPNGUnclampedDelayTime.string, value: newValue) }
     }

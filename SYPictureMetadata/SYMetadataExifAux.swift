@@ -17,12 +17,12 @@ import ImageIO
         set { setValue(key: kCGImagePropertyExifAuxLensInfo.string, value: newValue) }
     }
     
-    public var lensModel: NSString? {
+    public var lensModel: String? {
         get { getValue(key: kCGImagePropertyExifAuxLensModel.string) }
         set { setValue(key: kCGImagePropertyExifAuxLensModel.string, value: newValue) }
     }
     
-    public var serialNumber: NSString? {
+    public var serialNumber: String? {
         get { getValue(key: kCGImagePropertyExifAuxSerialNumber.string) }
         set { setValue(key: kCGImagePropertyExifAuxSerialNumber.string, value: newValue) }
     }
@@ -32,7 +32,7 @@ import ImageIO
         set { setValue(key: kCGImagePropertyExifAuxLensID.string, value: newValue) }
     }
     
-    public var lensSerialNumber: NSString? {
+    public var lensSerialNumber: String? {
         get { getValue(key: kCGImagePropertyExifAuxLensSerialNumber.string) }
         set { setValue(key: kCGImagePropertyExifAuxLensSerialNumber.string, value: newValue) }
     }
@@ -47,7 +47,7 @@ import ImageIO
         set { setValue(key: kCGImagePropertyExifAuxFlashCompensation.string, value: newValue) }
     }
     
-    public var ownerName: NSString? {
+    public var ownerName: String? {
         get { getValue(key: kCGImagePropertyExifAuxOwnerName.string) }
         set { setValue(key: kCGImagePropertyExifAuxOwnerName.string, value: newValue) }
     }

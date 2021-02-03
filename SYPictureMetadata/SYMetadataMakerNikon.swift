@@ -36,7 +36,7 @@ import ImageIO
     }
 
     // MARK: Values
-    public var isoSetting: Array<NSNumber>? {
+    public var isoSetting: Array<Int>? {
         get { getValue(key: kCGImagePropertyMakerNikonISOSetting.string) }
         set { setValue(key: kCGImagePropertyMakerNikonISOSetting.string, value: newValue) }
     }

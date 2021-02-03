@@ -38,6 +38,14 @@ import ImageIO
         case milesPerHour = "M"
         case knots = "N"
     }
+    public enum MeasureMode: String, CaseIterable {
+        case twoDimensional = "2"
+        case threeDimensional = "3"
+    }
+    public enum Status: String, CaseIterable {
+        case active = "A"
+        case void = "V"
+    }
 
     // MARK: Values
     public var version: Array<NSNumber>? {
@@ -50,7 +58,7 @@ import ImageIO
         set { setValue(key: kCGImagePropertyGPSLatitudeRef.string, value: newValue) }
     }
     
-    public var latitude: NSNumber? {
+    public var latitude: Double? {
         get { getValue(key: kCGImagePropertyGPSLatitude.string) }
         set { setValue(key: kCGImagePropertyGPSLatitude.string, value: newValue) }
     }
@@ -60,7 +68,7 @@ import ImageIO
         set { setValue(key: kCGImagePropertyGPSLongitudeRef.string, value: newValue) }
     }
     
-    public var longitude: NSNumber? {
+    public var longitude: Double? {
         get { getValue(key: kCGImagePropertyGPSLongitude.string) }
         set { setValue(key: kCGImagePropertyGPSLongitude.string, value: newValue) }
     }
@@ -70,32 +78,32 @@ import ImageIO
         set { setValue(key: kCGImagePropertyGPSAltitudeRef.string, value: newValue) }
     }
     
-    public var altitude: NSNumber? {
+    public var altitude: Double? {
         get { getValue(key: kCGImagePropertyGPSAltitude.string) }
         set { setValue(key: kCGImagePropertyGPSAltitude.string, value: newValue) }
     }
     
-    public var timeStamp: NSString? {
+    public var timeStamp: String? {
         get { getValue(key: kCGImagePropertyGPSTimeStamp.string) }
         set { setValue(key: kCGImagePropertyGPSTimeStamp.string, value: newValue) }
     }
     
-    public var satellites: NSString? {
+    public var satellites: String? {
         get { getValue(key: kCGImagePropertyGPSSatellites.string) }
         set { setValue(key: kCGImagePropertyGPSSatellites.string, value: newValue) }
     }
     
-    public var status: NSString? {
+    public var status: Status? {
         get { getValue(key: kCGImagePropertyGPSStatus.string) }
         set { setValue(key: kCGImagePropertyGPSStatus.string, value: newValue) }
     }
     
-    public var measureMode: NSString? {
+    public var measureMode: MeasureMode? {
         get { getValue(key: kCGImagePropertyGPSMeasureMode.string) }
         set { setValue(key: kCGImagePropertyGPSMeasureMode.string, value: newValue) }
     }
     
-    public var dop: NSNumber? {
+    public var dop: Double? {
         get { getValue(key: kCGImagePropertyGPSDOP.string) }
         set { setValue(key: kCGImagePropertyGPSDOP.string, value: newValue) }
     }
@@ -105,7 +113,7 @@ import ImageIO
         set { setValue(key: kCGImagePropertyGPSSpeedRef.string, value: newValue) }
     }
     
-    public var speed: NSNumber? {
+    public var speed: Double? {
         get { getValue(key: kCGImagePropertyGPSSpeed.string) }
         set { setValue(key: kCGImagePropertyGPSSpeed.string, value: newValue) }
     }
@@ -115,7 +123,7 @@ import ImageIO
         set { setValue(key: kCGImagePropertyGPSTrackRef.string, value: newValue) }
     }
     
-    public var track: NSNumber? {
+    public var track: Double? {
         get { getValue(key: kCGImagePropertyGPSTrack.string) }
         set { setValue(key: kCGImagePropertyGPSTrack.string, value: newValue) }
     }
@@ -125,12 +133,12 @@ import ImageIO
         set { setValue(key: kCGImagePropertyGPSImgDirectionRef.string, value: newValue) }
     }
     
-    public var imgDirection: NSNumber? {
+    public var imgDirection: Double? {
         get { getValue(key: kCGImagePropertyGPSImgDirection.string) }
         set { setValue(key: kCGImagePropertyGPSImgDirection.string, value: newValue) }
     }
     
-    public var mapDatum: NSString? {
+    public var mapDatum: String? {
         get { getValue(key: kCGImagePropertyGPSMapDatum.string) }
         set { setValue(key: kCGImagePropertyGPSMapDatum.string, value: newValue) }
     }
@@ -140,7 +148,7 @@ import ImageIO
         set { setValue(key: kCGImagePropertyGPSDestLatitudeRef.string, value: newValue) }
     }
     
-    public var destLatitude: NSNumber? {
+    public var destLatitude: Double? {
         get { getValue(key: kCGImagePropertyGPSDestLatitude.string) }
         set { setValue(key: kCGImagePropertyGPSDestLatitude.string, value: newValue) }
     }
@@ -150,7 +158,7 @@ import ImageIO
         set { setValue(key: kCGImagePropertyGPSDestLongitudeRef.string, value: newValue) }
     }
     
-    public var destLongitude: NSNumber? {
+    public var destLongitude: Double? {
         get { getValue(key: kCGImagePropertyGPSDestLongitude.string) }
         set { setValue(key: kCGImagePropertyGPSDestLongitude.string, value: newValue) }
     }
@@ -160,7 +168,7 @@ import ImageIO
         set { setValue(key: kCGImagePropertyGPSDestBearingRef.string, value: newValue) }
     }
     
-    public var destBearing: NSNumber? {
+    public var destBearing: Double? {
         get { getValue(key: kCGImagePropertyGPSDestBearing.string) }
         set { setValue(key: kCGImagePropertyGPSDestBearing.string, value: newValue) }
     }
@@ -170,12 +178,12 @@ import ImageIO
         set { setValue(key: kCGImagePropertyGPSDestDistanceRef.string, value: newValue) }
     }
     
-    public var destDistance: NSNumber? {
+    public var destDistance: Double? {
         get { getValue(key: kCGImagePropertyGPSDestDistance.string) }
         set { setValue(key: kCGImagePropertyGPSDestDistance.string, value: newValue) }
     }
     
-    public var processingMethod: NSString? {
+    public var processingMethod: NSObject? {
         get { getValue(key: kCGImagePropertyGPSProcessingMethod.string) }
         set { setValue(key: kCGImagePropertyGPSProcessingMethod.string, value: newValue) }
     }
@@ -185,17 +193,17 @@ import ImageIO
         set { setValue(key: kCGImagePropertyGPSAreaInformation.string, value: newValue) }
     }
     
-    public var dateStamp: NSString? {
+    public var dateStamp: String? {
         get { getValue(key: kCGImagePropertyGPSDateStamp.string) }
         set { setValue(key: kCGImagePropertyGPSDateStamp.string, value: newValue) }
     }
     
-    public var differental: NSNumber? {
+    public var differental: Double? {
         get { getValue(key: kCGImagePropertyGPSDifferental.string) }
         set { setValue(key: kCGImagePropertyGPSDifferental.string, value: newValue) }
     }
     
-    public var hPositioningError: NSNumber? {
+    public var hPositioningError: Double? {
         get { getValue(key: kCGImagePropertyGPSHPositioningError.string) }
         set { setValue(key: kCGImagePropertyGPSHPositioningError.string, value: newValue) }
     }

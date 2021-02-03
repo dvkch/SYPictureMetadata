@@ -128,12 +128,12 @@ class SYPictureMetadataTests: XCTestCase {
     func testCanon() throws {
         let metadata = try! TestFile.canon.readMetadata()
         XCTAssertNotNil(metadata.metadataMakerCanon)
-        XCTAssertEqual(metadata.metadataMakerCanon?.continuousDrive, 0)
+        XCTAssertEqual(metadata.metadataMakerCanon?.continuousDrive, .single)
         XCTAssertEqual(metadata.metadataMakerCanon?.lensModel, "EF-S18-135mm f/3.5-5.6 IS STM")
         XCTAssertEqual(metadata.metadataMakerCanon?.maxAperture, 4.3620309306610308)
         XCTAssertEqual(metadata.metadataMakerCanon?.minAperture, 28.508758980490853)
         XCTAssertEqual(metadata.metadataMakerCanon?.uniqueModelID, 2147484453)
-        XCTAssertEqual(metadata.metadataMakerCanon?.whiteBalanceIndex, 0)
+        XCTAssertEqual(metadata.metadataMakerCanon?.whiteBalance, .auto)
 
         // stats
         keepStats([metadata])
@@ -142,9 +142,9 @@ class SYPictureMetadataTests: XCTestCase {
     func testCIFF() throws {
         let metadata = try! TestFile.ciff.readMetadata()
         XCTAssertNotNil(metadata.metadataCIFF)
-        XCTAssertEqual(metadata.metadataCIFF?.continuousDrive, 0)
+        XCTAssertEqual(metadata.metadataCIFF?.continuousDrive, .single)
         XCTAssertEqual(metadata.metadataCIFF?.descr, "High definition CCD image")
-        XCTAssertEqual(metadata.metadataCIFF?.focusMode, 1)
+        XCTAssertEqual(metadata.metadataCIFF?.focusMode, .aiServoAF)
         XCTAssertEqual(metadata.metadataCIFF?.imageFileName, "CRW_5082.CRW")
         XCTAssertEqual(metadata.metadataCIFF?.imageName, "CRW:High definition CCD image")
         XCTAssertEqual(metadata.metadataCIFF?.maxAperture, 2.8903616139540933)
@@ -152,7 +152,7 @@ class SYPictureMetadataTests: XCTestCase {
         XCTAssertEqual(metadata.metadataCIFF?.measuredEV, 0.375)
         XCTAssertEqual(metadata.metadataCIFF?.recordID, 0)
         XCTAssertEqual(metadata.metadataCIFF?.uniqueModelID, 20512768)
-        XCTAssertEqual(metadata.metadataCIFF?.whiteBalanceIndex, 5)
+        XCTAssertEqual(metadata.metadataCIFF?.whiteBalance, .flash)
 
         // stats
         keepStats([metadata])
@@ -166,8 +166,8 @@ class SYPictureMetadataTests: XCTestCase {
         XCTAssertEqual(metadata.metadataDNG?.uniqueCameraModel, "Nikon D5300")
         XCTAssertEqual(metadata.metadataDNG?.blackLevel, [150,  150,  150,  150])
         XCTAssertEqual(metadata.metadataDNG?.whiteLevel, [3972])
-        XCTAssertEqual(metadata.metadataDNG?.calibrationIlluminant1, 17)
-        XCTAssertEqual(metadata.metadataDNG?.calibrationIlluminant2, 21)
+        XCTAssertEqual(metadata.metadataDNG?.calibrationIlluminant1, .standardLightA)
+        XCTAssertEqual(metadata.metadataDNG?.calibrationIlluminant2, .d65)
         XCTAssertEqual(metadata.metadataDNG?.colorMatrix1, [
             0.96719998121261597, -0.41530001163482666, 0.006399999838322401,
             -0.41200000047683716, 1.1851999759674072, 0.25709998607635498,
@@ -307,7 +307,7 @@ class SYPictureMetadataTests: XCTestCase {
             0.33000000000000002, 0.21000000000000002, 0.71000000000000008,
             0.14999000000000001, 0.059990000000000002
         ])
-        XCTAssertEqual(metadata.metadataPNG?.interlaceType, 0)
+        XCTAssertEqual(metadata.metadataPNG?.interlaceType, .nonInterlaced)
         XCTAssertEqual(metadata.metadataPNG?.software, "Adobe Photoshop CC 2017 (Macintosh)")
         XCTAssertEqual(metadata.metadataPNG?.xPixelsPerMeter, 11811)
         XCTAssertEqual(metadata.metadataPNG?.yPixelsPerMeter, 11811)

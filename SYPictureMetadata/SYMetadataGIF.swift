@@ -17,7 +17,7 @@ import ImageIO
         set { setValue(key: kCGImagePropertyGIFLoopCount.string, value: newValue) }
     }
 
-    public var delayTime: NSNumber? {
+    public var delayTime: Double? {
         get { getValue(key: kCGImagePropertyGIFDelayTime.string) }
         set { setValue(key: kCGImagePropertyGIFDelayTime.string, value: newValue) }
     }
@@ -27,12 +27,12 @@ import ImageIO
         set { setValue(key: kCGImagePropertyGIFImageColorMap.string, value: newValue) }
     }
     
-    public var hasGlobalColorMap: NSNumber? {
+    public var hasGlobalColorMap: Bool? {
         get { getValue(key: kCGImagePropertyGIFHasGlobalColorMap.string) }
         set { setValue(key: kCGImagePropertyGIFHasGlobalColorMap.string, value: newValue) }
     }
     
-    public var unclampedDelayTime: NSNumber? {
+    public var unclampedDelayTime: Double? {
         get { getValue(key: kCGImagePropertyGIFUnclampedDelayTime.string) }
         set { setValue(key: kCGImagePropertyGIFUnclampedDelayTime.string, value: newValue) }
     }

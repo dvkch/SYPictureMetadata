@@ -13,13 +13,38 @@ import ImageIO
 
 @objcMembers public class SYMetadataDNG : SYMetadataBase {
 
+    public enum LightSource: Int, CaseIterable {
+        case unknown = 0
+        case daylight = 1
+        case fluorescent = 2
+        case tungstenIncandescent = 3
+        case flash = 4
+        case fineWeather = 9
+        case cloudy = 10
+        case shade = 11
+        case daylightFluorescent = 12
+        case dayWhiteFluorescent = 13
+        case coolWhiteFluorescent = 14
+        case whiteFluorescent = 15
+        case warmWhiteFluorescent = 16
+        case standardLightA = 17
+        case standardLightB = 18
+        case standardLightC = 19
+        case d55 = 20
+        case d65 = 21
+        case d75 = 22
+        case d50 = 23
+        case isoStudioTungsten = 24
+        case other = 255
+    }
+    
     // MARK: Values
-    public var version: Array<NSNumber>? {
+    public var version: Array<Int>? {
         get { getValue(key: kCGImagePropertyDNGVersion.string) }
         set { setValue(key: kCGImagePropertyDNGVersion.string, value: newValue) }
     }
    
-    public var backwardVersion: Array<NSNumber>? {
+    public var backwardVersion: Array<Int>? {
         get { getValue(key: kCGImagePropertyDNGBackwardVersion.string) }
         set { setValue(key: kCGImagePropertyDNGBackwardVersion.string, value: newValue) }
     }
@@ -44,32 +69,32 @@ import ImageIO
         set { setValue(key: kCGImagePropertyDNGLensInfo.string, value: newValue) }
     }
     
-    public var blackLevel: Array<NSNumber>? {
+    public var blackLevel: Array<Float>? {
         get { getValue(key: kCGImagePropertyDNGBlackLevel.string) }
         set { setValue(key: kCGImagePropertyDNGBlackLevel.string, value: newValue) }
     }
     
-    public var whiteLevel: Array<NSNumber>? {
+    public var whiteLevel: Array<Int>? {
         get { getValue(key: kCGImagePropertyDNGWhiteLevel.string) }
         set { setValue(key: kCGImagePropertyDNGWhiteLevel.string, value: newValue) }
     }
     
-    public var calibrationIlluminant1: NSNumber? {
+    public var calibrationIlluminant1: LightSource? {
         get { getValue(key: kCGImagePropertyDNGCalibrationIlluminant1.string) }
         set { setValue(key: kCGImagePropertyDNGCalibrationIlluminant1.string, value: newValue) }
     }
     
-    public var calibrationIlluminant2: NSNumber? {
+    public var calibrationIlluminant2: LightSource? {
         get { getValue(key: kCGImagePropertyDNGCalibrationIlluminant2.string) }
         set { setValue(key: kCGImagePropertyDNGCalibrationIlluminant2.string, value: newValue) }
     }
     
-    public var colorMatrix1: Array<NSNumber>? {
+    public var colorMatrix1: Array<Float>? {
         get { getValue(key: kCGImagePropertyDNGColorMatrix1.string) }
         set { setValue(key: kCGImagePropertyDNGColorMatrix1.string, value: newValue) }
     }
     
-    public var colorMatrix2: Array<NSNumber>? {
+    public var colorMatrix2: Array<Float>? {
         get { getValue(key: kCGImagePropertyDNGColorMatrix2.string) }
         set { setValue(key: kCGImagePropertyDNGColorMatrix2.string, value: newValue) }
     }
@@ -84,7 +109,7 @@ import ImageIO
         set { setValue(key: kCGImagePropertyDNGCameraCalibration2.string, value: newValue) }
     }
     
-    public var asShotNeutral: Array<NSNumber>? {
+    public var asShotNeutral: Array<Float>? {
         get { getValue(key: kCGImagePropertyDNGAsShotNeutral.string) }
         set { setValue(key: kCGImagePropertyDNGAsShotNeutral.string, value: newValue) }
     }
@@ -94,17 +119,17 @@ import ImageIO
         set { setValue(key: kCGImagePropertyDNGAsShotWhiteXY.string, value: newValue) }
     }
     
-    public var baselineExposure: NSNumber? {
+    public var baselineExposure: Float? {
         get { getValue(key: kCGImagePropertyDNGBaselineExposure.string) }
         set { setValue(key: kCGImagePropertyDNGBaselineExposure.string, value: newValue) }
     }
     
-    public var baselineNoise: NSNumber? {
+    public var baselineNoise: Float? {
         get { getValue(key: kCGImagePropertyDNGBaselineNoise.string) }
         set { setValue(key: kCGImagePropertyDNGBaselineNoise.string, value: newValue) }
     }
     
-    public var baselineSharpness: NSNumber? {
+    public var baselineSharpness: Float? {
         get { getValue(key: kCGImagePropertyDNGBaselineSharpness.string) }
         set { setValue(key: kCGImagePropertyDNGBaselineSharpness.string, value: newValue) }
     }
@@ -124,7 +149,7 @@ import ImageIO
         set { setValue(key: kCGImagePropertyDNGProfileCalibrationSignature.string, value: newValue) }
     }
     
-    public var noiseProfile: Array<NSNumber>? {
+    public var noiseProfile: Array<Double>? {
         get { getValue(key: kCGImagePropertyDNGNoiseProfile.string) }
       	set { setValue(key: kCGImagePropertyDNGNoiseProfile.string, value: newValue) }
     }

@@ -257,7 +257,7 @@ import ImageIO
         set { setValue(key: kCGImagePropertyIPTCLanguageIdentifier.string, value: newValue) }
     }
     
-    public var starRating: NSNumber? {
+    public var starRating: Double? {
         get { getValue(key: kCGImagePropertyIPTCStarRating.string) }
         set { setValue(key: kCGImagePropertyIPTCStarRating.string, value: newValue) }
     }

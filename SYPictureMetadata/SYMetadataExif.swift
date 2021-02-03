@@ -168,7 +168,7 @@ import ImageIO
     }
 
     // MARK: Values
-    public var exposureTime: NSNumber? {
+    public var exposureTime: Float? {
         get { getValue(key: kCGImagePropertyExifExposureTime.string) }
         set { setValue(key: kCGImagePropertyExifExposureTime.string, value: newValue) }
     }
