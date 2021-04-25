@@ -21,6 +21,12 @@ There are basic tests in place currently testing around 32% of defined getters a
 
 Xcode reports 36.4% of test coverage for this library.
 
+#### Photos captions (iOS 14)
+
+I have added preliminary support for iOS 14 photo captions. Since this data is not stored in the image data like any other metadata read but `ImageIO` until the image is exported, I made a quick `PHAsset` extension with a read-only  property called `assetCaption` to obtain this information.
+
+More details in [SYMetadataExtensions.swift](https://github.com/dvkch/SYPictureMetadata/blob/master/SYPictureMetadata/SYMetadataExtensions.swift)
+
 ## Keep in mind
 
 When saving metadata to a file you can encouter the following issues:

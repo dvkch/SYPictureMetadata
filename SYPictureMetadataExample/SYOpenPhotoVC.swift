@@ -81,7 +81,10 @@ class SYOpenPhotoVC : UIViewController {
                 self.textView.text = error.localizedDescription
             }
             else if let metadata = metadata {
-                self.textView.text = metadata.originalDictionary.jsonString
+                self.textView.text = [
+                    "CAPTION: \(asset.assetCaption ?? "")",
+                    metadata.originalDictionary.jsonString
+                ].joined(separator: "\n\n")
             }
         }
     }
