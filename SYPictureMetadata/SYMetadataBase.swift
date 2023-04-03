@@ -47,7 +47,8 @@ public class SYMetadataBase : NSObject {
     }
     private var childrenObjects: [String: SYMetadataBase?] = [:]
     internal func getChildren<T: SYMetadataBase>(key: String) -> T? {
-        return childrenObjects[key] as! T?
+        guard let child = childrenObjects[key] else { return nil }
+        return child as! T
     }
     internal func setChildren<T: SYMetadataBase>(key: String, value: T?) {
         // using the subscript would remove the value from the dictionary. we want to keep it, this is an intentional remove
