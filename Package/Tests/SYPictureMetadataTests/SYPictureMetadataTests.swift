@@ -7,7 +7,8 @@
 //
 
 import XCTest
-import SYPictureMetadata
+@testable import SYPictureMetadata
+@testable import SYPictureMetadataTestAssets
 
 var readKeys = Set<String>()
 var writtenKeys = Set<String>()
@@ -24,7 +25,7 @@ class SYPictureMetadataTests: XCTestCase {
     }
     
     override class func tearDown() {
-        let supported = Keys.supported.read().count
+        let supported = MetadataKeys.supported.read().count
         let ratioReadAvailable = Int(Float(readKeys.count) / Float(availableKeys.count) * 100)
         let ratioReadSupported = Int(Float(readKeys.count) / Float(supported) * 100)
         let ratioWrittenSupported = Int(Float(writtenKeys.count) / Float(supported) * 100)
@@ -47,13 +48,11 @@ class SYPictureMetadataTests: XCTestCase {
     func testFileListCompleteAndAvailable() throws {
         // All files are available
         TestFile.allCases.forEach { file in
-            XCTAssert(file.url != nil, "Missing file \(file.rawValue)")
+            XCTAssertNotNil(try? file.read(), "Missing file \(file.rawValue)")
         }
 
         // File list is complete
-        let knownFiles = TestFile.allCases.map { $0.url! }
-            .map { $0.standardizedFileURL.path }
-            .sorted()
+        let knownFiles = TestFile.allCases.map(\.url.standardizedFileURL.path).sorted()
         let parentDir = TestFile.nikon.url.deletingLastPathComponent()
         let availableFiles = try! FileManager.default.contentsOfDirectory(at: parentDir, includingPropertiesForKeys: nil, options: .skipsSubdirectoryDescendants)
             .map { $0.standardizedFileURL.path }
@@ -324,7 +323,7 @@ class SYPictureMetadataTests: XCTestCase {
     
     // MARK: Writing metadata
     func testWritingIPTC() throws {
-        let imageURL = TestFile.iptc2.url!
+        let imageURL = TestFile.iptc2.url
         
         // load metadata from original file (please handle errors, the type is SYMetadata.Error)
         let metadata = try! SYMetadata(fileURL: imageURL)
@@ -353,7 +352,7 @@ class SYPictureMetadataTests: XCTestCase {
     }
     
     func testRemovingChildren() throws {
-        let imageURL = TestFile.iptc2.url!
+        let imageURL = TestFile.iptc2.url
         
         // load metadata from original file (please handle errors, the type is SYMetadata.Error)
         let metadata = try! SYMetadata(fileURL: imageURL)
@@ -388,7 +387,7 @@ class SYPictureMetadataTests: XCTestCase {
     }
     
     func testUpdatingAndRemovingValues() throws {
-        let imageURL = TestFile.iptc2.url!
+        let imageURL = TestFile.iptc2.url
         
         // load metadata from original file (please handle errors, the type is SYMetadata.Error)
         let metadata = try! SYMetadata(fileURL: imageURL)
@@ -429,7 +428,7 @@ class SYPictureMetadataTests: XCTestCase {
     }
     
     func testStripAll() throws {
-        let imageURL = TestFile.iptc2.url!
+        let imageURL = TestFile.iptc2.url
         
         // create new image data with original image data and strip all metadata
         let originalImageData = try! Data(contentsOf: imageURL)

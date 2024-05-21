@@ -4,8 +4,8 @@ Read and write images metadata using `ImageIO` and easy to use models.
 
 ## Screenshots
 
-<img src="https://raw.githubusercontent.com/dvkch/SYPictureMetadata/master/screenshots/screenshot_set_analysis.png" alt="Data set analysis" width="300"/>
-<img src="https://raw.githubusercontent.com/dvkch/SYPictureMetadata/master/screenshots/screenshot_preview.png" alt="Metadata preview" width="300"/>
+<img src="https://raw.githubusercontent.com/dvkch/SYPictureMetadata/main/Screenshots/screenshot_set_analysis.png" alt="Data set analysis" width="300"/>
+<img src="https://raw.githubusercontent.com/dvkch/SYPictureMetadata/main/Screenshots/screenshot_preview.png" alt="Metadata preview" width="300"/>
 
 ## Metadata support
 
@@ -25,7 +25,7 @@ Xcode reports 36.4% of test coverage for this library.
 
 I have added preliminary support for iOS 14 photo captions. Since this data is not stored in the image data like any other metadata read but `ImageIO` until the image is exported, I made a quick `PHAsset` extension with a read-only  property called `assetCaption` to obtain this information.
 
-More details in [SYMetadataExtensions.swift](https://github.com/dvkch/SYPictureMetadata/blob/master/SYPictureMetadata/SYMetadataExtensions.swift)
+More details in [SYMetadataExtensions.swift](https://github.com/dvkch/SYPictureMetadata/blob/main/Sources/SYPictureMetadata/SYMetadataExtensions.swift)
 
 ## Keep in mind
 

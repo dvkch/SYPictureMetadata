@@ -8,7 +8,7 @@
 
 import Foundation
 
-extension Dictionary where Value == Any {
+public extension Dictionary where Value == Any {
     var removingData: Dictionary {
         return self.mapValues { (value) -> Value in
             if let value = value as? Data {

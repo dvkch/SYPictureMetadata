@@ -9,7 +9,9 @@
 import Foundation
 import SYPictureMetadata
 
-enum TestFile: String, CaseIterable {
+private class EmptyClass: NSObject {}
+
+public enum TestFile: String, CaseIterable {
     case appleGPS = "TEST_APPLE_GPS.JPG"
     case eightBim = "TEST_8BIM.psd"
     case canon = "TEST_CANON.cr2"
@@ -23,15 +25,15 @@ enum TestFile: String, CaseIterable {
     case png = "TEST_PNG.png"
     case unreadable = "TEST_unreadable.txt"
     
-    var url: URL! {
-        #if EXAMPLE
-        return Bundle(for: AppDelegate.self).url(forResource: rawValue, withExtension: nil, subdirectory: "Test images")
-        #elseif TEST
-        return Bundle(for: SYPictureMetadataTests.self).url(forResource: rawValue, withExtension: nil, subdirectory: "Test images")
-        #endif
+    public var url: URL {
+        return Bundle.module.url(forResource: rawValue, withExtension: nil, subdirectory: "TestFile")!
     }
-    
-    func readMetadata() throws -> SYMetadata {
+
+    public func read() throws -> Data {
+        try Data(contentsOf: url)
+    }
+
+    public func readMetadata() throws -> SYMetadata {
         return try SYMetadata(fileURL: url)
     }
 }

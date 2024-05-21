@@ -7,8 +7,8 @@
 //
 
 import UIKit
-import SYKit
 import SYPictureMetadata
+import SYPictureMetadataTestAssets
 import Photos
 
 class SYSummaryVC: UIViewController {
@@ -17,7 +17,7 @@ class SYSummaryVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Summary"
-        tableView.registerCell(SYSummaryCell.self, xib: false)
+        tableView.register(SYSummaryCell.self, forCellReuseIdentifier: "SYSummaryCell")
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -37,9 +37,9 @@ class SYSummaryVC: UIViewController {
 
     // Supported keys
     private func detailedSupportedKeys() -> String {
-        let imageIO = Keys.imageIO.read().count
-        let supported = Keys.supported.read().count
-        let unsupported = Keys.unsupported.read().count
+        let imageIO = MetadataKeys.imageIO.read().count
+        let supported = MetadataKeys.supported.read().count
+        let unsupported = MetadataKeys.unsupported.read().count
         let ratio = Int(Float(supported) / Float(imageIO) * 100)
 
         var details = [String]()
@@ -130,7 +130,7 @@ class SYSummaryVC: UIViewController {
         details.append("")
 
         // add total keys to log
-        details.append("Currrent set of files uses \(readKeys.count) keys out of \(Keys.supported.read().count) supported")
+        details.append("Currrent set of files uses \(readKeys.count) keys out of \(MetadataKeys.supported.read().count) supported")
         
         return details.joined(separator: "\n")
     }
@@ -156,7 +156,7 @@ extension SYSummaryVC : UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueCell(SYSummaryCell.self, for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "SYSummaryCell", for: indexPath) as! SYSummaryCell
         
         switch Section(rawValue: indexPath.section)! {
         case .supportedKeys:

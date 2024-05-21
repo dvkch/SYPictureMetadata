@@ -8,6 +8,7 @@
 
 import UIKit
 import SYPictureMetadata
+import SYPictureMetadataTestAssets
 
 class SYImagesVC : UIPageViewController {
     // MARK: UIViewController
@@ -42,9 +43,7 @@ class SYImagesVC : UIPageViewController {
     
     // MARK: Content
     private func loadURLs() {
-        guard let baseURL = Bundle.main.url(forResource: "Test images", withExtension: nil) else { return }
-        let imageNames = try! FileManager.default.contentsOfDirectory(atPath: baseURL.path)
-        self.urls = imageNames.map { baseURL.appendingPathComponent($0) }
+        self.urls = TestFile.allCases.map(\.url)
     }
     
     // MARK: Child ViewControllers

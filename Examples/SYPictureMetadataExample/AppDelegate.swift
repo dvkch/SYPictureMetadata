@@ -8,6 +8,7 @@
 
 import UIKit
 import SYPictureMetadata
+import SYPictureMetadataTestAssets
 
 // TODO: use property wrappers when they can reference self
 // TODO: print stats of untested but supported keys (needs property wrappers?)
@@ -26,7 +27,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     // README Examples
     func testAddIPTC() {
-        let imageURL = TestFile.iptc2.url!
+        let imageURL = TestFile.iptc2.url
         
         // load metadata from original file (please handle errors, the type is SYMetadata.Error)
         let metadata = try! SYMetadata(fileURL: imageURL)
@@ -74,7 +75,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func testStripAll() {
-        let imageURL = TestFile.iptc2.url!
+        let imageURL = TestFile.iptc2.url
         
         // load metadata from original file (please handle errors, the type is SYMetadata.Error)
         let metadata = try! SYMetadata(fileURL: imageURL)
