@@ -14,12 +14,13 @@
 		97172AC323F051C2007F2203 /* SYSummaryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97172AC223F051C2007F2203 /* SYSummaryCell.swift */; };
 		97172AC923F052BB007F2203 /* SYSummaryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97172AC823F052BB007F2203 /* SYSummaryVC.swift */; };
 		97172ACD23F0731C007F2203 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97172ACB23F0731C007F2203 /* LaunchScreen.storyboard */; };
+		97230E172BFD510500CDB64D /* SYPictureMetadata in Frameworks */ = {isa = PBXBuildFile; productRef = 97230E162BFD510500CDB64D /* SYPictureMetadata */; };
+		97230E192BFD510500CDB64D /* SYPictureMetadataTestAssets in Frameworks */ = {isa = PBXBuildFile; productRef = 97230E182BFD510500CDB64D /* SYPictureMetadataTestAssets */; };
+		97230E1E2BFD511500CDB64D /* Foundation+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97230E1B2BFD511500CDB64D /* Foundation+Extensions.swift */; };
+		97230E1F2BFD511500CDB64D /* Dictionary+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97230E1C2BFD511500CDB64D /* Dictionary+Extensions.swift */; };
+		97230E202BFD511500CDB64D /* SYMetadata+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97230E1D2BFD511500CDB64D /* SYMetadata+Extensions.swift */; };
 		975D0D2323D5F5CD00DFFC35 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 975D0D2223D5F5CD00DFFC35 /* AppDelegate.swift */; };
 		975D0D2C23D5F5CF00DFFC35 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 975D0D2B23D5F5CF00DFFC35 /* Assets.xcassets */; };
-		976713942BFD4E5C00C946F5 /* SYPictureMetadataTestAssets in Frameworks */ = {isa = PBXBuildFile; productRef = 976713932BFD4E5C00C946F5 /* SYPictureMetadataTestAssets */; };
-		976713992BFD4EBD00C946F5 /* Dictionary+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 976713952BFD4EBD00C946F5 /* Dictionary+Extensions.swift */; };
-		9767139A2BFD4EBD00C946F5 /* Foundation+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 976713962BFD4EBD00C946F5 /* Foundation+Extensions.swift */; };
-		9767139B2BFD4EBD00C946F5 /* SYMetadata+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 976713972BFD4EBD00C946F5 /* SYMetadata+Extensions.swift */; };
 		976E79552BFD3BB200336C5C /* SYPictureMetadata in Frameworks */ = {isa = PBXBuildFile; productRef = 976E79542BFD3BB200336C5C /* SYPictureMetadata */; };
 		97CD867E25C9B8B00039F7ED /* SYOpenPhotoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97CD867D25C9B8B00039F7ED /* SYOpenPhotoVC.swift */; };
 /* End PBXBuildFile section */
@@ -33,12 +34,12 @@
 		97172AC823F052BB007F2203 /* SYSummaryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SYSummaryVC.swift; sourceTree = "<group>"; };
 		97172ACA23F0731C007F2203 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		97172ACB23F0731C007F2203 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		97230E1B2BFD511500CDB64D /* Foundation+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Foundation+Extensions.swift"; sourceTree = "<group>"; };
+		97230E1C2BFD511500CDB64D /* Dictionary+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Dictionary+Extensions.swift"; sourceTree = "<group>"; };
+		97230E1D2BFD511500CDB64D /* SYMetadata+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SYMetadata+Extensions.swift"; sourceTree = "<group>"; };
 		975D0D1F23D5F5CD00DFFC35 /* SYPictureMetadataExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SYPictureMetadataExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		975D0D2223D5F5CD00DFFC35 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		975D0D2B23D5F5CF00DFFC35 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		976713952BFD4EBD00C946F5 /* Dictionary+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Dictionary+Extensions.swift"; sourceTree = "<group>"; };
-		976713962BFD4EBD00C946F5 /* Foundation+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Foundation+Extensions.swift"; sourceTree = "<group>"; };
-		976713972BFD4EBD00C946F5 /* SYMetadata+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SYMetadata+Extensions.swift"; sourceTree = "<group>"; };
 		97B92E6925C9C2DF00EC7244 /* SYPictureMetadataExample.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SYPictureMetadataExample.entitlements; sourceTree = "<group>"; };
 		97CD867D25C9B8B00039F7ED /* SYOpenPhotoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SYOpenPhotoVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -48,14 +49,26 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				97230E172BFD510500CDB64D /* SYPictureMetadata in Frameworks */,
 				976E79552BFD3BB200336C5C /* SYPictureMetadata in Frameworks */,
-				976713942BFD4E5C00C946F5 /* SYPictureMetadataTestAssets in Frameworks */,
+				97230E192BFD510500CDB64D /* SYPictureMetadataTestAssets in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		97230E1A2BFD511500CDB64D /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				97230E1B2BFD511500CDB64D /* Foundation+Extensions.swift */,
+				97230E1C2BFD511500CDB64D /* Dictionary+Extensions.swift */,
+				97230E1D2BFD511500CDB64D /* SYMetadata+Extensions.swift */,
+			);
+			name = Extensions;
+			path = ../../Tests/SYPictureMetadataTests/Extensions;
+			sourceTree = "<group>";
+		};
 		975D0D1623D5F5CD00DFFC35 = {
 			isa = PBXGroup;
 			children = (
@@ -78,7 +91,7 @@
 			children = (
 				97B92E6925C9C2DF00EC7244 /* SYPictureMetadataExample.entitlements */,
 				975D0D2B23D5F5CF00DFFC35 /* Assets.xcassets */,
-				976713982BFD4EBD00C946F5 /* Extensions */,
+				97230E1A2BFD511500CDB64D /* Extensions */,
 				976E79512BFD3B5300336C5C /* Cells */,
 				976E79522BFD3B5D00336C5C /* ViewControllers */,
 				975D0D2223D5F5CD00DFFC35 /* AppDelegate.swift */,
@@ -94,17 +107,6 @@
 			children = (
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		976713982BFD4EBD00C946F5 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				976713952BFD4EBD00C946F5 /* Dictionary+Extensions.swift */,
-				976713962BFD4EBD00C946F5 /* Foundation+Extensions.swift */,
-				976713972BFD4EBD00C946F5 /* SYMetadata+Extensions.swift */,
-			);
-			name = Extensions;
-			path = ../../Package/Tests/SYPictureMetadataTests/Extensions;
 			sourceTree = "<group>";
 		};
 		976E79512BFD3B5300336C5C /* Cells */ = {
@@ -147,7 +149,8 @@
 			name = SYPictureMetadataExample;
 			packageProductDependencies = (
 				976E79542BFD3BB200336C5C /* SYPictureMetadata */,
-				976713932BFD4E5C00C946F5 /* SYPictureMetadataTestAssets */,
+				97230E162BFD510500CDB64D /* SYPictureMetadata */,
+				97230E182BFD510500CDB64D /* SYPictureMetadataTestAssets */,
 			);
 			productName = SYPictureMetadataExample;
 			productReference = 975D0D1F23D5F5CD00DFFC35 /* SYPictureMetadataExample.app */;
@@ -179,7 +182,7 @@
 			);
 			mainGroup = 975D0D1623D5F5CD00DFFC35;
 			packageReferences = (
-				976E79532BFD3BB200336C5C /* XCLocalSwiftPackageReference "../Package" */,
+				97230E152BFD510500CDB64D /* XCLocalSwiftPackageReference ".." */,
 			);
 			productRefGroup = 975D0D2023D5F5CD00DFFC35 /* Products */;
 			projectDirPath = "";
@@ -222,7 +225,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "SDK_PATH=`xcrun --sdk iphoneos --show-sdk-path`\nHEADER_PATH=\"${SDK_PATH}/System/Library/Frameworks/ImageIO.framework/Headers/CGImageProperties.h\"\nPACKAGE=\"${SRCROOT}/../Package\"\nKEYS=\"${PACKAGE}/Sources/SYPictureMetadataTestAssets/MetadataKeys\"\n\ngrep \"kCGImageProperty\" \"${HEADER_PATH}\" | grep -o 'kCGImageProperty\\w*' | sort | uniq > \"${KEYS}/ImageIO.txt\"\ngrep -oh 'kCGImageProperty\\w*' \"${PACKAGE}/Sources/SYPictureMetadata/\"*.swift | sort | uniq > \"${KEYS}/Supported.txt\"\ngrep -v -f \"${KEYS}/Supported.txt\" \"${KEYS}/ImageIO.txt\" > \"${KEYS}/Unsupported.txt\"\n";
+			shellScript = "SDK_PATH=`xcrun --sdk iphoneos --show-sdk-path`\nHEADER_PATH=\"${SDK_PATH}/System/Library/Frameworks/ImageIO.framework/Headers/CGImageProperties.h\"\nPACKAGE=\"${SRCROOT}/..\"\nKEYS=\"${PACKAGE}/Sources/SYPictureMetadataTestAssets/MetadataKeys\"\n\ngrep \"kCGImageProperty\" \"${HEADER_PATH}\" | grep -o 'kCGImageProperty\\w*' | sort | uniq > \"${KEYS}/ImageIO.txt\"\ngrep -oh 'kCGImageProperty\\w*' \"${PACKAGE}/Sources/SYPictureMetadata/\"*.swift | sort | uniq > \"${KEYS}/Supported.txt\"\ngrep -v -f \"${KEYS}/Supported.txt\" \"${KEYS}/ImageIO.txt\" > \"${KEYS}/Unsupported.txt\"\n";
 		};
 		974D914F23EF97A500C770FA /* TODOs */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -250,15 +253,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9767139A2BFD4EBD00C946F5 /* Foundation+Extensions.swift in Sources */,
 				97172AC323F051C2007F2203 /* SYSummaryCell.swift in Sources */,
 				97172ABB23F0430D007F2203 /* SYImagesVC.swift in Sources */,
 				97172AC923F052BB007F2203 /* SYSummaryVC.swift in Sources */,
-				976713992BFD4EBD00C946F5 /* Dictionary+Extensions.swift in Sources */,
 				97172ABE23F045B3007F2203 /* SYImageVC.swift in Sources */,
 				975D0D2323D5F5CD00DFFC35 /* AppDelegate.swift in Sources */,
-				9767139B2BFD4EBD00C946F5 /* SYMetadata+Extensions.swift in Sources */,
+				97230E1E2BFD511500CDB64D /* Foundation+Extensions.swift in Sources */,
 				97CD867E25C9B8B00039F7ED /* SYOpenPhotoVC.swift in Sources */,
+				97230E202BFD511500CDB64D /* SYMetadata+Extensions.swift in Sources */,
+				97230E1F2BFD511500CDB64D /* Dictionary+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -449,16 +452,19 @@
 /* End XCConfigurationList section */
 
 /* Begin XCLocalSwiftPackageReference section */
-		976E79532BFD3BB200336C5C /* XCLocalSwiftPackageReference "../Package" */ = {
+		97230E152BFD510500CDB64D /* XCLocalSwiftPackageReference ".." */ = {
 			isa = XCLocalSwiftPackageReference;
-			relativePath = ../Package;
+			relativePath = ..;
 		};
 /* End XCLocalSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		976713932BFD4E5C00C946F5 /* SYPictureMetadataTestAssets */ = {
+		97230E162BFD510500CDB64D /* SYPictureMetadata */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 976E79532BFD3BB200336C5C /* XCLocalSwiftPackageReference "../Package" */;
+			productName = SYPictureMetadata;
+		};
+		97230E182BFD510500CDB64D /* SYPictureMetadataTestAssets */ = {
+			isa = XCSwiftPackageProductDependency;
 			productName = SYPictureMetadataTestAssets;
 		};
 		976E79542BFD3BB200336C5C /* SYPictureMetadata */ = {
