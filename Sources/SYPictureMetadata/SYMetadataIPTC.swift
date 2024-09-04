@@ -271,4 +271,9 @@ import ImageIO
         get { getValue(key: kCGImagePropertyIPTCScene.string) }
         set { setValue(key: kCGImagePropertyIPTCScene.string, value: newValue) }
     }
+
+    public var digitalSourceType: String? {
+        get { getValue(key: kCGImagePropertyIPTCExtDigitalSourceType.string) }
+        set { setValue(key: kCGImagePropertyIPTCExtDigitalSourceType.string, value: newValue) }
+    }
 }
