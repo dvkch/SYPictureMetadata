@@ -7,7 +7,9 @@ let package = Package(
     name: "SYPictureMetadata",
     platforms: [
         .iOS(.v12),
-        .tvOS(.v12)
+        .tvOS(.v12),
+        .macOS(.v10_14),
+        .visionOS(.v1)
     ],
     products: [
         .library(name: "SYPictureMetadata", targets: ["SYPictureMetadata"]),
