@@ -20,6 +20,7 @@ public enum TestFile: String, CaseIterable {
     case gif = "TEST_GIF.gif"
     case iptc = "TEST_IPTC.jpg"
     case iptc2 = "TEST_IPTC_2.jpg"
+    case iptc3 = "TEST_IPTC_3.jpg"
     case nikon = "TEST_NIKON.nef"
     case pictureStyle = "TEST_PICTURESTYLE.CR2"
     case png = "TEST_PNG.png"
