@@ -263,6 +263,16 @@ class SYPictureMetadataTests: XCTestCase {
         keepStats([metadata])
     }
 
+    func testIPTC3() throws {
+        let metadata = try! TestFile.iptc3.readMetadata()
+        XCTAssertNotNil(metadata.metadataIPTC)
+        XCTAssertEqual(metadata.metadataIPTC?.credit, "Apple Image Playground")
+        XCTAssertEqual(metadata.metadataIPTC?.digitalSourceType, "http://cv.iptc.org/newscodes/digitalsourcetype/trainedAlgorithmicMedia")
+
+        // stats
+        keepStats([metadata])
+    }
+
     func testNikon() throws {
         let metadata = try! TestFile.nikon.readMetadata()
         XCTAssertNotNil(metadata.metadataMakerNikon)
