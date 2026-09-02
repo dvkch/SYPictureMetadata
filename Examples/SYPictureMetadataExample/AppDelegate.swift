@@ -3,7 +3,7 @@
 //  SYPictureMetadataExample
 //
 //  Created by Stanislas Chevallier on 20/01/2020.
-//  Copyright © 2020 Syan.me. All rights reserved.
+//  Copyright © 2020 Syan.me.
 //
 
 import UIKit
@@ -17,42 +17,42 @@ import SYPictureMetadataTestAssets
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    
+
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         testAddIPTC()
         testStripAll()
         return true
     }
-    
+
     // README Examples
     func testAddIPTC() {
         let imageURL = TestFile.iptc2.url
-        
+
         // load metadata from original file (please handle errors, the type is SYMetadata.Error)
         let metadata = try! SYMetadata(fileURL: imageURL)
-        
+
         // create IPTC container if not present
         if (metadata.metadataIPTC == nil) {
             metadata.metadataIPTC = SYMetadataIPTC()
         }
-        
+
         // edit metadata
         metadata.metadataIPTC?.keywords  = ["Some test keywords", "added by SYMetadata example app"];
         metadata.metadataIPTC?.city      = "Lyon";
         metadata.metadataIPTC?.credit    = "© Me 2017";
-        
+
         // create new image data with original image data and edited metadata
         let originalImageData = try! Data(contentsOf: imageURL)
         let imageDataWithMetadata = try! metadata.apply(to: originalImageData)
-        
+
         // log the delta in file size
         print("File size delta:", imageDataWithMetadata.count - originalImageData.count);
         // File size delta: 60325
 
         // load metadata for newly cerated image
         let reloadedMetadata = try! SYMetadata(imageData: imageDataWithMetadata)
-        
+
         // log the differences between files
         print("Differences:\n", reloadedMetadata.originalDictionary.metadataDifferences(from: metadata.originalDictionary, includeValuesInDiff: true).jsonString)
         // Differences:
@@ -73,24 +73,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //   }
         // }
     }
-    
+
     func testStripAll() {
         let imageURL = TestFile.iptc2.url
-        
+
         // load metadata from original file (please handle errors, the type is SYMetadata.Error)
         let metadata = try! SYMetadata(fileURL: imageURL)
-        
+
         // create new image data with original image data and strip all metadata
         let originalImageData = try! Data(contentsOf: imageURL)
         let imageDataWithoutMetadata = try! SYMetadata.stripAllMetadata(from: originalImageData)
-        
+
         // log the delta in file size
         print("File size delta:", imageDataWithoutMetadata.count - originalImageData.count);
         // File size delta: 73491
 
         // load metadata for newly cerated image
         let reloadedMetadata = try! SYMetadata(imageData: imageDataWithoutMetadata)
-        
+
         // log the differences between files
         print("Differences:\n", reloadedMetadata.originalDictionary.metadataDifferences(from: metadata.originalDictionary, includeValuesInDiff: false).jsonString)
         // Differences:
@@ -195,4 +195,3 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // }
     }
 }
-

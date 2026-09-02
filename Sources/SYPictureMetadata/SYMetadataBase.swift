@@ -3,7 +3,7 @@
 //  SYPictureMetadata
 //
 //  Created by Stanislas Chevallier on 07/02/2020.
-//  Copyright © 2020 Syan.me. All rights reserved.
+//  Copyright © 2020 Syan.me.
 //
 
 import Foundation
@@ -14,7 +14,7 @@ public class SYMetadataBase : NSObject {
     public required init(dictionary: Dictionary<String, Any>) {
         self.originalDictionary = dictionary
         self.valuesDictionary = dictionary
-        
+
         for (key, type) in Self.childrenMappings {
             if let value = self.valuesDictionary[key] as? [String: Any] {
                 self.childrenObjects[key] = type.init(dictionary: value)
@@ -25,11 +25,11 @@ public class SYMetadataBase : NSObject {
             }
         }
     }
-    
+
     public convenience override init() {
         self.init(dictionary: [:])
     }
-    
+
     // MARK: Properties
     public let originalDictionary: [String: Any]
     public var currentDictionary: [String: Any] {
@@ -54,7 +54,7 @@ public class SYMetadataBase : NSObject {
         // using the subscript would remove the value from the dictionary. we want to keep it, this is an intentional remove
         childrenObjects.updateValue(value, forKey: key)
     }
-    
+
     // MARK: Debug
     #if DEBUG
     internal var debugReadKeys: Set<String> = []

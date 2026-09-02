@@ -3,7 +3,7 @@
 //  SYPictureMetadataExample
 //
 //  Created by Stanislas Chevallier on 13/02/2020.
-//  Copyright © 2020 Syan.me. All rights reserved.
+//  Copyright © 2020 Syan.me.
 //
 
 import Foundation
@@ -26,4 +26,3 @@ func anyEqual(_ a: Any?, _ b: Any?) -> Bool {
     print("anyEqual: unhandled types \(anyDescription(for: a)) and \(anyDescription(for: b))")
     return false
 }
-

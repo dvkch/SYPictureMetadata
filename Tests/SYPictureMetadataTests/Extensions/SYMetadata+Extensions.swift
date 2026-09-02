@@ -3,7 +3,7 @@
 //  SYPictureMetadataExample
 //
 //  Created by Stanislas Chevallier on 13/02/2020.
-//  Copyright © 2020 Syan.me. All rights reserved.
+//  Copyright © 2020 Syan.me.
 //
 
 import Foundation
@@ -14,4 +14,3 @@ extension SYMetadata {
         return self.currentDictionary.metadataDifferences(from: self.originalDictionary, includeValuesInDiff: true)
     }
 }
-

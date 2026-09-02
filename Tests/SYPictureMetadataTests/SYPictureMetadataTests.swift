@@ -3,7 +3,7 @@
 //  SYPictureMetadataTests
 //
 //  Created by Stanislas Chevallier on 09/02/2020.
-//  Copyright © 2020 Syan.me. All rights reserved.
+//  Copyright © 2020 Syan.me.
 //
 
 import XCTest
@@ -23,19 +23,19 @@ class SYPictureMetadataTests: XCTestCase {
 
     override func tearDownWithError() throws {
     }
-    
+
     override class func tearDown() {
         let supported = MetadataKeys.supported.read().count
         let ratioReadAvailable = Int(Float(readKeys.count) / Float(availableKeys.count) * 100)
         let ratioReadSupported = Int(Float(readKeys.count) / Float(supported) * 100)
         let ratioWrittenSupported = Int(Float(writtenKeys.count) / Float(supported) * 100)
-        
+
         print("STATS :")
         print(" - read \(ratioReadAvailable)% of keys available in test files")
         print(" - read \(ratioReadSupported)% of supported keys")
         print(" - wrote \(ratioWrittenSupported)% of supported keys")
     }
-    
+
     func keepStats(_ metadatas: [SYMetadata]) {
         metadatas.forEach { (metadata) in
             readKeys.formUnion(metadata.allDebugReadKeys)
@@ -59,7 +59,7 @@ class SYPictureMetadataTests: XCTestCase {
             .sorted()
         XCTAssertEqual(availableFiles, knownFiles)
     }
-    
+
     // MARK: Helpers
     func printJSON(_ metadata: SYMetadataBase?) {
         var options = JSONSerialization.WritingOptions.prettyPrinted
@@ -69,7 +69,7 @@ class SYPictureMetadataTests: XCTestCase {
         let dictionary = metadata?.originalDictionary ?? [:]
         print(dictionary.jsonString)
     }
-    
+
     // MARK: Reading metadata
     func testMetadata() throws {
         let metadata = try! TestFile.iptc.readMetadata()
@@ -95,7 +95,7 @@ class SYPictureMetadataTests: XCTestCase {
         // stats
         keepStats([metadata])
     }
-    
+
     func testAppleGPS() throws {
         let metadata = try! TestFile.appleGPS.readMetadata()
 
@@ -330,28 +330,28 @@ class SYPictureMetadataTests: XCTestCase {
             XCTAssertEqual(error as? SYMetadata.Error, SYMetadata.Error.cannotCopyPropertiesAtIndexZero)
         }
     }
-    
+
     // MARK: Writing metadata
     func testWritingIPTC() throws {
         let imageURL = TestFile.iptc2.url
-        
+
         // load metadata from original file (please handle errors, the type is SYMetadata.Error)
         let metadata = try! SYMetadata(fileURL: imageURL)
-        
+
         // create IPTC container if not present
         if (metadata.metadataIPTC == nil) {
             metadata.metadataIPTC = SYMetadataIPTC()
         }
-        
+
         // edit metadata
         metadata.metadataIPTC?.keywords  = ["Some test keywords", "added by SYMetadata example app"];
         metadata.metadataIPTC?.city      = "Lyon";
         metadata.metadataIPTC?.credit    = "© Me 2017";
-        
+
         // create new image data with original image data and edited metadata
         let originalImageData = try! Data(contentsOf: imageURL)
         let imageDataWithMetadata = try! metadata.apply(to: originalImageData)
-        
+
         let reloadedMetadata = try! SYMetadata(imageData: imageDataWithMetadata)
         XCTAssertEqual(reloadedMetadata.metadataIPTC?.keywords, ["Some test keywords", "added by SYMetadata example app"])
         XCTAssertEqual(reloadedMetadata.metadataIPTC?.city, "Lyon")
@@ -360,10 +360,10 @@ class SYPictureMetadataTests: XCTestCase {
         // stats
         keepStats([metadata, reloadedMetadata])
     }
-    
+
     func testRemovingChildren() throws {
         let imageURL = TestFile.iptc2.url
-        
+
         // load metadata from original file (please handle errors, the type is SYMetadata.Error)
         let metadata = try! SYMetadata(fileURL: imageURL)
 
@@ -381,11 +381,11 @@ class SYPictureMetadataTests: XCTestCase {
 
         // remove EXIF
         metadata.metadataExif = nil
-        
+
         // create new image data with original image data and edited metadata
         let originalImageData = try! Data(contentsOf: imageURL)
         let imageDataWithMetadata = try! metadata.apply(to: originalImageData)
-        
+
         // Make sure we remove (almost) all keys
         let reloadedMetadata = try! SYMetadata(imageData: imageDataWithMetadata)
         let expectedUpdatedKeys: [String] = ["DateTimeOriginal", "ColorSpace", "PixelYDimension", "DateTimeDigitized", "PixelXDimension"]
@@ -395,10 +395,10 @@ class SYPictureMetadataTests: XCTestCase {
         // stats
         keepStats([metadata, reloadedMetadata])
     }
-    
+
     func testUpdatingAndRemovingValues() throws {
         let imageURL = TestFile.iptc2.url
-        
+
         // load metadata from original file (please handle errors, the type is SYMetadata.Error)
         let metadata = try! SYMetadata(fileURL: imageURL)
 
@@ -419,14 +419,14 @@ class SYPictureMetadataTests: XCTestCase {
         // remove image description
         metadata.metadataTIFF?.imageDescription = nil
         metadata.metadataIPTC?.captionAbstract = nil
-        
+
         // remove photometric interpolation
         metadata.metadataTIFF?.photometricInterpretation = nil
-        
+
         // create new image data with original image data and edited metadata
         let originalImageData = try! Data(contentsOf: imageURL)
         let imageDataWithMetadata = try! metadata.apply(to: originalImageData)
-        
+
         let reloadedMetadata = try! SYMetadata(imageData: imageDataWithMetadata)
         XCTAssertEqual(reloadedMetadata.metadataTIFF?.artist, "New Artist")
         XCTAssertEqual(reloadedMetadata.metadataTIFF?.copyright, nil)
@@ -436,14 +436,14 @@ class SYPictureMetadataTests: XCTestCase {
         // stats
         keepStats([metadata, reloadedMetadata])
     }
-    
+
     func testStripAll() throws {
         let imageURL = TestFile.iptc2.url
-        
+
         // create new image data with original image data and strip all metadata
         let originalImageData = try! Data(contentsOf: imageURL)
         let imageDataWithoutMetadata = try! SYMetadata.stripAllMetadata(from: originalImageData)
-        
+
         // load metadata for newly cerated image
         let reloadedMetadata = try! SYMetadata(imageData: imageDataWithoutMetadata)
         let keptKeys = reloadedMetadata.originalDictionary.allKeyPaths

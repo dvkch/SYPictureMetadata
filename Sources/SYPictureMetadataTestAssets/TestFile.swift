@@ -3,7 +3,7 @@
 //  SYPictureMetadataTests
 //
 //  Created by Stanislas Chevallier on 24/02/2020.
-//  Copyright © 2020 Syan.me. All rights reserved.
+//  Copyright © 2020 Syan.me.
 //
 
 import Foundation
@@ -25,7 +25,7 @@ public enum TestFile: String, CaseIterable {
     case pictureStyle = "TEST_PICTURESTYLE.CR2"
     case png = "TEST_PNG.png"
     case unreadable = "TEST_unreadable.txt"
-    
+
     public var url: URL {
         return Bundle.module.url(forResource: rawValue, withExtension: nil, subdirectory: "TestFile")!
     }
@@ -38,4 +38,3 @@ public enum TestFile: String, CaseIterable {
         return try SYMetadata(fileURL: url)
     }
 }
-

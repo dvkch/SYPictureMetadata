@@ -3,7 +3,7 @@
 //  SYPictureMetadataExample
 //
 //  Created by Stanislas Chevallier on 13/02/2020.
-//  Copyright © 2020 Syan.me. All rights reserved.
+//  Copyright © 2020 Syan.me.
 //
 
 import Foundation
@@ -20,7 +20,7 @@ public extension Dictionary where Value == Any {
             return value
         }
     }
-    
+
     var jsonString: String {
         do {
             var options = JSONSerialization.WritingOptions.prettyPrinted
@@ -39,17 +39,17 @@ public extension Dictionary where Value == Any {
 extension Dictionary where Key: CustomStringConvertible {
     var allKeyPaths: [String] {
         var keyPaths = [String]()
-        
+
         for key in keys {
             let keyString = key.description
             keyPaths.append(keyString)
-            
+
             if let subDic = self[key] as? [Key: Any] {
                 let subKeyPaths = subDic.allKeyPaths.map { keyString + "." + $0 }
                 keyPaths.append(contentsOf: subKeyPaths)
             }
         }
-        
+
         return keyPaths
     }
 }
@@ -57,15 +57,15 @@ extension Dictionary where Key: CustomStringConvertible {
 extension Dictionary where Key == String {
     func metadataDifferences(from dictionaryOld: [Key: Value], includeValuesInDiff: Bool) -> [Key: Any] {
         let dictionaryNew = self
-        
+
         let formatAdded    = (includeValuesInDiff ? "Added: %@"          : "Added"  )
         let formatUpdated  = (includeValuesInDiff ? "Updated: %@ -> %@"  : "Updated")
         let formatRemoved  = (includeValuesInDiff ? "Removed: %@"        : "Removed")
-        
+
         var allKeys = Set<Key>()
         allKeys = allKeys.union(dictionaryOld.keys)
         allKeys = allKeys.union(dictionaryNew.keys)
-        
+
         var diffs = [String: Any]()
         for key in allKeys {
             let valueOld = dictionaryOld[key]
@@ -75,7 +75,7 @@ extension Dictionary where Key == String {
 
             let oldIsNilOrDic = valueOld == nil || (valueOld as? Self) != nil
             let newIsNilOrDic = valueNew == nil || (valueNew as? Self) != nil
-            
+
             if (oldIsNilOrDic && newIsNilOrDic) {
                 let subDicOld = valueOld as? Self ?? [:]
                 let subDicNew = valueNew as? Self ?? [:]
@@ -85,7 +85,7 @@ extension Dictionary where Key == String {
 
             var valueOldString = anyDescription(for: valueOld)
             var valueNewString = anyDescription(for: valueNew)
-            
+
             if let array = valueOld as? [Any] {
                 valueOldString = array.map { anyDescription(for: $0) }.joined(separator: ", ")
             }
@@ -105,7 +105,7 @@ extension Dictionary where Key == String {
 
             diffs[key] = String(format: formatUpdated, valueOldString, valueNewString)
         }
-        
+
         return diffs
     }
 }

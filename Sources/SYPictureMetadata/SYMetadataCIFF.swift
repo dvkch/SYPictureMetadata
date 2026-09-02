@@ -3,7 +3,7 @@
 //  SYPictureMetadata
 //
 //  Created by Stanislas Chevallier on 08/02/2020.
-//  Copyright © 2020 Syan.me. All rights reserved.
+//  Copyright © 2020 Syan.me.
 //
 
 import Foundation
@@ -19,12 +19,12 @@ import ImageIO
         case singleShot = 0
         case continuousShooting = 2
     }
-    
+
     public enum ReleaseTiming: Int, CaseIterable {
         case priorityOnShutter = 0
         case priorityOnFocus = 1
     }
-    
+
     public enum MeteringMode: Int, CaseIterable {
         case `default` = 0
         case spot = 1
@@ -33,7 +33,7 @@ import ImageIO
         case partial = 4
         case centerWeightedAverage = 5
     }
-    
+
     public enum WhiteBalance: Int, CaseIterable {
         case auto = 0
         case daylight = 1
@@ -58,7 +58,7 @@ import ImageIO
         case pcSet5 = 21
         case autoAmbiencePriority = 23
     }
-    
+
     public enum ContinousDrive: Int, CaseIterable {
         case single = 0
         case continuous = 1
@@ -70,7 +70,7 @@ import ImageIO
         case singleSilent = 9
         case continuousSilent = 10
     }
-    
+
     public enum FocusMode: Int, CaseIterable {
         case oneShotAF = 0
         case aiServoAF = 1
@@ -84,123 +84,123 @@ import ImageIO
         case movieSnapFocus = 512
         case movieServoAF = 519
     }
-    
+
     // MARK: Values
     public var descr: String? {
         get { getValue(key: kCGImagePropertyCIFFDescription.string) }
         set { setValue(key: kCGImagePropertyCIFFDescription.string, value: newValue) }
     }
-    
+
     public var firmware: String? {
         get { getValue(key: kCGImagePropertyCIFFFirmware.string) }
         set { setValue(key: kCGImagePropertyCIFFFirmware.string, value: newValue) }
     }
-    
+
     public var ownerName: String? {
         get { getValue(key: kCGImagePropertyCIFFOwnerName.string) }
         set { setValue(key: kCGImagePropertyCIFFOwnerName.string, value: newValue) }
     }
-    
+
     public var imageName: String? {
         get { getValue(key: kCGImagePropertyCIFFImageName.string) }
         set { setValue(key: kCGImagePropertyCIFFImageName.string, value: newValue) }
     }
-    
+
     public var imageFileName: String? {
         get { getValue(key: kCGImagePropertyCIFFImageFileName.string) }
         set { setValue(key: kCGImagePropertyCIFFImageFileName.string, value: newValue) }
     }
-    
+
     public var releaseMethod: ReleaseMethod? {
         get { getValue(key: kCGImagePropertyCIFFReleaseMethod.string) }
         set { setValue(key: kCGImagePropertyCIFFReleaseMethod.string, value: newValue) }
     }
-    
+
     public var releaseTiming: ReleaseTiming? {
         get { getValue(key: kCGImagePropertyCIFFReleaseTiming.string) }
         set { setValue(key: kCGImagePropertyCIFFReleaseTiming.string, value: newValue) }
     }
-    
+
     public var recordID: UInt? {
         get { getValue(key: kCGImagePropertyCIFFRecordID.string) }
         set { setValue(key: kCGImagePropertyCIFFRecordID.string, value: newValue) }
     }
-    
+
     public var selfTimingTime: UInt? {
         get { getValue(key: kCGImagePropertyCIFFSelfTimingTime.string) }
         set { setValue(key: kCGImagePropertyCIFFSelfTimingTime.string, value: newValue) }
     }
-    
+
     public var cameraSerialNumber: UInt? {
         get { getValue(key: kCGImagePropertyCIFFCameraSerialNumber.string) }
         set { setValue(key: kCGImagePropertyCIFFCameraSerialNumber.string, value: newValue) }
     }
-    
+
     public var imageSerialNumber: UInt? {
         get { getValue(key: kCGImagePropertyCIFFImageSerialNumber.string) }
         set { setValue(key: kCGImagePropertyCIFFImageSerialNumber.string, value: newValue) }
     }
-    
+
     public var continuousDrive: ContinousDrive? {
         get { getValue(key: kCGImagePropertyCIFFContinuousDrive.string) }
         set { setValue(key: kCGImagePropertyCIFFContinuousDrive.string, value: newValue) }
     }
-    
+
     public var focusMode: FocusMode? {
         get { getValue(key: kCGImagePropertyCIFFFocusMode.string) }
         set { setValue(key: kCGImagePropertyCIFFFocusMode.string, value: newValue) }
     }
-    
+
     public var meteringMode: MeteringMode? {
         get { getValue(key: kCGImagePropertyCIFFMeteringMode.string) }
         set { setValue(key: kCGImagePropertyCIFFMeteringMode.string, value: newValue) }
     }
-    
+
     public var shootingMode: NSNumber? {
         get { getValue(key: kCGImagePropertyCIFFShootingMode.string) }
         set { setValue(key: kCGImagePropertyCIFFShootingMode.string, value: newValue) }
     }
-    
+
     public var lensModel: String? {
         get { getValue(key: kCGImagePropertyCIFFLensModel.string) }
         set { setValue(key: kCGImagePropertyCIFFLensModel.string, value: newValue) }
     }
-    
+
     public var lensMaxMM: Int? {
         get { getValue(key: kCGImagePropertyCIFFLensMaxMM.string) }
         set { setValue(key: kCGImagePropertyCIFFLensMaxMM.string, value: newValue) }
     }
-    
+
     public var lensMinMM: Int? {
         get { getValue(key: kCGImagePropertyCIFFLensMinMM.string) }
         set { setValue(key: kCGImagePropertyCIFFLensMinMM.string, value: newValue) }
     }
-    
+
     public var whiteBalance: WhiteBalance? {
         get { getValue(key: kCGImagePropertyCIFFWhiteBalanceIndex.string) }
         set { setValue(key: kCGImagePropertyCIFFWhiteBalanceIndex.string, value: newValue) }
     }
-    
+
     public var flashExposureComp: Int? {
         get { getValue(key: kCGImagePropertyCIFFFlashExposureComp.string) }
         set { setValue(key: kCGImagePropertyCIFFFlashExposureComp.string, value: newValue) }
     }
-    
+
     public var measuredEV: Double? {
         get { getValue(key: kCGImagePropertyCIFFMeasuredEV.string) }
         set { setValue(key: kCGImagePropertyCIFFMeasuredEV.string, value: newValue) }
     }
-    
+
     public var uniqueModelID: UInt? {
         get { getValue(key: kSYImagePropertyCIFFUniqueModelID.string) }
         set { setValue(key: kSYImagePropertyCIFFUniqueModelID.string, value: newValue) }
     }
-    
+
     public var maxAperture: Double? {
         get { getValue(key: kSYImagePropertyCIFFMaxAperture.string) }
         set { setValue(key: kSYImagePropertyCIFFMaxAperture.string, value: newValue) }
     }
-    
+
     public var minAperture: Double? {
         get { getValue(key: kSYImagePropertyCIFFMinAperture.string) }
         set { setValue(key: kSYImagePropertyCIFFMinAperture.string, value: newValue) }

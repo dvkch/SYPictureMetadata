@@ -3,7 +3,7 @@
 //  SYPictureMetadata
 //
 //  Created by Stanislas Chevallier on 20/01/2020.
-//  Copyright © 2020 Syan.me. All rights reserved.
+//  Copyright © 2020 Syan.me.
 //
 
 import Foundation
@@ -128,5 +128,3 @@ import ImageIO
         set { setValue(key: kCGImagePropertyTIFFTileLength.string, value: newValue) }
     }
 }
-
-

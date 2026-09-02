@@ -3,7 +3,7 @@
 //  SYPictureMetadataExample
 //
 //  Created by Stanislas Chevallier on 09/02/2020.
-//  Copyright © 2020 Syan.me. All rights reserved.
+//  Copyright © 2020 Syan.me.
 //
 
 import UIKit
@@ -18,16 +18,16 @@ class SYImagesVC : UIPageViewController {
         delegate = self
         loadURLs()
     }
-    
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         openIndex(0, animated: false, forceForwardAnimation: false)
     }
-    
+
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
-    
+
     // MARK: Properties
     private var nextIndex: Int = 0
     private var currentIndex: Int = 0 {
@@ -40,29 +40,29 @@ class SYImagesVC : UIPageViewController {
             openIndex(currentIndex, animated: false, forceForwardAnimation: false)
         }
     }
-    
+
     // MARK: Content
     private func loadURLs() {
         self.urls = TestFile.allCases.map(\.url)
     }
-    
+
     // MARK: Child ViewControllers
     private func viewController(at newIndex: Int) -> SYImageVC? {
         guard urls.count > 0 else { return nil }
         let index = (newIndex + urls.count) % urls.count
         guard index < urls.count else { return nil }
         let url = urls[index]
-        
+
         let vc = SYImageVC()
         vc.pictureURL = url
         vc.index = index
-        
+
         return vc
     }
-    
+
     private func openIndex(_ index: Int, animated: Bool, forceForwardAnimation: Bool) {
         guard let vc = viewController(at: index) else { return }
-        
+
         var direction = UIPageViewController.NavigationDirection.forward
         if (index < currentIndex && !forceForwardAnimation) {
             // going backwards
@@ -78,15 +78,15 @@ extension SYImagesVC : UIPageViewControllerDataSource {
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
         // disable infinity scroll when only has a single item
         if urls.count < 2 { return nil }
-        
+
         guard let prevVC = viewController as? SYImageVC else { return nil }
         return self.viewController(at: prevVC.index - 1)
     }
-    
+
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
         // disable infinity scroll when only has a single item
         if urls.count < 2 { return nil }
-        
+
         guard let prevVC = viewController as? SYImageVC else { return nil }
         return self.viewController(at: prevVC.index + 1)
     }
@@ -98,7 +98,7 @@ extension SYImagesVC : UIPageViewControllerDelegate {
             nextIndex = vc.index
         }
     }
-    
+
     func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
         if completed {
             currentIndex = nextIndex
@@ -106,4 +106,3 @@ extension SYImagesVC : UIPageViewControllerDelegate {
         nextIndex = 0
     }
 }
-

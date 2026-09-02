@@ -3,7 +3,7 @@
 //  SYPictureMetadataExample
 //
 //  Created by Stanislas Chevallier on 02/02/2021.
-//  Copyright © 2021 Syan.me. All rights reserved.
+//  Copyright © 2021 Syan.me.
 //
 
 import UIKit
@@ -11,20 +11,20 @@ import PhotosUI
 import SYPictureMetadata
 
 class SYOpenPhotoVC : UIViewController {
-    
+
     // MARK: ViewController
     override func viewDidLoad() {
         super.viewDidLoad()
         updateContent()
     }
-    
+
     // MARK: Properties
     private var asset: PHAsset? {
         didSet {
             updateContent()
         }
     }
-    
+
     // MARK: Views
     @IBOutlet private var imageView: UIImageView!
     @IBOutlet private var textView: UITextView!
@@ -35,7 +35,7 @@ class SYOpenPhotoVC : UIViewController {
             self.showPicker()
         }
     }
-    
+
     private func askPermission(success: @escaping () -> Void) {
         let status = PHPhotoLibrary.authorizationStatus()
         if status == .authorized {
@@ -53,7 +53,7 @@ class SYOpenPhotoVC : UIViewController {
             }
         }
     }
-    
+
     private func showPicker() {
         let picker = UIImagePickerController()
         picker.delegate = self
@@ -62,7 +62,7 @@ class SYOpenPhotoVC : UIViewController {
         picker.mediaTypes = UIImagePickerController.availableMediaTypes(for: .photoLibrary) ?? []
         present(picker, animated: true, completion: nil)
     }
-    
+
     // MARK: Content
     private func updateContent() {
         guard let asset = asset else {
@@ -71,11 +71,11 @@ class SYOpenPhotoVC : UIViewController {
             textView.text = nil
             return
         }
-        
+
         PHImageManager.default().requestImage(for: asset, targetSize: imageView.bounds.size, contentMode: .aspectFit, options: nil) { (image, _) in
             self.imageView.image = image
         }
-        
+
         SYMetadata.metadata(asset: asset, networkAccessAllowed: false) { (metadata, error) in
             if let error = error {
                 self.textView.text = error.localizedDescription
